@@ -2,7 +2,7 @@
 title: Jerry Blog
 SEOTitle: Jerry的博客 | Jerry Blog
 header-img: img/home-bg.jpg
-email: huxpro@gmail.com
+email: 
 description: "关于白帽子、黑客与文人 | Curious Passionate Dream-Chaser Hacker | 这里是 @Jerry 的个人博客，一个有趣的灵魂期待与你相遇。"
 keyword: "CTF，攻防，HACK,白帽子，渗透，逆向，二进制，密码学，区块链"
 url: "https://hackerjerry.top"              # your host, for absolute URL
@@ -13,11 +13,11 @@ future: true
 
 # SNS settings
 RSS: false
-weibo_username:     huxpro
-zhihu_username:     huxpro
-github_username:    huxpro
-twitter_username:   huxpro
-#facebook_username:  huxpro
+#weibo_username:     
+#zhihu_username:     
+#github_username:    
+#twitter_username:   
+#facebook_username:  
 #linkedin_username:  firstname-lastname-idxxxx
 
 
@@ -59,7 +59,7 @@ kramdown:
 
 
 # Disqus settings
-disqus_username: hux
+disqus_username: Jerry
 
 # Netease settings
 netease_comment: false
@@ -71,8 +71,8 @@ netease_comment: false
 # ba_track_id: [your track id]
 
 # Google Analytics
-ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
-ga_domain: huangxuan.me
+#ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
+#ga_domain: huangxuan.me
 
 
 
@@ -108,3 +108,5 @@ friends: [
     # },{
         
 ]
+
+excerpt_separator: '<!--more-->'
