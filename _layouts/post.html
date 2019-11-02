@@ -13,7 +13,13 @@ layout: default
 <article>
     <div class="container">
         <div class="row">
-
+{% if site.leancloud.enable %}
+       <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
+        <span class="post-meta-divider">|</span>
+        <span class="post-meta-item-text"> Hits <i class="fa fa-eye"></i>:  </span>
+        <span class="leancloud-visitors-count"></span>
+       </span>
+   {% endif %}
     <!-- Post Container -->
             <div class="
                 col-lg-8 col-lg-offset-2
@@ -171,3 +177,4 @@ layout: default
     }
 </style>
 {% endif %}
+

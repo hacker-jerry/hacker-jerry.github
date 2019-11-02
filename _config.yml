@@ -109,4 +109,7 @@ friends: [
         
 ]
 
-excerpt_separator: '<!--more-->'
+leancloud:
+  enable: true
+  app_id: yoiaxJTwIFL3doFXtfqb8z0p-gzGzoHsz
+  app_key: Cx3TbKuYgXoMJr81TaClCb2j
