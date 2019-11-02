@@ -1217,7 +1217,7 @@ samp {
   }
 }
 .post-content-preview {
-  font-size: 22px;
+  font-size: 20px;
   color: #a3a3a3;
 }
 .post-content-preview:hover {
@@ -1225,7 +1225,7 @@ samp {
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
-    font-size: 22px;
+    font-size: 20px;
   }
 }
 .section-heading {
@@ -1353,8 +1353,6 @@ form .row:first-child .floating-label-form-group {
   transition-delay: 0s;
   line-height: 2;
   position: relative;
-  left: 300px;
-  top: 6.5px;
 }
 .bt:hover {
   border-color: #fcfcfc;

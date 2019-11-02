@@ -1,6 +1,6 @@
 ---
 layout: page
-description: "冷风热血 荡涤乾坤"
+description: "冷风热血 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;荡涤乾坤"
 ---
 
 {% for post in paginator.posts %}
@@ -9,7 +9,7 @@ description: "冷风热血 荡涤乾坤"
         <h2 class="post-title">
             {{ post.title }}
         </h2>
-        
+
         {% if post.subtitle %}
         <h3 class="post-subtitle">
             {{ post.subtitle }}
@@ -18,7 +18,7 @@ description: "冷风热血 荡涤乾坤"
         <div class="post-content-preview">
             {% if post.content contains "<!-- more -->" %}
                 {{post.content | split:"<!-- more -->" | first}}
-                <a class="bt" href='{{post.url}}' >阅读全文</a>
+                <a class="bt" href='{{post.url}}' >阅读全文>></a>
             {% else %}
                 {{ post.content | strip_html | truncate:200 }}
             {% endif %}
