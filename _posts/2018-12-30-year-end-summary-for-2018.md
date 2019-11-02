@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "写给二〇一八的年终总结"
-subtitle:   " 2018再见 "
+subtitle:   " 2018再见 2019你好 "
 date:       2018-12-30 22:03:07 
 header-img: "http://ww1.sinaimg.cn/mw690/006y7E7Sly1g7gju5cxb1j30se1o0na4.jpg"
 author:     "Jerry"
@@ -9,7 +9,7 @@ catalog: true
 tags:
     - 随笔
 ---
-<center><font face="楷体" size=5>这是我写下的第二篇年终总结。</font></center>
+<center>这是我写下的第二篇年终总结。</center>
 <!-- more -->
 
 不要问我第一篇是哪一年的(我也记不清了)
