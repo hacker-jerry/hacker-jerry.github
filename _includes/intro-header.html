@@ -40,7 +40,12 @@
                     <div class="tags">
                         {% for tag in page.tags %}
                         <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}" title="{{ tag }}">{{ tag }}</a>
-                        {% endfor %}  &nbsp; <i class="fa fa-check-square-o" aria-hidden="true"></i> {{ content | strip_html | strip_newlines | split: "" | size }} words
+                        {% endfor %}  &nbsp; {% if site.leancloud.enable %}
+       <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
+        <span class="post-meta-item-text">  <i class="fa fa-eye"></i>:  </span>
+        <span class="leancloud-visitors-count"></span> viewers
+       </span>
+   {% endif %} <i class="fa fa-check-square-o" aria-hidden="true"></i> {{ content | strip_html | strip_newlines | split: "" | size }} words
                     </div>
                     <h1>{{ page.title }}</h1>
                     {% comment %} always create a h2 for keeping the margin {% endcomment %}
