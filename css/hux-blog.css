@@ -1217,7 +1217,7 @@ samp {
   }
 }
 .post-content-preview {
-  font-size: 20px;
+  font-size: 17px;
   color: #a3a3a3;
 }
 .post-content-preview:hover {
@@ -1225,7 +1225,7 @@ samp {
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
-    font-size: 20px;
+    font-size: 17px;
   }
 }
 .section-heading {
