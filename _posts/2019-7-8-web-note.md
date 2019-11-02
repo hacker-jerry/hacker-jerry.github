@@ -1,4 +1,3 @@
-
 ---
 layout:     post
 title:      "前端笔记(一)"
@@ -6,7 +5,7 @@ subtitle:   " 爱你所爱，无问西东 "
 date:       2019-07-03 19:16:08 
 header-img: ""
 author:     "Jerry"
-catalog: true
+catalog:  true
 tags:
     - 前端
 ---

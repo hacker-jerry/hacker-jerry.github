@@ -1,17 +1,4 @@
-I"x 
-<hr />
-<p>layout:     post
-title:      “前端笔记(一)”
-subtitle:   “ 爱你所爱，无问西东 “
-date:       2019-07-03 19:16:08 
-header-img: “”
-author:     “Jerry”
-catalog: true
-tags:
-    - 前端
-—</p>
-
-<h1 id="基础元素">基础元素</h1>
+I"�<h1 id="基础元素">基础元素</h1>
 <h2 id="声明">声明</h2>
 <p><code class="highlighter-rouge">&lt;!DOCTYPE&gt;</code>用于说明页面的HTML版本
 <code class="highlighter-rouge">&lt;head&gt;</code>

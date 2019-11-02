@@ -4,8 +4,8 @@ description: "冷 风 热 血 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 荡 涤 乾 �
 ---
 
 {% for post in paginator.posts %}
-<div class="post-preview">
-    <a href="{{ post.url | prepend: site.baseurl }}">
+<div class="post-preview" style="color: #a3a3a3;">
+    <a href="{{ post.url | prepend: site.baseurl }}" >
         <h2 class="post-title">
             {{ post.title }}
         </h2>
@@ -18,7 +18,7 @@ description: "冷 风 热 血 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 荡 涤 乾 �
         <div class="post-content-preview">
             {% if post.content contains "<!-- more -->" %}
                 {{post.content | split:"<!-- more -->" | first}}
-                <a class="bt" href='{{post.url}}' >阅读全文>></a>
+                <a class="bt" href='{{post.url}}' style="color: #a3a3a3;">阅读全文>></a>
             {% else %}
                 {{ post.content | strip_html | truncate:200 }}
             {% endif %}

@@ -1,23 +1,14 @@
-
 ---
 layout:     post
 title:      "数据结构"
 subtitle:   " 它好难呀"
-date:       2019-05-31 21:51:53
+date:      2019-05-31 21:51:53
 header-img: ""
 author:     "Jerry"
 catalog: true
 tags:
     - 数据结构
 ---
-<head>
-<title>数据结构 - 幕布</title>
-<meta charset="utf-8"/>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="renderer" content="webkit"/>
-<meta name="author" content="mubu.com"/>
-</head>
-<body style="margin: 0;color: #333;font-family: SourceSansPro,-apple-system,BlinkMacSystemFont,'PingFang SC',Helvetica,Arial,'Microsoft YaHei',微软雅黑,黑体,Heiti,sans-serif,SimSun,宋体,serif">
 
 <div class="export-wrapper"><div style="font-size: 22px; padding: 0 15px 0;"><div style="padding-bottom: 24px">数据结构</div><div style="background: #e5e6e8; height: 1px; margin-bottom: 20px;"></div></div>
 
@@ -79,6 +70,7 @@ tags:
    * ### <span class="content mubu-node" style="line-height: 24px; min-height: 24px; font-size: 16px; padding: 2px 0px; display: inline-block; vertical-align: top;">循环队列</span>
 
    * #### <span class="content mubu-node" images="%5B%7B%22id%22%3A%222d916b08d164ee154-3245207%22%2C%22uri%22%3A%22document_image%2F2650eba0-a135-4454-9b36-077dd79f21ea-3245207.jpg%22%2C%22ow%22%3A517%2C%22oh%22%3A192%2C%22w%22%3A262%7D%5D" style="line-height: 24px; min-height: 24px; font-size: 16px; padding: 2px 0px; display: inline-block; vertical-align: top;">形象示例</span>
+
     ![](https://img.mubu.com/document_image/2650eba0-a135-4454-9b36-077dd79f21ea-3245207.jpg)
 
    * #### <span class="content mubu-node" images="%5B%7B%22id%22%3A%2236e16b08d2e8d50bf-3245207%22%2C%22uri%22%3A%22document_image%2F60049f5e-5401-4268-9191-50d9fa874756-3245207.jpg%22%2C%22ow%22%3A779%2C%22oh%22%3A241%2C%22w%22%3A537%7D%5D" style="line-height: 24px; min-height: 24px; font-size: 16px; padding: 2px 0px; display: inline-block; vertical-align: top;">置空队</span>

@@ -15,7 +15,7 @@ tags:
 
 
 `#include<sdtio.h>`是`c`的头文件，而cpp的头文件是`#include<iostream>`
-```c
+```cpp
 #include<stdio.h>
 #include<math.h>
 int sum(char *p,char *f,int m,int n)

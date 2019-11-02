@@ -1,0 +1,12 @@
+I"�<h1 id="基础元素">基础元素</h1>
+<h2 id="声明">声明</h2>
+<p><code class="highlighter-rouge">&lt;!DOCTYPE&gt;</code>用于说明页面的HTML版本
+<code class="highlighter-rouge">&lt;head&gt;</code>
+<code class="highlighter-rouge">&lt;body&gt;</code>具体内容
+<code class="highlighter-rouge">&lt;title&gt;</code>显示在标签栏上
+<code class="highlighter-rouge">&lt;h1&gt;  &lt;h2&gt;.......</code>标签
+<code class="highlighter-rouge">&lt;p&gt;</code>段落
+<code class="highlighter-rouge">&lt;a href=""&gt;xxx&lt;/a&gt;</code>把xxx作为超链接
+<code class="highlighter-rouge">&lt;img src=""&gt;</code>图片
+<code class="highlighter-rouge">&lt;br/&gt;</code>换行（空元素）</p>
+:ET

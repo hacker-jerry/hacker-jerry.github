@@ -1186,6 +1186,7 @@ samp {
   margin: 0;
   font-weight: 300;
   margin-bottom: 10px;
+  font-family: 楷体;
 }
 .post-preview > .post-meta {
   font-family: 'Lora', 'Times New Roman', serif;
