@@ -1251,7 +1251,7 @@ footer .list-inline {
   padding: 0;
 }
 footer .copyright {
-  font-size: 14px;
+  font-size: 0px;
   text-align: center;
   margin-bottom: 0;
 }
