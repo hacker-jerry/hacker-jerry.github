@@ -9,9 +9,11 @@
         position: relative;
         background-image: url('{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
         background: {{ page.header-bg-css }};
-        background-size:100% auto;-moz-background-size:100% 100%;}
+        background-size:auto 100%;-moz-background-size:100% 100%;}
     }
-
+    img.a-pic {
+        background-image: url('{% if page.next.header-img %}{{page.next.header-img}}{% else %}{{ site.header-img }}{% endif %}');
+    }
     {% if page.header-mask %}
     header.intro-header .header-mask{
         width: 100%;

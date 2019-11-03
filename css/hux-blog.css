@@ -1731,3 +1731,9 @@ img::-moz-selection {
 }
 .post-copyright a{font-family: "Ink free";}
 .post-copyright a:hover{color: #f6782f;}
+
+.a-pic {
+  background-image: url('page.next.header-img');
+  width: 100%;
+  max-width: 50em;
+}
