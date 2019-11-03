@@ -78,7 +78,7 @@ netease_comment: false
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "愿你在冷铁卷刃前，得以窥见天光"
+sidebar-about-description: "<p>生活永远不会圆满的，</p><p>但是，</p><p>曾拥有过圆满，</p><p>有过，</p>不就足够了吗?"
 sidebar-avatar: /img/jerry.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
@@ -113,3 +113,7 @@ leancloud:
   enable: true
   app_id: yoiaxJTwIFL3doFXtfqb8z0p-gzGzoHsz
   app_key: Cx3TbKuYgXoMJr81TaClCb2j
+
+post_copyright:
+  enable: true
+  license: <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a>

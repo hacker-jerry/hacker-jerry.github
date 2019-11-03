@@ -5,6 +5,7 @@ subtitle:   " 2018再见  &nbsp;&nbsp; 2019你好 "
 date:       2018-12-30 22:03:07 
 header-img: "http://ww1.sinaimg.cn/mw690/006y7E7Sly1g7gju5cxb1j30se1o0na4.jpg"
 author:     "Jerry"
+post_copyright: true
 catalog: true
 tags:
     - 随笔
