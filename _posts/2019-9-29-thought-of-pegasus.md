@@ -3,7 +3,7 @@ layout:     post
 title:      "飞驰人生二刷有感"
 subtitle:   "我没想赢，但我不想输。"
 date:       2019-07-05 20:08:43
-header-img: ""
+header-img: "http://ww1.sinaimg.cn/large/006y7E7Sly1g8l0jh22fvj31gs0o87lb.jpg"
 author:     "Jerry"
 catalog: true
 tags:

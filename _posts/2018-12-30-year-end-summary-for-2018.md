@@ -3,7 +3,7 @@ layout:     post
 title:      "写给二〇一八的年终总结"
 subtitle:   " 2018再见  &nbsp;&nbsp; 2019你好 "
 date:       2018-12-30 22:03:07 
-header-img: "http://ww1.sinaimg.cn/mw690/006y7E7Sly1g7gju5cxb1j30se1o0na4.jpg"
+header-img: "http://ww1.sinaimg.cn/large/006y7E7Sly1g8kzsae6ugj31gs0o8thp.jpg"
 author:     "Jerry"
 post_copyright: true
 catalog: true

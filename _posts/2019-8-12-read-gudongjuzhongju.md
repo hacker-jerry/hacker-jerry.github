@@ -3,7 +3,7 @@ layout:     post
 title:      "读古董局中局后感"
 subtitle:   "鉴古易，鉴人难"
 date:       2019-08-01 16:47:12
-header-img: ""
+header-img: "http://ww1.sinaimg.cn/large/006y7E7Sly1g8l0hbx7k5j31gs0o8k26.jpg"
 author:     "Jerry"
 catalog: true
 tags:
