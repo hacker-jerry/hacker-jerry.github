@@ -1388,7 +1388,7 @@ form .row:first-child .floating-label-form-group {
   }
 }
 .pager li > a {
-  color: #404040;
+  color: rgba(255,255,255,0.8);
 }
 .pager li > a:hover,
 .pager li > a:focus {

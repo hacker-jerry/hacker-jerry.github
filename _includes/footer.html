@@ -5,11 +5,137 @@
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <!-- SNS Link -->
                 {% include sns-links.html center=true %}
-
+<style type="text/css">
+/*后一篇*/
+    a.next {
+        background-image: url('{% if page.next.header-img %}{{page.next.header-img}}{% else %}{{ site.header-img }}{% endif %}');
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        right: 0px;
+        overflow: visible;
+        background-size:auto 100%;-moz-background-size:auto 100%;
+    }
+/*前一篇*/
+    a.previous {
+        background-image: url('{% if page.previous.header-img %}{{page.previous.header-img}}{% else %}{{ site.header-img }}{% endif %}');
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        left: 0px;
+        overflow: visible;
+        background-size:auto 100%;-moz-background-size:auto 100%;
+    }
+    /*遮罩层*/
+    a.next:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    transition: all .5s ease;
+}
+    a.next:hover:before{
+        background: rgba(0, 0, 0, 0.57);
+    }
+    a.previous:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    transition: all .5s ease;
+}
+    a.previous:hover:before{
+        background: rgba(0, 0, 0, 0.57);
+    }
+     /*.ppost::before {
+    content: "Read Previous";
+    padding: 4px 10px 5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: "Open Sans",sans-serif;
+    color: rgba(255,255,255,0.8);
+    border: rgba(255,255,255,0.5) 1px solid;
+    border-radius: 4px;
+    transition: all .5s ease;
+}*/
+/*按钮*/
+    bt.ppost {
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #f8f8f8;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(225,225,225,0.859);
+    text-decoration: none;
+    border-radius: 2px;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    line-height: 2;
+    position: relative;
+}
+     bt.ppost:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+        color: rgba(9, 6, 6, 0.8);
+    }
+   bt.npost {
+    display: inline-block;
+    padding: 0 20px;
+    font-size: 14px;
+    color: #f8f8f8;
+    background: rgba(255, 255, 255, 0.07);
+    border: 1px solid rgba(225,225,225,0.859);
+    text-decoration: none;
+    border-radius: 2px;
+    transition-property: background-color;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-in-out;
+    transition-delay: 0s;
+    line-height: 2;
+    position: relative;
+}
+     bt.npost:hover{
+        background-color: rgba(255, 255, 255, 0.8);
+        color: rgba(9, 6, 6, 0.8);
+    }
+</style>
                 <p class="copyright text-muted">
                     Copyright &copy; <a href="https://hackerjerry.top">{{ site.title }}</a> {{ site.time | date: '%Y' }}
-                    
                 </p>
+                <hr style="visibility: hidden;">
+                <ul class="pager">
+                    {% if page.previous.url %}
+                    <li class="previous">
+                        <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 3.6rem;letter-spacing:2px">
+                            
+                                <bt class="ppost">READ PREVIOUS
+                                 </bt>
+                            <br>
+                        <span>{{page.previous.title}}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if page.next.url %}
+                    <li class="next">
+                        <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 3.6rem;letter-spacing:2px">
+                        
+                                <bt class="npost">READ NEXT
+                                 </bt>
+                            <br>
+                        <span>{{page.next.title}}</span>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul>
             </div>
         </div>
     </div>

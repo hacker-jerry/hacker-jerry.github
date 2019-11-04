@@ -11,9 +11,6 @@
         background: {{ page.header-bg-css }};
         background-size:auto 100%;-moz-background-size:100% 100%;}
     }
-    img.a-pic {
-        background-image: url('{% if page.next.header-img %}{{page.next.header-img}}{% else %}{{ site.header-img }}{% endif %}');
-    }
     {% if page.header-mask %}
     header.intro-header .header-mask{
         width: 100%;
