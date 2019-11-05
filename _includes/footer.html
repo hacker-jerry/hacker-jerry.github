@@ -117,10 +117,12 @@
                     <li class="previous">
                         <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 3.6rem;letter-spacing:2px">
                             
-                                <bt class="ppost">READ PREVIOUS
-                                 </bt>
-                            <br>
+                               <br>
                         <span>{{page.previous.title}}</span>
+                        <span style="font-size:20px;font-family:Helvetica Neue;font-weight:300">{{page.previous.excerpt}}</span> 
+                        <bt class="ppost">READ PREVIOUS
+                                 </bt>
+                            
                         </a>
                     </li>
                     {% endif %}
@@ -128,10 +130,12 @@
                     <li class="next">
                         <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 3.6rem;letter-spacing:2px">
                         
-                                <bt class="npost">READ NEXT
-                                 </bt>
-                            <br>
+                              <br>
                         <span>{{page.next.title}}</span>
+                        <span style="font-size:20px;font-family:Helvetica Neue;font-weight:300">{{page.next.excerpt}}</span>
+                          <bt class="npost">READ NEXT
+                                 </bt>
+                            
                         </a>
                     </li>
                     {% endif %}

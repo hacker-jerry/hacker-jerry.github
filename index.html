@@ -3,6 +3,15 @@ layout: page
 description: "冷 风 热 血 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 荡 涤 乾 坤"
 ---
 
+<style>
+a.bt{
+    color: #a3a3a3;
+}
+a.bt:hover{
+    color: rgba(255,255,255,0.8);
+    background-color: #e6c48787;
+}
+</style>
 {% for post in paginator.posts %}
 <div class="post-preview" style="color: #a3a3a3;">
     <a href="{{ post.url | prepend: site.baseurl }}" >
@@ -18,7 +27,7 @@ description: "冷 风 热 血 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 荡 涤 乾 �
         <div class="post-content-preview">
             {% if post.content contains "<!-- more -->" %}
                 {{post.content | split:"<!-- more -->" | first}}
-                <a class="bt" href='{{post.url}}' style="color: #a3a3a3;">阅读全文>></a>
+                <a class="bt" href='{{post.url}}' >阅读全文>></a>
             {% else %}
                 {{ post.content | strip_html | truncate:200 }}
             {% endif %}

@@ -9,14 +9,17 @@
         position: relative;
         background-image: url('{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
         background: {{ page.header-bg-css }};
-        background-size:auto 100%;-moz-background-size:100% 100%;}
+        /*background-size:100% 100%;-moz-background-size:100% 100%;}*/
     }
+
     {% if page.header-mask %}
+/*我也不知道为啥黄玄博客里mask可以露出后面的字*/
     header.intro-header .header-mask{
         width: 100%;
         height: 100%;
         position: absolute;
         background: rgba(0,0,0, {{ page.header-mask }});
+        z-index: -1;
     }
     {% endif %}
 </style>
@@ -38,7 +41,7 @@
 
                     <div class="tags">
                         {% for tag in page.tags %}
-                        <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}" title="{{ tag }}">{{ tag }}</a>
+                        <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}" title="{{ tag }}" style="z-index:2;">{{ tag }}</a>
                         {% endfor %}  &nbsp; {% if site.leancloud.enable %}
        <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
         <span class="post-meta-item-text">  <i class="fa fa-eye"></i>:  </span>

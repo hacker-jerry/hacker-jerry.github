@@ -6,6 +6,7 @@ date:      2019-09-13 19:42:01
 header-img: "http://ww1.sinaimg.cn/large/006y7E7Sly1g8l0hsgx7sj31gs0o8gu9.jpg"
 author:     "Jerry"
 catalog: true
+header-mask: "0.3"
 tags:
     - 随笔
 ---
