@@ -42,6 +42,10 @@
         width: 100%;
         overflow: visible;
         padding-right: 0px;
+       
+    }
+    span.pr-title {
+         font-size: 5vw;
     }
         } 
     /*遮罩层*/
@@ -137,7 +141,7 @@
                             <bt class="ppost">READ PREVIOUS
                                  </bt>
                                <br>
-                        <span>{{page.previous.title}}</span>
+                        <span id="pr-title">{{page.previous.title}}</span>
                         <span style="font-size:18px;font-family:Helvetica Neue;font-weight:300">{{page.previous.excerpt}}</span> 
                         
                             
