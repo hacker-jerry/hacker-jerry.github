@@ -17,10 +17,13 @@
         overflow: visible;
         background-size:100% 100%;-moz-background-size:auto 100%;
     }
-    @media only screen and (max-width: 500px){
+    /* 实现了响应式布局？ */
+    @media only screen and (max-width: 800px){
         a.next{
-        postion: relative;
+        position: relative;
+        width: 100%;
     }
+
         } 
 /*前一篇*/
     a.previous {
@@ -33,9 +36,12 @@
         overflow: visible;
         background-size:auto 100%;-moz-background-size:auto 100%;
     }
-     @media only screen and (max-width: 500px){
+     @media only screen and (max-width: 800px){
         a.previous{
-        postion: relative;
+        position: relative;
+        width: 100%;
+        overflow: visible;
+        padding-right: 0px;
     }
         } 
     /*遮罩层*/
@@ -127,12 +133,12 @@
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
-                        <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 3vw;letter-spacing:2px">
+                        <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 3.5vw;letter-spacing:2px">
                             <bt class="ppost">READ PREVIOUS
                                  </bt>
                                <br>
                         <span>{{page.previous.title}}</span>
-                        <span style="font-size:1.8vw;font-family:Helvetica Neue;font-weight:300">{{page.previous.excerpt}}</span> 
+                        <span style="font-size:18px;font-family:Helvetica Neue;font-weight:300">{{page.previous.excerpt}}</span> 
                         
                             
                         </a>
@@ -140,12 +146,12 @@
                     {% endif %}
                     {% if page.next.url %}
                     <li class="next">
-                        <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 3vw;letter-spacing:2px">
+                        <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 3.5vw;letter-spacing:2px">
                         <bt class="npost">READ NEXT
                                  </bt>
                               <br>
                         <span>{{page.next.title}}</span>
-                        <span style="font-size:1.8vw;font-family:Helvetica Neue;font-weight:300">{{page.next.excerpt}}</span>
+                        <span style="font-size:18px;font-family:Helvetica Neue;font-weight:300">{{page.next.excerpt}}</span>
                           
                             
                         </a>
