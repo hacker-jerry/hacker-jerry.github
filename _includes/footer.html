@@ -10,7 +10,7 @@
     a.next {
         background-image: url('{% if page.next.header-img %}{{page.next.header-img}}{% else %}{{ site.header-img }}{% endif %}');
         width: 50%;
-        height: 100%;
+        height: 70vw;
         max-height: 380px;
         position: absolute;
         right: 0px;
@@ -26,7 +26,7 @@
     a.previous {
         background-image: url('{% if page.previous.header-img %}{{page.previous.header-img}}{% else %}{{ site.header-img }}{% endif %}');
         width: 50%;
-        height: 100%;
+        height: 70vw;
         max-height: 380px;
         position: absolute;
         left: 0px;
@@ -127,12 +127,12 @@
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
-                        <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 151.5%;letter-spacing:2px">
+                        <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 2vw;letter-spacing:2px">
                             <bt class="ppost">READ PREVIOUS
                                  </bt>
                                <br>
                         <span>{{page.previous.title}}</span>
-                        <span style="font-size:1.9rem;font-family:Helvetica Neue;font-weight:300">{{page.previous.excerpt}}</span> 
+                        <span style="font-size:1.8vw;font-family:Helvetica Neue;font-weight:300">{{page.previous.excerpt}}</span> 
                         
                             
                         </a>
@@ -140,12 +140,12 @@
                     {% endif %}
                     {% if page.next.url %}
                     <li class="next">
-                        <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 151.5%;letter-spacing:2px">
+                        <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 2vw;letter-spacing:2px">
                         <bt class="npost">READ NEXT
                                  </bt>
                               <br>
                         <span>{{page.next.title}}</span>
-                        <span style="font-size:1.9rem;font-family:Helvetica Neue;font-weight:300">{{page.next.excerpt}}</span>
+                        <span style="font-size:1.8vw;font-family:Helvetica Neue;font-weight:300">{{page.next.excerpt}}</span>
                           
                             
                         </a>

@@ -1,7 +1,30 @@
+<script type="text/javascript">
+    
+    window.onload = function() {
+      var el = document.getElementById('fuck');
+      var child = el.getElementsByTagName('p');
+      
+      var i = 0;
+      while(child.length>0){
+         el.removeChild(child[i]);
+      }
+      var txt = document.createElement("p");
+      var saying = ["生活永远不会圆满的，但是，曾拥有过圆满，有过，不就足够了吗?","2","3","4","5","6","7","8","9","10"]
+      var x = Math.ceil(Math.random()*10)-1;
+      var t = document.createTextNode(saying[0]);
+      txt.appendChild(t);
+      el.appendChild(txt);
+    }
+ 
+    
+   
+      
+    
+</script>
 <section class="visible-md visible-lg">
   <hr>
   <h5><a href="{{'/about/' | prepend: site.baseurl }}">ABOUT ME</a></h5>
-  <div class="short-about">
+  <div class="short-about" id="fuck">
     {% if site.sidebar-avatar %}
     <img src="{{site.sidebar-avatar}}" />
     {% endif %}
