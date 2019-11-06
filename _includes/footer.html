@@ -15,13 +15,15 @@
         position: absolute;
         right: 0px;
         z-index: 9999;
+        font-size: 5.8rem;
         background-size:100% 100%;-moz-background-size:auto 100%;
     }
     /* 实现了响应式布局？ */
-    @media only screen and (max-width: 800px){
+    @media only screen and (max-width: 900px){
         a.next{
         position: relative;
         width: 100%;
+        font-size: 3.6rem;
     }
 
         } 
@@ -34,15 +36,16 @@
         position: absolute;
         left: 0px;
         z-index: 9999;
+        font-size: 5.8rem;
         background-size:auto 100%;-moz-background-size:auto 100%;
     }
-     @media only screen and (max-width: 800px){
+     @media only screen and (max-width: 900px){
         a.previous{
         position: relative;
         width: 100%;
         /* overflow: visible;
         padding-right: 0px; */
-       
+        font-size: 3.6rem;
     }
         .pr-ex {
          display: hidden;
@@ -127,7 +130,7 @@
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
-                        <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 5.8rem;letter-spacing:2px">
+                        <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;letter-spacing:2px">
                             <bt class="ppost">READ PREVIOUS
                                  </bt>
                                <br>
@@ -140,7 +143,7 @@
                     {% endif %}
                     {% if page.next.url %}
                     <li class="next">
-                        <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;font-size: 5.8rem;letter-spacing:2px">
+                        <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;letter-spacing:2px">
                         <bt class="npost">READ NEXT
                                  </bt>
                               <br>
