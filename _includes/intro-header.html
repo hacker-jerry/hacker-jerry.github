@@ -47,7 +47,14 @@
         <span class="leancloud-visitors-count"></span> viewers
        </span>
    {% endif %} <i class="fa fa-check-square-o" aria-hidden="true"></i> {{ content | strip_html | strip_newlines | split: "" | size }} words
-                    </div>
+                    <!-- 更新时间 -->
+                {% if page.update-time %}
+                
+                    &nbsp;<span id="update-time" ><i class="fa fa-refresh fa-spin"></i>本文最后更新于：{{page.update-time}}</span>
+                
+                {% endif %}
+</div>
+                    
                     <h1>{{ page.title }}</h1>
                     {% comment %} always create a h2 for keeping the margin {% endcomment %}
                     <h2 class="subheading">{{ page.subtitle }}</h2>
