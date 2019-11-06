@@ -3,16 +3,26 @@
     window.onload = function() {
       var el = document.getElementById('fuck');
       var child = el.getElementsByTagName('p');
-      
+      // 思考，为什么ByClassName的时候无法获取到相应元素的子元素呢？
+      // 为何ID就可以呢？
       var i = 0;
       while(child.length>0){
          el.removeChild(child[i]);
       }
       var txt = document.createElement("p");
-      var saying = ["生活永远不会圆满的，但是，曾拥有过圆满，有过，不就足够了吗?","2","3","4","5","6","7","8","9","10"]
+      var txt1 = "托微风和黎明<p></p>替我捎上一句晚安<p></p>转交给你";
+      var txt2 = "努力的意义，<p></p>就是以后的日子里 放眼望去，<p></p>全部都是自己喜欢的人和事。";
+      var txt3 = "虽然人世寂寥黯淡，<p></p>我们也可以相互照亮。";
+      var txt4 = "如果愿意对一切致以爱意，<p></p>那么冷风也和顺，<p></p>冬天也会有暖阳。";
+      var txt5 = "<p>生活永远不会圆满的，</p><p>但是，</p><p>曾拥有过圆满，</p><p>有过，<p></p>不就足够了吗?</p>";
+      var txt6 = "在第一千个选择之外，<p></p>还有第一千零一个可能，<p></p>有一扇窗等着我打开，<p></p>然后有光透进来。"
+      var txt7 = "每个人的生命中，<p></p>都有最艰难的那一年，<p></p>将人生变得美好而辽阔。"
+      var txt8 = "燕雀戏藩柴，<p></p>安识鸿鹄游。"
+      var txt9 = "如果结果不如你所愿，<p></p>就在尘埃落定前奋力一搏。"
+      var txt10 = "勇敢的人，<p></p>不是不落泪的人，<p></p>而是愿意含着泪继续奔跑的人。"
+      var saying = [txt1,txt2,txt3,txt4,txt5,txt6,txt7,txt8,txt9,txt10];
       var x = Math.ceil(Math.random()*10)-1;
-      var t = document.createTextNode(saying[0]);
-      txt.appendChild(t);
+      txt.innerHTML=saying[x];
       el.appendChild(txt);
     }
  

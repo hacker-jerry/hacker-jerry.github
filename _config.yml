@@ -78,7 +78,7 @@ netease_comment: false
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "<p>生活永远不会圆满的，</p><p>但是，</p><p>曾拥有过圆满，</p><p>有过，<br>不就足够了吗?</p>"
+sidebar-about-description: ""
 sidebar-avatar: /img/jerry.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
