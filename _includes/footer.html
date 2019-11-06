@@ -14,7 +14,7 @@
         max-height: 380px;
         position: absolute;
         right: 0px;
-        /* overflow: visible; */
+        z-index: 9999;
         background-size:100% 100%;-moz-background-size:auto 100%;
     }
     /* 实现了响应式布局？ */
@@ -33,7 +33,7 @@
         max-height: 380px;
         position: absolute;
         left: 0px;
-        /* overflow: visible; */
+        z-index: 9999;
         background-size:auto 100%;-moz-background-size:auto 100%;
     }
      @media only screen and (max-width: 800px){
@@ -44,8 +44,8 @@
         padding-right: 0px; */
        
     }
-    span.pr-title {
-         font-size: 5vw;
+        .pr-ex {
+         display: hidden;
     }
         } 
     /*遮罩层*/
@@ -132,7 +132,7 @@
                                  </bt>
                                <br>
                         <span id="pr-title">{{page.previous.title}}</span>
-                        <span style="font-size:1.9rem;font-family:Helvetica Neue;font-weight:300">{{page.previous.excerpt}}</span> 
+                        <span class="pr-ex" style="font-size:.35em;font-family:Helvetica Neue;font-weight:300">{{page.previous.excerpt}}</span> 
                         
                             
                         </a>
@@ -145,7 +145,7 @@
                                  </bt>
                               <br>
                         <span>{{page.next.title}}</span>
-                        <span style="font-size:1.9rem;font-family:Helvetica Neue;font-weight:300">{{page.next.excerpt}}</span>
+                        <span style="font-size:.35em;font-family:Helvetica Neue;font-weight:300">{{page.next.excerpt}}</span>
                           
                             
                         </a>
