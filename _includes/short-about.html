@@ -21,7 +21,7 @@
       var txt9 = "如果结果不如你所愿，<p></p>就在尘埃落定前奋力一搏。"
       var txt10 = "勇敢的人，<p></p>不是不落泪的人，<p></p>而是愿意含着泪继续奔跑的人。"
       var saying = [txt1,txt2,txt3,txt4,txt5,txt6,txt7,txt8,txt9,txt10];
-      var x = Math.ceil(Math.random()*10)-1;
+      var x = Math.floor(Math.random()*10);
       txt.innerHTML=saying[x];
       el.appendChild(txt);
     }
