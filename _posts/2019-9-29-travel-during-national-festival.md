@@ -3,7 +3,7 @@ layout:     post
 title:      " 国庆有感"
 subtitle:   "人生不是一定会赢，而是要努力去赢。"
 date:        2019-09-29 17:59:12
-header-img: ""
+header-img: "https://i.loli.net/2019/11/06/NAuYrb4FlQX1Uog.jpg"
 author:     "Jerry"
 catalog: true
 tags:
