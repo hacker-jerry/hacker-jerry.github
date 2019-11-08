@@ -1,6 +1,6 @@
 <!-- Footer -->
 <footer>
-    <div class="container">
+    <div class="footer-re">
         <div class="row">
             <div>
                 <!-- SNS Link -->
@@ -9,48 +9,146 @@
 /*后一篇*/
     a.next {
         background-image: url('{% if page.next.header-img %}{{page.next.header-img}}{% else %}{{ site.header-img }}{% endif %}');
-        width: 50%;
-        height: 70vw;
-        max-height: 380px;
-        position: absolute;
-        right: 0px;
-        z-index: 9999;
-        font-size: 5.8rem;
-        background-size:100% 100%;-moz-background-size:auto 100%;
-    }
-    /* 实现了响应式布局？ */
-    @media only screen and (max-width: 900px){
-        a.next{
-        position: relative;
-        width: 100%;
-        font-size: 3.6rem;
+        display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    min-width: 50%;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: #222 no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
     }
 
-        } 
 /*前一篇*/
     a.previous {
         background-image: url('{% if page.previous.header-img %}{{page.previous.header-img}}{% else %}{{ site.header-img }}{% endif %}');
-        width: 50%;
-        height: 70vw;
-        max-height: 380px;
-        position: absolute;
-        left: 0px;
-        z-index: 9999;
-        font-size: 5.8rem;
-        background-size:auto 100%;-moz-background-size:auto 100%;
+        display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    min-width: 50%;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: #222 no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
     }
-     @media only screen and (max-width: 900px){
-        a.previous{
-        position: relative;
-        width: 100%;
-        /* overflow: visible;
-        padding-right: 0px; */
+/* 两个元素父类 */
+    .read-next {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    margin-top: 1rem;
+    height: 420px;
+        }
+    /* 对于手机的响应式布局*/
+    @media only screen and (max-width: 2000px) {
+           .post {
+            margin-left: 16px;
+             margin-right: 16px;
+             width: 100%;
+           }
+            .post p{
+            font-size: 2.3rem;
+        }
+            .read-next div {
+                font-size: 5.1rem;
+                text-align: center;
+                margin-top: 3rem;
+                font-weight: bold;
+                line-height: 1.2;
+            }
+        }
+       @media only screen and (max-width: 1100px) {
+           .post {
+            margin-left: 16px;
+             margin-right: 16px;
+             width: 100%;
+           }
+            .post p{
+            font-size: 2.1rem;
+        }
+            .read-next div {
+                font-size: 5.3rem;
+                text-align: center;
+                margin-top: 1rem;
+                font-weight: bold;
+                line-height: 1.2;
+            }
+        }
+        @media only screen and (max-width: 800px) {
+            .post{
+                width: 100%;
+            }
+            .post p{
+            display: none;
+        }
+        .read-next div {
         font-size: 3.6rem;
+        text-align: center;
+        margin-top: 1rem;
+        font-weight: bold;
     }
-        .pr-ex {
-         display: hidden;
+    } 
+        @media only screen and (max-width: 450px) {
+            .read-next{
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                 flex-direction: column;
+                 margin-top: 4rem;
+            }
+            .read-next .post {
+                 width: 100%;
+                 margin-top: 2rem;
+                 margin-bottom: 2rem;
+                 margin-left: 16px;
+                 margin-right: 16px;
+                 padding-bottom: 2rem;
+                 line-height: 1.65em;
+         }
+            .next .post{
+                padding-top: 5rem;
+                padding-bottom: 6rem;
+            }
+            .previous .post {
+                padding-top: 5rem;
+                padding-bottom: 6rem;
+            }
+            .post p{
+            display: none;
+        }
+            .read-next div {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-top: 1rem;
+        font-weight: bold;
     }
-        } 
+      
+    }
+     
+        /* 对于平板横屏时的响应式布局 */
+     
     /*遮罩层*/
     a.next:before {
     content: "";
@@ -63,7 +161,7 @@
     background: rgba(0,0,0,0.3);
     transition: all .5s ease;
 }
-    a.next:hover:before{
+    a.next:hover:before {
         background: rgba(0, 0, 0, 0.57);
     }
     a.previous:before {
@@ -82,7 +180,7 @@
     }
 
 /*按钮*/
-    bt.ppost {
+    /* bt.ppost {
     display: inline-block;
     padding: 0 20px;
     font-size: 14px;
@@ -121,40 +219,71 @@
      bt.npost:hover{
         background-color: rgba(255, 255, 255, 0.8);
         color: rgba(9, 6, 6, 0.8);
+    } */
+    .next .post:before {
+    content: "Read Next";
+    padding: 4px 10px 5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: "Open Sans",sans-serif;
+    color: rgba(255,255,255,0.8);
+    border: rgba(255,255,255,0.5) 1px solid;
+    border-radius: 4px;
+    transition: all .5s ease;
     }
+    .previous .post:before {
+    content: "Read Next";
+    padding: 4px 10px 5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: "Open Sans",sans-serif;
+    color: rgba(255,255,255,0.8);
+    border: rgba(255,255,255,0.5) 1px solid;
+    border-radius: 4px;
+    transition: all .5s ease;
+    }
+    .post {
+    position: relative;
+    width: 70%;
+    max-width: 1366px;
+    margin: 4rem auto;
+    padding-bottom: .5rem;
+    word-wrap: break-word;
+    }
+    .read-next p {
+        font-weight: 200;
+    }
+    
 </style>
                 <p class="copyright text-muted">
                     Copyright &copy; <a href="https://hackerjerry.top">{{ site.title }}</a> {{ site.time | date: '%Y' }}
                 </p>
                 <hr style="visibility: hidden;">
-                <ul class="pager">
-                    {% if page.previous.url %}
-                    <li class="previous">
-                        <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;letter-spacing:2px">
-                            <bt class="ppost">READ PREVIOUS
-                                 </bt>
-                               <br>
-                        <span id="pr-title">{{page.previous.title}}</span>
-                        <span class="pr-ex" style="font-size:1.6rem;font-family:Helvetica Neue;font-weight:300">{{page.previous.excerpt}}</span> 
-                        
-                            
+                <aside class="read-next">
+                 {% if page.previous.url %}
+                    
+                    <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"   style="background-image: url('{% if page.previous.header-img %}{{page.previous.header-img}}{% else %}{{ site.header-img }}{% endif %}');border-style: none;letter-spacing:2px">
+                    <section class="post">
+                        <div class="pr-title">{{page.previous.title}}</div>
+                        <p>{{page.previous.excerpt}}</p> 
+                    </section>
                         </a>
-                    </li>
+                    
                     {% endif %}
                     {% if page.next.url %}
-                    <li class="next">
-                        <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" data-toggle="tooltip" data-placement="top"  style="border-style: none;letter-spacing:2px">
-                        <bt class="npost">READ NEXT
-                                 </bt>
-                              <br>
-                        <span>{{page.next.title}}</span>
-                        <span style="font-size:1.6rem;font-family:Helvetica Neue;font-weight:300">{{page.next.excerpt}}</span>
-                          
-                            
+                   
+                        <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" style="background-image: url('{% if page.next.header-img %}{{page.next.header-img}}{% else %}{{ site.header-img }}{% endif %}');border-style: none;letter-spacing:2px">
+                        <section class="post">
+                            <div class="ne-title">{{page.next.title}}</div>
+                            <p> {{page.next.excerpt}}</p>
+                        </section>
+                         
                         </a>
-                    </li>
+                    
                     {% endif %}
-                </ul>
+                </aside>
+                   
+              
             </div>
         </div>
     </div>
