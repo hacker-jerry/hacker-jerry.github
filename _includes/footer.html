@@ -179,47 +179,7 @@
         background: rgba(0, 0, 0, 0.57);
     }
 
-/*按钮*/
-    /* bt.ppost {
-    display: inline-block;
-    padding: 0 20px;
-    font-size: 14px;
-    color: #f8f8f8;
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(225,225,225,0.859);
-    text-decoration: none;
-    border-radius: 2px;
-    transition-property: background-color;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
-    line-height: 2;
-    position: relative;
-}
-     bt.ppost:hover {
-        background-color: rgba(255, 255, 255, 0.8);
-        color: rgba(9, 6, 6, 0.8);
-    }
-   bt.npost {
-    display: inline-block;
-    padding: 0 20px;
-    font-size: 14px;
-    color: #f8f8f8;
-    background: rgba(255, 255, 255, 0.07);
-    border: 1px solid rgba(225,225,225,0.859);
-    text-decoration: none;
-    border-radius: 2px;
-    transition-property: background-color;
-    transition-duration: 0.2s;
-    transition-timing-function: ease-in-out;
-    transition-delay: 0s;
-    line-height: 2;
-    position: relative;
-}
-     bt.npost:hover{
-        background-color: rgba(255, 255, 255, 0.8);
-        color: rgba(9, 6, 6, 0.8);
-    } */
+
     .next .post:before {
     content: "Read Next";
     padding: 4px 10px 5px;
@@ -231,8 +191,16 @@
     border-radius: 4px;
     transition: all .5s ease;
     }
+    .next .post:hover:before{
+        background-color: azure;
+        color: dimgray;
+    }
+    .previous .post:hover:before{
+        background-color: azure;
+        color: dimgray;
+    }
     .previous .post:before {
-    content: "Read Next";
+    content: "Read Previous";
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 1.1rem;

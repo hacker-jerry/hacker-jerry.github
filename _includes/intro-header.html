@@ -41,7 +41,8 @@
                     <div class="tags">
                         {% for tag in page.tags %}
                         <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}" title="{{ tag }}" style="z-index:2;">{{ tag }}</a>
-                        {% endfor %}  &nbsp; {% if site.leancloud.enable %}
+                        {% endfor %}  &nbsp; 
+                        {% if site.leancloud.enable %}
        <span id="{{ page.url }}" class="leancloud_visitors" data-flag-title="{{ page.title }}">
         <span class="post-meta-item-text">  <i class="fa fa-eye"></i>:  </span>
         <span class="leancloud-visitors-count"></span> viewers

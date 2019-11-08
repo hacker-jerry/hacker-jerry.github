@@ -1,0 +1,7 @@
+I"Y<div class="tip inlineBlock important">这是<strong>重要</strong>标签</div>
+<p><br /></p>
+<div class="tip inlineBlock success">这是<strong>成功</strong>标签</div>
+<p><br /></p>
+<div class="tip inlineBlock warning">这是<strong>警告</strong>标签</div>
+<div class="tip inlineBlock warning">可以添加<code>cpp</code>代码</div>
+:ET

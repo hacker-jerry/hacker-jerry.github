@@ -26,7 +26,7 @@
 }
 .sidebar-container a:hover,
 .sidebar-container a:active {
-  color: #f6782f !important;
+  color: #f89797 !important;
 }
 .sidebar-container .tags a {
   border-color: #bfbfbf;
@@ -607,7 +607,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #f6782f;
+  color: #f89797;
   text-decoration:none;
 }
 a img:hover,
@@ -1222,7 +1222,7 @@ samp {
   color: #a3a3a3;
 }
 .post-content-preview:hover {
-  color: #f6782f;
+  color: #f89797;
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
@@ -1726,13 +1726,63 @@ img::-moz-selection {
   line-height: 1.6em;
   word-break: break-all;
   background: rgba(255,255,255,0.4);
-  border-left: 4px solid #f6782f;
+  border-left: 4px solid #f89797;
 }
 .post-copyright a{font-family: "Ink free";}
-.post-copyright a:hover{color: #f6782f;}
+.post-copyright a:hover{color: #f89797;}
 
 .a-pic {
   background-image: url('page.next.header-img');
   width: 100%;
   max-width: 50em;
+}
+/* 模仿@docsify的warning */
+.tip.inlineBlock {
+  display: inline-block;
+}
+.tip.warning {
+  border-left-color: #ff7800;
+  background: #fcf2e9;
+}
+.tip {
+  background: #eef6fd;
+  padding: 8px 20px;
+  border-left: 3px solid #38a3fd;
+  border-radius: 0 5px 5px 0;
+  margin-bottom: 10px;
+}
+.tip.warning:before {
+  background: #ff7800;
+  content: "!";
+}
+.tip:before {
+  background: #38a3fd;
+  border-radius: 50%;
+  color: #fff;
+  content: "i";
+  font-family: Dosis,"Source Sans Pro","Helvetica Neue",Arial,sans-serif;
+  font-size: 16px;
+  height: 21px;
+  line-height: 21px;
+  margin-left: -32px;
+  margin-top: 5px;
+  position: absolute;
+  text-align: center;
+  width: 21px;
+}
+.tip.success {
+  border-left-color: #86cc00;
+  background: #f0f8e5;
+}
+.tip.success:before {
+  background: #86cc00;
+  content: "√";
+}
+.tip.important {
+  border-left-color: #fad733;
+  background: #ffec9182;
+}
+.tip.important:before{
+  background: #fad733;
+  content: "☆";
 }
