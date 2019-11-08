@@ -259,9 +259,9 @@
                     Copyright &copy; <a href="https://hackerjerry.top">{{ site.title }}</a> {{ site.time | date: '%Y' }}
                 </p>
                 <hr style="visibility: hidden;">
-                <aside class="read-next">
+                
                  {% if page.previous.url %}
-                    
+                    <aside class="read-next">
                     <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"   style="background-image: url('{% if page.previous.header-img %}{{page.previous.header-img}}{% else %}{{ site.header-img }}{% endif %}');border-style: none;letter-spacing:2px">
                     <section class="post">
                         <div class="pr-title">{{page.previous.title}}</div>
