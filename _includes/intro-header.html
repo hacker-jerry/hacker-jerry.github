@@ -5,13 +5,19 @@
 
 {% if include.type == 'post' %}
 <style type="text/css">
+    {% if page.header-img == 'pain' %}
     header.intro-header{
         position: relative;
-        background-image: url('{% if page.header-img %}{{ page.header-img }}{% else %}https://ws1.sinaimg.cn/large/006y7E7Sly1g8rs77gpjqj30xc0iraeu.jpg{% endif %}');
         background-color: #5b5a5af0;
-        /*background-size:100% 100%;-moz-background-size:100% 100%;}*/
     }
-
+    {% else %}
+        header.intro-header{
+        position: relative;
+        background-image: url('{% if page.header-img %}{{ page.header-img }}{% else %}http://ww1.sinaimg.cn/large/006y7E7Sly1g8rul1bp06j30xc0iraeu.jpg{% endif %}');
+        background-color: #5b5a5af0;
+    }
+    {% endif %}
+    
     {% if page.header-mask %}
 /*我也不知道为啥黄玄博客里mask可以露出后面的字*/
     header.intro-header .header-mask{
@@ -107,7 +113,7 @@
 {% endif %}
 
 {% if include.type == 'page' %}
-<header class="intro-header" style="background-image: url('{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}')">
+<header class="intro-header" style="background-image: url('{% if page.header-img %}{{ page.header-img }}{% else %}{{site.header-img}}{% endif %}')">
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">

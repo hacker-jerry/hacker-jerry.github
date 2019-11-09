@@ -3,7 +3,7 @@ layout:     post
 title:      "数据结构"
 subtitle:   " 它好难呀"
 date:      2019-05-31 21:51:53
-header-img: 
+header-img: 'pain'
 author:     "Jerry"
 catalog: true
 tags:
@@ -67,7 +67,7 @@ tags:
  ![](https://img.mubu.com/document_image/d647ecdd-13cc-4c30-9ea4-b7ef116636d5-3245207.jpg)
 
 ### 循环队列
-    
+
 #### 形象示例  
 ![](https://img.mubu.com/document_image/2650eba0-a135-4454-9b36-077dd79f21ea-3245207.jpg)
     
