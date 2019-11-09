@@ -28,6 +28,7 @@ task :post do
     post.puts "tags: "
     post.puts "date: #{Time.now.strftime('%Y-%m-%d')}"
     post.puts "header-img: "
+    post.puts "painhead: "
     post.puts "post_copyright: true"
     post.puts "author: Jerry"
     post.puts "---"
