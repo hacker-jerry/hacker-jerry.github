@@ -3,7 +3,7 @@ layout:     post
 title:      "JavaScript学习笔记"
 subtitle:   " JavaScript，通常缩写为 JS，是一种高级的，不进行预编译的，从上到下逐行执行的编程语言。 "
 date:       2019-07-28 11:50:46
-header-img: ""
+header-img: 
 author:     "Jerry"
 catalog: true
 tags:

@@ -3,7 +3,7 @@ layout:     post
 title:      "c++学习笔记(一)"
 subtitle:   "吾辈青年岂容卸甲，唯有自请长缨，日夜兼程。"
 date:       2019-07-02 11:31:49
-header-img: ""
+header-img: 
 author:     "Jerry"
 catalog: true
 tags:

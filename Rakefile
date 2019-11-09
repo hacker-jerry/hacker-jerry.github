@@ -24,10 +24,12 @@ task :post do
     post.puts "layout: post"
     post.puts "title: \"#{title.gsub(/-/,' ')}\""
     post.puts "category: "
+    post.puts "catalog: true"
     post.puts "tags: "
+    post.puts "date: #{Time.now.strftime('%Y-%m-%d')}"
     post.puts "header-img: "
     post.puts "post_copyright: true"
-    post.puts "author: "
+    post.puts "author: Jerry"
     post.puts "---"
   end
 end # task :post

@@ -8,7 +8,7 @@
 <style type="text/css">
 /*后一篇*/
     a.next {
-        background-image: url('{% if page.next.header-img %}{{page.next.header-img}}{% else %}{{ site.header-img }}{% endif %}');
+        background-image: url('{% if page.next.header-img %}{{page.next.header-img}}{% else %}https://ws1.sinaimg.cn/large/006y7E7Sly1g8rs77gpjqj30xc0iraeu.jpg{% endif %}');
         display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -28,7 +28,7 @@
 
 /*前一篇*/
     a.previous {
-        background-image: url('{% if page.previous.header-img %}{{page.previous.header-img}}{% else %}{{ site.header-img }}{% endif %}');
+        background-image: url('{% if page.previous.header-img %}{{page.previous.header-img}}{% else %}https://ws1.sinaimg.cn/large/006y7E7Sly1g8rs77gpjqj30xc0iraeu.jpg{% endif %}');
         display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
@@ -56,7 +56,7 @@
     -ms-flex-align: stretch;
     align-items: stretch;
     margin-top: 1rem;
-    height: 420px;
+    /*height: 36rem;*/
         }
     /* 对于手机的响应式布局*/
     @media only screen and (max-width: 2000px) {
@@ -66,7 +66,7 @@
              width: 100%;
            }
             .post p{
-            font-size: 2.3rem;
+            font-size: 2.2rem;
         }
             .read-next div {
                 font-size: 5.1rem;
@@ -89,7 +89,7 @@
              width: 100%;
            }
             .post p{
-            font-size: 2.1rem;
+            font-size: 2.0rem;
         }
             .read-next div {
                 font-size: 4.9rem;
@@ -110,7 +110,7 @@
                 width: 100%;
             }
             .post p{
-                font-size: 1.9rem;
+                font-size: 1.8rem;
         }
         .read-next div {
         font-size: 3.6rem;
@@ -245,7 +245,7 @@
     
 </style>
                 <p class="copyright text-muted">
-                    Copyright &copy; <a href="https://hackerjerry.top">{{ site.title }}</a> {{ site.time | date: '%Y' }}
+                    Copyright &copy; <a href="https://hackerjerry.top">{{ site.title }}</a> &nbsp;2018-{{ site.time | date: '%Y' }}
                 </p>
                 <hr style="visibility: hidden;">
                 {% if page.previous.url or page.next.url %}
@@ -253,7 +253,7 @@
                        
                  {% if page.previous.url %}
                    
-                    <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"   style="background-image: url('{% if page.previous.header-img %}{{page.previous.header-img}}{% else %}{{ site.header-img }}{% endif %}');border-style: none;letter-spacing:2px">
+                    <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"   style="background-image: url('{% if page.previous.header-img %}{{page.previous.header-img}}{% else %}https://ws1.sinaimg.cn/large/006y7E7Sly1g8rs77gpjqj30xc0iraeu.jpg{% endif %}');border-style: none;letter-spacing:2px">
                     <section class="post">
                         <div class="pr-title">{{page.previous.title}}</div>
                         <p>{{page.previous.excerpt}}</p> 
@@ -264,7 +264,7 @@
                     {% endif %}
                     {% if page.next.url %}
                         
-                        <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" style="background-image: url('{% if page.next.header-img %}{{page.next.header-img}}{% else %}{{ site.header-img }}{% endif %}');border-style: none;letter-spacing:2px">
+                        <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" style="background-image: url('{% if page.next.header-img %}{{page.next.header-img}}{% else %}https://ws1.sinaimg.cn/large/006y7E7Sly1g8rs77gpjqj30xc0iraeu.jpg{% endif %}');border-style: none;letter-spacing:2px">
                         <section class="post">
                             <div class="ne-title">{{page.next.title}}</div>
                             <p> {{page.next.excerpt}}</p>
@@ -289,7 +289,7 @@
 <script src="{{ "/js/bootstrap.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Custom Theme JavaScript -->
-<script src="{{ "/js/hux-blog.min.js " | prepend: site.baseurl }}"></script>
+<script src="{{ "/js/jerry-blog.min.js " | prepend: site.baseurl }}"></script>
 
 <!-- Service Worker -->
 {% if site.service-worker %}
@@ -313,7 +313,7 @@
      Because of the native support for backtick-style fenced code blocks
      right within the Markdown is landed in Github Pages,
      From V1.6, There is no need for Highlight.js,
-     so Huxblog drops it officially.
+     so Jerryblog drops it officially.
 
      - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
      - https://help.github.com/articles/creating-and-highlighting-code-blocks/
@@ -356,7 +356,7 @@
 <!-- Google Analytics -->
 {% if site.ga_track_id %}
 <script>
-    // dynamic User by Hux
+    // dynamic User by Jerry
     var _gaId = '{{ site.ga_track_id }}';
     var _gaDomain = '{{ site.ga_domain }}';
 
@@ -375,7 +375,7 @@
 <!-- Baidu Tongji -->
 {% if site.ba_track_id %}
 <script>
-    // dynamic User by Hux
+    // dynamic User by Jerry
     var _baId = '{{ site.ba_track_id }}';
 
     // Originial
