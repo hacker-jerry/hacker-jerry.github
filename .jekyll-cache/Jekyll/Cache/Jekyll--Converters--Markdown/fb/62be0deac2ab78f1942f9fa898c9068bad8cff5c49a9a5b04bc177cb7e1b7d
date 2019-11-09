@@ -1,0 +1,45 @@
+I"�<p>容器类的对象实例成为容器，用于保存对象。</p>
+
+<h1 id="容器">容器</h1>
+
+<p>按照存储的元素形式，按照接口划分为两类：</p>
+
+<h2 id="collection">Collection</h2>
+<div class="tip inlineBlock important">包括List，Set，Queue。</div>
+<ol>
+  <li>List：按照元素被插入时的顺序保存的元素
+    <ul>
+      <li>ArrayList</li>
+      <li>LinkedList</li>
+    </ul>
+  </li>
+  <li>Set：不能有重复元素
+    <ul>
+      <li>TreeSet</li>
+      <li>HashSet
+        <ul>
+          <li>LinkedHashSet</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>Queue：按照排队规则确定的元素顺序
+    <ul>
+      <li>PriorityQueue</li>
+    </ul>
+  </li>
+</ol>
+
+<h2 id="map">Map</h2>
+<div class="tip inlineBlock important">一系列由键值对组成的序列，允许通过键查找值</div>
+<ul>
+  <li>HashMap
+    <ul>
+      <li>LinkedHashMap</li>
+    </ul>
+  </li>
+  <li>TreeMap</li>
+</ul>
+
+<h1 id="容器具体代码实现">容器具体代码实现</h1>
+:ET
