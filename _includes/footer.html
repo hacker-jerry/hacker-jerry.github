@@ -256,7 +256,7 @@
                     <a class="previous" href="{{ page.previous.url | prepend: site.baseurl | replace: '//', '/' }}"   style="background-image: url('{% if page.previous.header-img %}{{page.previous.header-img}}{% else %}https://ws1.sinaimg.cn/large/006y7E7Sly1g8rs77gpjqj30xc0iraeu.jpg{% endif %}');border-style: none;letter-spacing:2px">
                     <section class="post">
                         <div class="pr-title">{{page.previous.title}}</div>
-                        <p>{{page.previous.excerpt}}</p> 
+                        <p>{{page.previous.subtitle}}</p> 
                     </section>
                         </a>
                     
@@ -267,7 +267,7 @@
                         <a class="next" href="{{ page.next.url | prepend: site.baseurl | replace: '//', '/' }}" style="background-image: url('{% if page.next.header-img %}{{page.next.header-img}}{% else %}https://ws1.sinaimg.cn/large/006y7E7Sly1g8rs77gpjqj30xc0iraeu.jpg{% endif %}');border-style: none;letter-spacing:2px">
                         <section class="post">
                             <div class="ne-title">{{page.next.title}}</div>
-                            <p> {{page.next.excerpt}}</p>
+                            <p> {{page.next.subtitle}}</p>
                         </section>
                          
                         </a>
