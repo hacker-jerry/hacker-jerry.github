@@ -26,7 +26,7 @@
 }
 .sidebar-container a:hover,
 .sidebar-container a:active {
-  color: #f89797 !important;
+  color: #595959 !important;
 }
 .sidebar-container .tags a {
   border-color: #bfbfbf;
@@ -607,7 +607,7 @@ a {
 }
 a:hover,
 a:focus {
-  color: #f89797;
+  color: #595959;
   text-decoration:none;
 }
 a img:hover,
@@ -1222,7 +1222,7 @@ samp {
   color: #a3a3a3;
 }
 .post-content-preview:hover {
-  color: #f89797;
+  color: #595959;
 }
 @media only screen and (min-width: 768px) {
   .post-content-preview {
@@ -1357,7 +1357,7 @@ form .row:first-child .floating-label-form-group {
 .bt:hover {
   border-color: #fcfcfc;
   color: #fff;
-  background: #7e7a7a;
+  background: #595959;
 }
 .pager {
   margin: 20px 0 0 !important;
@@ -1726,10 +1726,10 @@ img::-moz-selection {
   line-height: 1.6em;
   word-break: break-all;
   background: rgba(255,255,255,0.4);
-  border-left: 4px solid #f89797;
+  border-left: 4px solid #595959;
 }
 .post-copyright a{font-family: "Ink free";}
-.post-copyright a:hover{color: #f89797;}
+.post-copyright a:hover{color: #595959;}
 
 .a-pic {
   background-image: url('page.next.header-img');
