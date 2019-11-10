@@ -1786,3 +1786,7 @@ img::-moz-selection {
   background: #fad733;
   content: "☆";
 }
+/*优化表格*/
+tbody>tr:nth-child(2n+1)>td{
+  background-color: rgba(102,128,153,.05);
+}
