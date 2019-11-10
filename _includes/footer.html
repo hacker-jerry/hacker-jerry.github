@@ -4,6 +4,7 @@
         <div class="row">
             <div>
                 <!-- SNS Link -->
+                    
                 {% include sns-links.html center=true %}
 <style type="text/css">
 /*后一篇*/
@@ -244,9 +245,19 @@
     }
     
 </style>
-                <p class="copyright text-muted">
-                    Copyright &copy; <a href="https://www.hackerjerry.top">{{ site.title }}</a> &nbsp;2018-{{ site.time | date: '%Y' }}
+                
+                <a id="typing" class="footer-device1" cursor="default" pointer-events="none">这里有一个有趣的灵魂</a>
+                
+                
+                <a id="TimeShow" class="footer-device2" cursor="default" pointer-events="none" ></a>
+                
+                <p class="copyright text-muted" style="color: lightslategray;letter-spacing: 1px;">
+
+                    Copyright &copy; <a href="https://www.hackerjerry.top">{{ site.title }}</a> <br>2018-{{ site.time | date: '%Y' }}
                 </p>
+                
+                
+
                 <hr style="visibility: hidden;">
                 {% if page.previous.url or page.next.url %}
                  <aside class="read-next">
@@ -506,4 +517,64 @@
     _render();
 </script>
 {% endif %}
+<!-- 打字特效 -->
+<script type="text/javascript">
+    var scilper_option = new Object();
+    scilper_option.site_name = "Jerry&#0;s Home";
+    scilper_option.author_name = "Jerry";
+    scilper_option.admin_des = "这里有一个有趣的灵魂";
+var typing = function (r) {
+    function t() {
+        return b[Math.floor(Math.random() * b.length)]
+    }
 
+    function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+    }
+
+    function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+            var l = document.createElement("span");
+            l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+    }
+
+    function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : ( c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+    }
+
+    var l = "",
+        o = [ "欢迎来到" + scilper_option.site_name , scilper_option.admin_des ].map(function(r) {
+            return r + "."
+        }),
+        a = 2,
+        g = 1,
+        s = 5,
+        d = 75,
+        b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)",
+            "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"
+        ],
+        c = {
+            text: "",
+            prefixP: -s,
+            skillI: 0,
+            skillP: 0,
+            direction: "forward",
+            delay: a,
+            step: g
+        };
+    i()
+};
+typing(document.getElementById('typing'));
+
+window.onload = function() {
+    var TimeShow = document.getElementById("TimeShow");
+    if(TimeShow != undefined) {
+        TimeShow.innerHTML = "Time to build the page：" + (new Date().getTime()-t1) + " ms";
+    } else {
+        return false;
+    }
+};
+</script>
