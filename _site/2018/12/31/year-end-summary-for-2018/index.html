@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="关于白帽子、黑客与文人 | Curious Passionate Dream-Chaser Hacker | 这里是 @Jerry 的个人博客，一个有趣的灵魂期待与你相遇。">
+    <meta name="keywords"  content="CTF，攻防，HACK,白帽子，渗透，逆向，二进制，密码学，区块链">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="写给二〇一八的年终总结 - Jerry的博客 | Jerry Blog">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="这是我写下的第二篇年终总结。
+
+">
+    
+    <meta property="article:published_time" content="2018-12-31T06:03:07Z">
+    
+    
+    <meta property="article:author" content="Jerry">
+    
+    
+    <meta property="article:tag" content="随笔">
+    
+    
+    <meta property="og:image" content="http://localhost:4000/img/jerry.jpg">
+    <meta property="og:url" content="http://localhost:4000/2018/12/31/year-end-summary-for-2018/">
+    <meta property="og:site_name" content="Jerry的博客 | Jerry Blog">
+    
+    <title>写给二〇一八的年终总结 - Jerry的博客 | Jerry Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2018/12/31/year-end-summary-for-2018/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/jerry-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Jerry change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    </script>
+    <script>
+        var t1 = new Date().getTime();
+    </script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Jerry Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archive/">Archive</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/http://ww1.sinaimg.cn/large/006y7E7Sly1g8kzsae6ugj31gs0o8thp.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    
+        header.intro-header{
+        position: relative;
+        background-image: url('http://ww1.sinaimg.cn/large/006y7E7Sly1g8kzsae6ugj31gs0o8thp.jpg');
+        background-color: #5b5a5af0;
+    }
+    
+    
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=%E9%9A%8F%E7%AC%94" title="随笔" style="z-index:2;">随笔</a>
+                          &nbsp; 
+                        
+       <span id="/2018/12/31/year-end-summary-for-2018/" class="leancloud_visitors" data-flag-title="写给二〇一八的年终总结">
+        <span class="post-meta-item-text">  <i class="fa fa-eye"></i>:  </span>
+        <span class="leancloud-visitors-count"></span> viewers
+       </span>
+    <i class="fa fa-check-square-o" aria-hidden="true"></i> 3382 words
+                    <!-- 更新时间 -->
+                
+</div>
+                    
+                    <h1>写给二〇一八的年终总结</h1>
+                    
+                    <h2 class="subheading"> 2018再见  &nbsp;&nbsp; 2019你好 </h2>
+                    <span class="meta">Posted by Jerry on December 31, 2018</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+                <p>这是我写下的第二篇年终总结。
+<!-- more --></p>
+
+<p>不要问我第一篇是哪一年的(我也记不清了)</p>
+
+<p>是什么促使我下定决心写一篇年终总结呢？因为今年，与众不同。</p>
+
+<p>今年反生了很多事，多到我猝不及防，却一件又一件的像梦一样倏忽而过。但我还是过完了这精彩而又惊心动魄的一年。</p>
+
+<h1 id="高三寒窗十载跋涉万里">高三·寒窗十载，跋涉万里</h1>
+
+<p>我终究来到了高考面前。</p>
+
+<p>曾经无数个日日夜夜念叨着的高考，敬仰着的高考，终于见到了它的真容。</p>
+
+<p>在我的印象里，高考应该是刻板严肃的老学究，背着个手，踱来踱去，谁偷懒了，就用戒尺在他手背上敲上一下。在他面前，任他是多么捣乱的学生也不敢造次。</p>
+
+<p>在我的印象里，高三应该是最灰暗的日子，没日没夜，废寝忘食(好像有点过了)，在一道道解析几何，导数大题，理综压轴的泥淖里拼命挣扎，在宿舍、教室、食堂三点一线中日复一日。</p>
+
+<p>直到我来到高三，我才发现，事实并非如此。</p>
+
+<p>去年暑假，我们搬到了高三教学楼，紧凑的教室并没有想象中的压抑。四只风扇在头顶乱舞，窗边的盆栽努力的活着(几乎没人浇水)，教室朝南，阳光很好，空气中悬浮的粉笔灰看得清清楚楚。我喜欢这儿。</p>
+
+<p>开学全市统考如约而至，糟糕的成绩诉说着暑假的潇洒(捂脸)。扶我起来，我还能学！</p>
+
+<p>我开始了高三模式。</p>
+
+<p>又买了一本练习题？刷！发现某考卷不错？刷！一言不合，就刷刷刷！好的我成功的陷入了刷题的死循环。当然，刷题应该是有效果的，但效果持续时间不长，且仅在小考中发挥(要哭了)。我有一个本子，记录着我高中三年大大小小每一次正规考试的年级排名，就看呀那跌宕起伏的折线图，哟这里好高，一看，噫，原来是月考，哟这里咋这么低，一看，期末/模拟……对，我就是那种一到大考就瞪不起眼的人，且成功将这种体质延续到了高考，当然这是后话了。</p>
+
+<p>刷题的路上，全班每一个人，都在疯狂前进。
+​       我和冰哥成了刷题上的战友，(不过冰哥比我刷的快)，一本又一本金考卷、押题卷、衡水金卷就这样在我们的手中变成了<del>废纸一堆</del>，然而还是买多了(暴风哭泣)，家里还有一摞练习题。（高考完那个暑假还琢磨怎么卖掉–有需要的小伙伴请联系我!)</p>
+
+<p>高考的脚步声近了。</p>
+
+<p>我还清楚得记得，在2018年1月1日那天，我们班级的元旦活动。</p>
+
+<p>那天可真热闹呀，Ivy给我们唱了一首歌(唱的超好听)，然后娜姐表演了一个魔术(真的好厉害！)，华姐给我们用”标准的普通话”深情朗诵，当然，我们每个同学都录了祝福的话，留给多年后的自已一个回忆。我还记得wyp说了”希望我们青年一辈，冷风热血，荡涤乾坤”，(果然不忘嘲讽我)，把我乐的。不过呀说到wyp我就想起了<del>西游记里</del>高三下学期我一件比较后悔的事情。之前我们是同位，关系应该算很好了，不过他总是喜欢嘲讽我？或者找我事？一开始我也就当玩笑听听，但是应该是持续了相当长一段时间，我真的受不了了简直烦死我了，于是某天午休当他再一次”骚扰”的时候，我脾气蹭的一下上来了，然后发生了一些很不愉快的事情。于是从那天开始，wyp与我，绝交。到今天也没有再说过一句话。虽然这对我来确实没什么，但是还是觉得有点可惜。怎么说呢，希望他未来还能像少年时那样脾气好，就这样吧，相忘于江湖也不失是一个好归宿。</p>
+
+<p>元旦一过，大家又立刻投入到紧张的备战当中。</p>
+
+<p>期末、一模二模三模、无数次理综、数不清的卷子，排名变了又变（当然学霸还是学霸，像我这样的学酥就只能起起伏伏，飘忽不定）。排名于我而言早已麻木，我要的是熟练，我要的是仔细！错误的原因有很多，但结果只有一种。我只有把所有的原因一一避开，才能拥有最终的正确。于是，我依旧在孜孜不倦的刷题。</p>
+
+<p>我习惯了教室午休，习惯了一个人去食堂。</p>
+
+<p>我习惯了第二节晚自习下课冲出教室，去操场跑圈，去体育馆后面昏黄的小道上走一走，闻一闻花香，让疲惫了一天的自己放松一下(要不然写题写到脑仁疼)。</p>
+
+<p>高三，是我对五十八中了解的最细致的一年。</p>
+
+<p>从初春到仲夏，我留心了校园的花花草草。虽然我不知道它们叫什么，但我真的很喜欢它们的味道，那一丛一丛的，开得顾盼生姿的花，洁白的令我陶醉。</p>
+
+<blockquote>
+  <p>余路还要走多久，你牵着我的手。</p>
+</blockquote>
+
+<p>高考终究还是来了。</p>
+
+<p>两天。四场考试。三年就画上了句号。</p>
+
+<p>并没有我想象中的顺利，虽然题有我想象中的简单，但是我还是无法控制的紧张过度，留下了很多的遗憾。</p>
+
+<p>但不管怎样，我还是我，我不后悔。</p>
+
+<p>踽踽独行，不惜万里蹀躞。</p>
+
+<p>高考，是终点也是起点。</p>
+
+<p>只是，从此以后，万里长路，山河寂寥。</p>
+
+<h1 id="我的大学西军电">我的大学·西军电</h1>
+
+<p>9月，梦想再一次起航。</p>
+
+<p>远离了故土，远离了海风，远离了海，远离了亲人和朋友，我来到了西安，这个古老与现代并存的城市。</p>
+
+<p>说实话，一方水土养一方人，西安这里给我留下的第一印象就是，这的人懒。</p>
+
+<p>为什么这么说呢，大早上出去买早餐，都七点多了，<strong>大街上没有几家店开门！</strong>我真的纳了闷了早餐店不应该早早的开门吗？还是夏天，天亮的早，为什么不愿意赚钱呢？后期走访(购物)发现，好多店都是十点以后开门(郁闷)。</p>
+
+<p>好了说正事。</p>
+
+<p>来到了西电，哇新校区好漂亮呀，开心开心。</p>
+
+<p>军训为什么十四天啊喂！为什么这里下午这么晒啊！为什么教官这么认真的摧残我们啊！看到小伙伴们的军训那么水，还在练军体拳的我默默在心中留下了眼泪。</p>
+
+<p>万万没想到！在我们艰苦卓绝的不懈努力下，求的雨终于！在汇报演出的那！天！下！了！本来一直是暴雨，都说要取消演出了，然而学校骚操作你永远也想不到，给我们每个人，<strong>发了一套塑料雨衣</strong>，对没错，我们是披着雨衣踢完的正步。冰冷的雨水就这样在我脸上胡乱的拍打。（自己求得雨，哭着也要把它淋完.jpg）</p>
+
+<p>好吧，军训除去晒和累，还是很好玩的。</p>
+
+<p>我们的连长比我们大了五岁左右吧，是一个非常可爱的小伙子。我们是他第一次带的学员，他本身也是军校大一的学生。他总是跟我们讲，不要老玩游戏，好好把学习搞上去，不要像他一样大三了再去考军校当兵。我听出了他的无奈。</p>
+
+<p>亲爱的连长，也请你继续完成你的梦想！</p>
+
+<p>之后呢，很开心，遇到了一群很可爱的小伙伴，包括我的舍友兄弟们以及院里的同学呀。</p>
+
+<p>虽然社团面试无一例外全都被刷了，但是我也没有那么不开心(才怪)。</p>
+
+<p>接下来开始正式大学学习生活啦。</p>
+
+<p>很努力的学高数。</p>
+
+<p>然而。</p>
+
+<p>天不遂人愿。</p>
+
+<p>期中，只有80分。</p>
+
+<p>好吧，让我再熟悉熟悉题型，期末杀他个片甲不留！</p>
+
+<p>接下来是碎碎念时间。</p>
+
+<p>西安这里冬天7点天还是黑的，给我一种错觉还是晚上，所以经常性堕落(起的好晚)，这跟我头一天12点睡似乎也有关系(捂脸)。</p>
+
+<p>舍友们还是一群很上进的小伙伴。有好多大佬呀。我要加把劲啦。</p>
+
+<p>校园里撒狗粮的好多呀，猝不及防。</p>
+
+<p>我天天吃这么多咋还没长胖呀(逃)。</p>
+
+<h1 id="感谢的人">感谢的人</h1>
+
+<p>首先呢，当然是感谢我妈妈啦！感觉妈妈好辛苦但是我却抽不出时间和妈妈打电话……那就今天晚上吧！很感谢妈妈的关心，虽然不好意思说但我真的爱您呀妈妈！希望2019年，时光能善待我妈妈，她身体健健康康平平安安我就超级开心啦！</p>
+
+<p>然后呢，是我的小仙女品子啦！手动比心比心比心。谢谢你一直陪伴着我，今天就是我们恋爱5周年的Anniversary啦，好开心呀！虽然我们一直异地，但是我期待将来某一天能有一个我们自己的小窝！努力去追寻自己的梦想吧！</p>
+
+<p>还有我高中陪伴了我两年的同位老铁家傲，前不久闲聊，字里行间还是透露出浓郁的上世纪知识分子的气息哈哈，给我剪辑的宣传片提供了建议，很感谢啦！希望你在南昌不要因为设计图纸搓光面包。加油老铁！</p>
+
+<p>以及多年好友冰哥，大学里的舍友们，因为你们，我不再独身一人。</p>
+
+<p>愿你我一路繁花似锦，山水相拥，青山为伴。</p>
+
+<h1 id="lyric-time">Lyric Time</h1>
+
+<h2 id="2018再见">2018再见</h2>
+
+<p>作为一个<del>信安狗</del>文艺青年怎么能忘记抒情呢？</p>
+
+<font face="楷体">2018，我走过很多的路，流下了很多的汗，有很多欢笑，也有不少泪水。
+
+身经百战，我从没想过放弃。
+
+单枪匹马，我完成了人生的第一次跨越。
+
+2018，我留下几万字的摘抄，读过许多书。
+
+我们都说过去了，风轻云淡，我们相信未来依旧有生生不息的希望和不期而遇的温暖。
+
+生活虽然可能荆棘遍地，但仍不能阻止你一路高歌。
+
+生命，其实最后总能成诗。
+
+把酒祝东风，且共从容。
+
+2018，谢谢你，这段日子，我很珍惜。
+
+再见了，2018。</font>
+
+<h2 id="2019你好">2019你好</h2>
+
+<font face="楷体">2019，希望是我从小白蜕变成dalao的起点。
+
+2019，希望我的家人平安健康，希望我爱和爱我的人一切顺利，希望日子里仍有感动长在。
+
+年少时的热血，如今仍在沸腾。面对信息安全，我将不遗余力。
+
+曾经承诺过要读很多书，留下很多随笔。2019，我不会忘记。
+
+想要结识更多的朋友，想要学业在上一层楼。
+
+想把岁月唱给你听。
+
+2019，希望一切，都是最好的样子。
+
+2019，加油。</font>
+
+<p><img src="http://ww1.sinaimg.cn/mw690/007dh5vlly1g4s9yddqntj30ku19qmzw.jpg" alt="" /></p>
+
+<center><font face="楷体" size="4">我的新年flag</font></center>
+
+                
+                <!-- Copyright -->
+                
+                    <div class="post-copyright">
+                        <p style='margin:-1px'>
+                            <span>本文标题：</span><a href="/2018/12/31/year-end-summary-for-2018/">写给二〇一八的年终总结</a>
+                        </p>
+                        <p style='margin:-1px'>
+                            <span>文章作者：</span><a href="">Jerry</a>
+                        </p>
+                        <p style='margin:-1px'>
+                            <span>发布时间：</span><a>2018-12-31 06:03:07 +0800</a>
+                        </p>
+                        <p style='margin:-1px'>
+                            <span>许可协议：</span> 除特殊说明外，本博客所有文章均采用<i class="fa fa-creative-commons"></i><a href="/2018/12/31/year-end-summary-for-2018/"><a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a></a>。转载请保留原文链接及作者。
+                        </p>
+                    </div>
+                
+                
+
+
+                
+                <hr style="visibility: hidden;">
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+        <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+        
+        
+        </a>
+        
+        
+                <a data-sort="0010" 
+                    href="/archive/?tag=%E9%9A%8F%E7%AC%94"
+                    rel="5">随笔</a>
+        
+                <a data-sort="0013" 
+                    href="/archive/?tag=%E5%89%8D%E7%AB%AF"
+                    rel="2">前端</a>
+        
+                <a data-sort="0013" 
+                    href="/archive/?tag=%E8%AF%BB%E5%90%8E%E6%84%9F"
+                    rel="2">读后感
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+</ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'right',
+          // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-re">
+        <div class="row">
+            <div>
+                <!-- SNS Link -->
+                    
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  
+  
+  
+  
+  
+</ul>
+<style type="text/css">
+/*后一篇*/
+    a.next {
+        background-image: url('http://ww1.sinaimg.cn/large/006y7E7Sly1g8l0gly4tsj31gs0o8tgu.jpg');
+        display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: #6795c6 no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    }
+
+/*前一篇*/
+    a.previous {
+        background-image: url('http://ww1.sinaimg.cn/large/006y7E7Sly1g8rul1bp06j30xc0iraeu.jpg');
+        display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: #88bf61d9 no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    }
+/* 两个元素父类 */
+    .read-next {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    margin-top: 1rem;
+    height: 38rem;
+    /* 不知道为什么添加了那个js动效之后，在默认背景以及国庆那张图存在的底栏又出现了疯狂跳动的bug，修改稿一些的height后就消除了 */
+        }
+    /* 对于手机的响应式布局*/
+    @media only screen and (max-width: 2000px) {
+           .post {
+            margin-left: 16px;
+             margin-right: 16px;
+             width: 100%;
+           }
+            .post p{
+            font-size: 2.2rem;
+        }
+            .read-next div {
+                font-size: 5.1rem;
+                text-align: center;
+                margin-top: 3rem;
+                font-weight: bold;
+                line-height: 1.2;
+            }
+            a.next {
+                max-width: 50%;
+            }
+            a.previous{
+                max-width: 50%;
+            }
+        }
+       @media only screen and (max-width: 1200px) {
+           .post {
+            margin-left: 16px;
+             margin-right: 16px;
+             width: 100%;
+           }
+            .post p{
+            font-size: 2.0rem;
+        }
+            .read-next div {
+                font-size: 4.9rem;
+                text-align: center;
+                margin-top: 2.8rem;
+                font-weight: bold;
+                line-height: 1.2;
+            }
+            a.next {
+                max-width: 50%;
+            }
+            a.previous{
+                max-width: 50%;
+            }
+        }
+        @media only screen and (max-width: 800px) {
+            .post{
+                width: 100%;
+            }
+            .post p{
+                font-size: 1.8rem;
+        }
+        .read-next div {
+        font-size: 3.6rem;
+        text-align: center;
+        margin-top: 2rem;
+        font-weight: bold;
+    }
+            a.next {
+                max-width: 50%;
+            }
+            a.previous{
+                max-width: 50%;
+            }
+    } 
+        @media only screen and (max-width: 450px) {
+            .read-next{
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                 flex-direction: column;
+                 margin-top: 4rem;
+            }
+            .read-next .post {
+                 width: 100%;
+                 margin-top: 2rem;
+                 margin-bottom: 2rem;
+                 margin-left: 16px;
+                 margin-right: 16px;
+                 padding-bottom: 2rem;
+                 line-height: 1.65em;
+         }
+            .next .post{
+                padding-top: 5rem;
+                padding-bottom: 6rem;
+            }
+            .previous .post {
+                padding-top: 5rem;
+                padding-bottom: 6rem;
+            }
+            .post p{
+            display: none;
+        }
+            .read-next div {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-top: 1.8rem;
+        font-weight: bold;
+    }
+            a.next {
+                max-width: 100%;
+            }
+            a.previous{
+                max-width: 100%;
+            }
+    }
+     
+        /* 对于平板横屏时的响应式布局 */
+     
+    /*遮罩层*/
+    a.next:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    transition: all .5s ease;
+}
+    a.next:hover:before {
+        background: rgba(0, 0, 0, 0.57);
+    }
+    a.previous:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    transition: all .5s ease;
+}
+    a.previous:hover:before{
+        background: rgba(0, 0, 0, 0.57);
+    }
+
+
+    .next .post:before {
+    content: "Read Next";
+    padding: 4px 10px 5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: "Open Sans",sans-serif;
+    color: rgba(255,255,255,0.8);
+    border: rgba(255,255,255,0.5) 1px solid;
+    border-radius: 4px;
+    transition: all .5s ease;
+    }
+    .next .post:hover:before{
+        background-color: azure;
+        color: dimgray;
+    }
+    .previous .post:hover:before{
+        background-color: azure;
+        color: dimgray;
+    }
+    .previous .post:before {
+    content: "Read Previous";
+    padding: 4px 10px 5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: "Open Sans",sans-serif;
+    color: rgba(255,255,255,0.8);
+    border: rgba(255,255,255,0.5) 1px solid;
+    border-radius: 4px;
+    transition: all .5s ease;
+    }
+    .post {
+    position: relative;
+    width: 70%;
+    max-width: 1366px;
+    margin: 4rem auto;
+    padding-bottom: .5rem;
+    word-wrap: break-word;
+    }
+    .read-next p {
+        font-weight: 200;
+    }
+    
+</style>
+                
+                <a id="typing" class="footer-device1" cursor="default" pointer-events="none">这里有一个有趣的灵魂</a>
+                
+                
+                <a id="TimeShow" class="footer-device2" cursor="default" pointer-events="none" ></a>
+                
+                <p class="copyright text-muted" style="color: lightslategray;letter-spacing: 1px;">
+
+                    Copyright &copy; <a href="https://www.hackerjerry.top">Jerry Blog</a> <br>2018-2019
+                </p>
+                
+                
+
+                <hr style="visibility: hidden;">
+                
+                 <aside class="read-next">
+                       
+                  
+                    
+                    
+                        
+                        <a class="next" href="/2019/03/28/infinite-civilization/" style="background-image: url('http://ww1.sinaimg.cn/large/006y7E7Sly1g8l0gly4tsj31gs0o8tgu.jpg');border-style: none;letter-spacing:2px">
+                        <section class="post">
+                            <div class="ne-title">不朽的文明</div>
+                            <p>  读《三体》有感</p>
+                        </section>
+                         
+                        </a>
+                    
+                    
+                </aside>
+                   
+              
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/jerry-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="/js/snackbar.js "></script>
+<script src="/js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Jerryblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+<!-- 打字特效 -->
+<script type="text/javascript">
+    var scilper_option = new Object();
+    scilper_option.site_name = "Jerry&#0;s Home";
+    scilper_option.author_name = "Jerry";
+    scilper_option.admin_des = "这里有一个有趣的灵魂";
+var typing = function (r) {
+    function t() {
+        return b[Math.floor(Math.random() * b.length)]
+    }
+
+    function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+    }
+
+    function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+            var l = document.createElement("span");
+            l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+    }
+
+    function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : ( c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+    }
+
+    var l = "",
+        o = [ "欢迎来到" + scilper_option.site_name , scilper_option.admin_des ].map(function(r) {
+            return r + "."
+        }),
+        a = 2,
+        g = 1,
+        s = 5,
+        d = 75,
+        b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)",
+            "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"
+        ],
+        c = {
+            text: "",
+            prefixP: -s,
+            skillI: 0,
+            skillP: 0,
+            direction: "forward",
+            delay: a,
+            step: g
+        };
+    i()
+};
+typing(document.getElementById('typing'));
+
+window.onload = function() {
+    var TimeShow = document.getElementById("TimeShow");
+    if(TimeShow != undefined) {
+        TimeShow.innerHTML = "Time to build the page：" + (new Date().getTime()-t1) + " ms";
+    } else {
+        return false;
+    }
+};
+</script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("yoiaxJTwIFL3doFXtfqb8z0p-gzGzoHsz", "Cx3TbKuYgXoMJr81TaClCb2j");</script>
+  <script>
+    function showHitCount(Counter) {
+      /* 这是给一个页面中有多篇文章时所调用的，例如博客主界面或者存档界面。
+      */
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      // 获取页面中所有文章的id（page.url）
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      // 批量查询
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var hits = item.get('hits');// 获取点击次数
+            var element = document.getElementById(url);
+
+            // 显示点击次数
+            $(element).find(COUNT_CONTAINER_REF).text(hits);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      // 页面（博客文章）中的信息：leancloud_visitors
+      // id为page.url， data-flag-title为page.title
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      // 只根据文章的url查询LeanCloud服务器中的数据
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {//说明LeanCloud中已经记录了这篇文章
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("hits");// 将点击次数加1
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('hits'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            // 执行这里，说明LeanCloud中还没有记录此文章
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);// 把文章标题
+            newcounter.set("url", url); // 文章url
+            newcounter.set("hits", 1); // 初始点击次数：1次
+            newcounter.save(null, { // 上传到LeanCloud服务器中
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('hits'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        // in post.html, so add 1 to hit counts
+        addCount(Counter);
+      } else if ($('.post-link').length > 1){
+        // in index.html, there are many 'leancloud_visitors' and 'post-link', so just show hit counts.
+        showHitCount(Counter);
+      }
+    });
+  </script>
+
+
+
+<!-- Image to hack wechat -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>

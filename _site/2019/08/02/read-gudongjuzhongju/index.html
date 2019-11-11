@@ -1,0 +1,1056 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="关于白帽子、黑客与文人 | Curious Passionate Dream-Chaser Hacker | 这里是 @Jerry 的个人博客，一个有趣的灵魂期待与你相遇。">
+    <meta name="keywords"  content="CTF，攻防，HACK,白帽子，渗透，逆向，二进制，密码学，区块链">
+    <meta name="theme-color" content="#000000">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="读古董局中局后感 - Jerry的博客 | Jerry Blog">
+    
+    <meta property="og:type" content="article">
+    <meta property="og:description" content="还是没挡住小说的诱惑，抱起我的kindle，在暑假的空当用了三天时间看完了98万字的《古董局中局》，真是感慨颇多呀。
+">
+    
+    <meta property="article:published_time" content="2019-08-02T00:47:12Z">
+    
+    
+    <meta property="article:author" content="Jerry">
+    
+    
+    <meta property="article:tag" content="读后感">
+    
+    
+    <meta property="og:image" content="http://localhost:4000/img/jerry.jpg">
+    <meta property="og:url" content="http://localhost:4000/2019/08/02/read-gudongjuzhongju/">
+    <meta property="og:site_name" content="Jerry的博客 | Jerry Blog">
+    
+    <title>读古董局中局后感 - Jerry的博客 | Jerry Blog</title>
+
+    <!-- Web App Manifest -->
+    <link rel="manifest" href="/pwa/manifest.json">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="/img/favicon.ico">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="http://localhost:4000/2019/08/02/read-gudongjuzhongju/">
+
+    <!-- Bootstrap Core CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/jerry-blog.min.css">
+
+    <!-- Custom Fonts -->
+    <!-- <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
+    <!-- Jerry change font-awesome CDN to qiniu -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- ga & ba script hoook -->
+   <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript">
+    </script>
+    <script>
+        var t1 = new Date().getTime();
+    </script>
+</head>
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    <!-- Navigation -->
+
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">Jerry Blog</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div id="huxblog_navbar">
+            <div class="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="/">Home</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    <li>
+                        <a href="/about/">About</a>
+                    </li>
+                    
+                    
+                    
+                    <li>
+                        <a href="/archive/">Archive</a>
+                    </li>
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                    
+                </ul>
+            </div>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+<script>
+    // Drop Bootstarp low-performance Navbar
+    // Use customize navbar with high-quality material design animation
+    // in high-perf jank-free CSS3 implementation
+    var $body   = document.body;
+    var $toggle = document.querySelector('.navbar-toggle');
+    var $navbar = document.querySelector('#huxblog_navbar');
+    var $collapse = document.querySelector('.navbar-collapse');
+
+    var __HuxNav__ = {
+        close: function(){
+            $navbar.className = " ";
+            // wait until animation end.
+            setTimeout(function(){
+                // prevent frequently toggle
+                if($navbar.className.indexOf('in') < 0) {
+                    $collapse.style.height = "0px"
+                }
+            },400)
+        },
+        open: function(){
+            $collapse.style.height = "auto"
+            $navbar.className += " in";
+        }
+    }
+
+    // Bind Event
+    $toggle.addEventListener('click', function(e){
+        if ($navbar.className.indexOf('in') > 0) {
+            __HuxNav__.close()
+        }else{
+            __HuxNav__.open()
+        }
+    })
+
+    /**
+     * Since Fastclick is used to delegate 'touchstart' globally
+     * to hack 300ms delay in iOS by performing a fake 'click',
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
+     * $toggle/$collapse will break global delegation.
+     * 
+     * Instead, we use a 'e.target' filter to prevent handler
+     * added to document close HuxNav.  
+     *
+     * Also, we use 'click' instead of 'touchstart' as compromise
+     */
+    document.addEventListener('click', function(e){
+        if(e.target == $toggle) return;
+        if(e.target.className == 'icon-bar') return;
+        __HuxNav__.close();
+    })
+</script>
+
+
+    <!-- Image to hack wechat -->
+<!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="/http://ww1.sinaimg.cn/large/006y7E7Sly1g8l0hbx7k5j31gs0o8k26.jpg" width="0" height="0"> -->
+
+<!-- Post Header -->
+
+
+
+<style type="text/css">
+    
+        header.intro-header{
+        position: relative;
+        background-image: url('http://ww1.sinaimg.cn/large/006y7E7Sly1g8l0hbx7k5j31gs0o8k26.jpg');
+        background-color: #5b5a5af0;
+    }
+    
+    
+    
+</style>
+
+<header class="intro-header" >
+
+    <div class="header-mask"></div>
+    
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+
+                    <div class="tags">
+                        
+                        <a class="tag" href="/archive/?tag=%E8%AF%BB%E5%90%8E%E6%84%9F" title="读后感" style="z-index:2;">读后感</a>
+                          &nbsp; 
+                        
+       <span id="/2019/08/02/read-gudongjuzhongju/" class="leancloud_visitors" data-flag-title="读古董局中局后感">
+        <span class="post-meta-item-text">  <i class="fa fa-eye"></i>:  </span>
+        <span class="leancloud-visitors-count"></span> viewers
+       </span>
+    <i class="fa fa-check-square-o" aria-hidden="true"></i> 2147 words
+                    <!-- 更新时间 -->
+                
+</div>
+                    
+                    <h1>读古董局中局后感</h1>
+                    
+                    <h2 class="subheading">鉴古易，鉴人难</h2>
+                    <span class="meta">Posted by Jerry on August 2, 2019</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+
+
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+    <!-- Post Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <!-- Multi-Lingual -->
+                
+
+                <p>还是没挡住小说的诱惑，抱起我的kindle，在暑假的空当用了三天时间看完了98万字的《古董局中局》，真是感慨颇多呀。</p>
+
+<p>故事很精彩，情节紧凑，可以说是精彩纷呈。其实啊，让我最惊喜的是，它竟然是6年前那个寻常的暑假里，我在收音机中听到的那个小说。</p>
+
+<p>作者的四本书，讲了四个故事，用许家和三代老朝奉的较量历程，作为一条明线穿之。</p>
+
+<p>从民国到90年代，70年风雨，古董行当几经沉浮，赝品产业的日益壮大已经开始撼动五脉的权威。因为古董，就讲究一个“真”字，如果名节不保，买卖自然就断了，但是如今，制假、售假已然壮大，制作精良、工艺成熟，每一件仿冒品背后，都是机关算尽的机巧和匪夷所思的圈套。而这一切的背后，一定是有一个强大的势力运作，是的，老朝奉确为幕后主使。</p>
+
+<p>第一部中，<strong>佛头遗案</strong>，让许愿这个毛头小子和五脉扯上了关系。<strong>明眼梅花</strong>，这个古老却美好的名词第一次被我所知道，它象征着古代鉴宝人最为严谨的态度，无论任何情况，不欺人，不骗人。去伪存真，是做人永远的底线。</p>
+
+<p>第二部，<strong>清明上河图</strong>。外国古董行企图摧毁五脉势力进入中国大肆掠夺资本，许愿心急，导致错误连连、漏洞百出，被人一直牵着鼻子走。后来，和老朝奉暂时联手，却真的击败了百瑞莲。这给我们的启示是，火急攻心，心智也会受到影响，做事永远不要急于求成，送上门的线索不要用。</p>
+
+<p>第三部，<strong>掠宝清单</strong>。这部是讲的许愿的爷爷许一城的故事。被许一城圈了粉，一个做事有勇有谋，生死一诺，不负嘱托的真汉子。他只身一人挡在孙殿英的军队前面，试图以一己之力阻挡大军。纵使失败，无怨无悔。</p>
+
+<p>第四部，<strong>青花瓷宝罐</strong>。这部作为大结局，解开了所有的谜团，为什么药不然会加入老朝奉，为什么郑教授会对老朝奉言听计从，老朝奉究竟是何许人也？一个个惊心动魄的探险，一次次精彩无比的推理，让老朝奉的面目逐渐浮现—-青字门掌门人，沈云琛，或者叫姬云琛。最后关头，本以为会述尽前世今生，道完沈家与许家的恩怨情仇。然而？</p>
+
+<blockquote>
+  <p>一个想替父亲报仇的女儿？一段不为人知的童年阴影？一个不得已的苦衷？别天真了，没有！这根本用不着什么矫情的理由。我发现制假赚钱多，盗卖利益大，就干了，没有什么心路曲折，也没什么道德挣扎。</p>
+</blockquote>
+
+<p>或许真的是这样，或许不是。但这确实符合这个半路杀进来的青字门掌门人的人物形象。她的父亲就是制假贩假，被许一城的妻子带入京城，养在沈家，改姓为沈。她从骨子里，就没有“真”这个底线，利欲熏心，和她的父亲一样。</p>
+
+<p>这四本小说里，有义薄云天的兄弟之情，有令人动容的生死之诺，有推理，有搞笑，有儿女情长，也有百味人生。</p>
+
+<p><strong>梦里说那世间混沌，悲痛，恨，恨就恨蚍蜉撼树，力量单薄。</strong></p>
+
+<p><strong>先须挽取天上水，洗尽人间污浊心。</strong></p>
+
+<hr />
+
+<p>生在乱世，没人可以自保；生在盛世，惟愿昌鸿延年。</p>
+
+<p>不得不说一下最近的<strong>香港暴乱</strong>，一个国际化的大都市，一个那么繁荣的地方，为何会有这么多的废青，会被西方势力所操控，那么卖命，好像天经地义。这不由得让我重新审视，那个表面光鲜、内部黑暗的社会，这就是资本主义，我不认为政府有错，政府永远为了社会的繁荣和稳定而在努力，但是商人不同，就像是那个小学生写的，“我要感谢诚哥”，这就是资本主义，那1%的人，掌握着全香港一半以上的财富，底层的人，世世代代生活在平民区，甚至是贫民区，一间20平米的房子，挤满了一家老小，因为读好大学才能有好工作，读好大学就要有个好高中，好初中，好小学，但他们没钱啊，没钱让子女接受更好的教育，只好放任自流。于是，没知识没文化的废青越来越多，他们更容易被洗脑，被煽动，做出那么多匪夷所思，丧尽天良的事。而且，美狗，真是越来越不要脸了，染指香港，如此明目张胆。当时我还在想，咋会这么多人暴乱呢，后来看报道，原来是一天3000啊，怪不得争先恐后的去（不过要是我，就直接抢钱跑人，你美狗不是有钱吗，来呀，越多越好，给3000拿3000，给10000拿10000，大家不都是带着口罩，管你谁是谁，拿钱跑就完事了）。明眼的香港市民都看出了美狗的把戏，但是废青们都看不透呀。阿sir当时说：</p>
+
+<blockquote>
+  <p>但是他们是中国人，打也不是，不打也不是，让人痛心。</p>
+</blockquote>
+
+<p>我想说，他们早就不是中国人了。请港警们拿好手中的警棍，带好头盔，护目镜，穿好防弹衣，在保护好自身安全的情况下打断他们的狗腿吧，不要心软，不要留情，他们又没有拿出身份证，怎么能说他们是中国人呢？说汉语的又不都是中国人，黄种人也不都是中国人，完全可以认为，暴徒之类都是间谍，虽然香港没有间谍法，但是完全可以对他们实施任何的手段。<strong>以暴制暴</strong>，是在非常时期的最有效手段，只有棍棒、鲜血，甚至刀、枪，或许能给那些麻木的灵魂一点警醒，一点震慑。</p>
+
+<p>至于<strong>BBC之流的无良媒体</strong>，我只想说：呵呵。脱欧都让腐国焦头烂额换了三任首相，还有什么脸来对中国主权指手画脚，事件报道颠倒黑白、混淆视听。这种意识形态的对立，已经击碎了一个世界知名媒体的底线，它们已经忘却了作为媒体人应有的良知。是的，它们似那沈云琛，都丢掉了“真”这个底线（动物它哦）。既然贵国的教育没有教好你们，总有一日，会让贵社的主页挂上中国国旗，教你做人，啊不，教你做x。</p>
+
+<p>好了好了，最近几日甚是烦闷，胸中郁积还是一吐为快的好，说出来，也舒服多了。</p>
+
+<p>最后，想用《古董局中局》中的语句结尾——</p>
+
+<p><strong>人心堕落，世道再乱，还能乱过那会儿么？</strong></p>
+
+<p><strong>海面黑暗，可天上的群星依然璀璨。</strong></p>
+
+                
+                <!-- Copyright -->
+                
+                
+
+
+                
+                <hr style="visibility: hidden;">
+
+                
+
+                
+            </div>  
+
+    <!-- Side Catalog Container -->
+        
+            <div class="
+                col-lg-2 col-lg-offset-0
+                visible-lg-block
+                sidebar-container
+                catalog-container">
+                <div class="side-catalog">
+                    <hr class="hidden-sm hidden-xs">
+                    <h5>
+                        <a class="catalog-toggle" href="#">CATALOG</a>
+                    </h5>
+                    <ul class="catalog-body"></ul>
+                </div>
+            </div>
+        
+
+    <!-- Sidebar Container -->
+            <div class="
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
+                <!-- Featured Tags -->
+                
+
+
+<section>
+    
+        <hr class="hidden-sm hidden-xs">
+    
+    <h5><a href="/archive/">FEATURED TAGS</a></h5>
+    <div class="tags">
+        
+        
+        
+        </a>
+        
+        
+                <a data-sort="0010" 
+                    href="/archive/?tag=%E9%9A%8F%E7%AC%94"
+                    rel="5">随笔</a>
+        
+                <a data-sort="0013" 
+                    href="/archive/?tag=%E5%89%8D%E7%AB%AF"
+                    rel="2">前端</a>
+        
+                <a data-sort="0013" 
+                    href="/archive/?tag=%E8%AF%BB%E5%90%8E%E6%84%9F"
+                    rel="2">读后感
+    </div>
+</section>
+
+
+                <!-- Friends Blog -->
+                
+<hr>
+<h5>FRIENDS</h5>
+<ul class="list-inline">
+  
+</ul>
+
+            </div>
+        </div>
+    </div>
+</article>
+
+<!-- add support for mathjax by voleking-->
+
+
+
+
+
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'hover',
+          placement: 'right',
+          // icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
+
+<script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+    <!-- Footer -->
+<footer>
+    <div class="footer-re">
+        <div class="row">
+            <div>
+                <!-- SNS Link -->
+                    
+                
+
+
+<ul class="list-inline text-center">
+
+
+  
+  
+  
+  
+  
+  
+  
+</ul>
+<style type="text/css">
+/*后一篇*/
+    a.next {
+        background-image: url('http://ww1.sinaimg.cn/large/006y7E7Sly1g8l0hsgx7sj31gs0o8gu9.jpg');
+        display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: #6795c6 no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    }
+
+/*前一篇*/
+    a.previous {
+        background-image: url('http://ww1.sinaimg.cn/large/006y7E7Sly1g8rul1bp06j30xc0iraeu.jpg');
+        display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-flex: 1;
+    -webkit-flex-grow: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    text-decoration: none;
+    position: relative;
+    text-align: center;
+    color: #fff;
+    background: #88bf61d9 no-repeat center center;
+    background-size: cover;
+    overflow: hidden;
+    }
+/* 两个元素父类 */
+    .read-next {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: stretch;
+    -webkit-align-items: stretch;
+    -ms-flex-align: stretch;
+    align-items: stretch;
+    margin-top: 1rem;
+    height: 38rem;
+    /* 不知道为什么添加了那个js动效之后，在默认背景以及国庆那张图存在的底栏又出现了疯狂跳动的bug，修改稿一些的height后就消除了 */
+        }
+    /* 对于手机的响应式布局*/
+    @media only screen and (max-width: 2000px) {
+           .post {
+            margin-left: 16px;
+             margin-right: 16px;
+             width: 100%;
+           }
+            .post p{
+            font-size: 2.2rem;
+        }
+            .read-next div {
+                font-size: 5.1rem;
+                text-align: center;
+                margin-top: 3rem;
+                font-weight: bold;
+                line-height: 1.2;
+            }
+            a.next {
+                max-width: 50%;
+            }
+            a.previous{
+                max-width: 50%;
+            }
+        }
+       @media only screen and (max-width: 1200px) {
+           .post {
+            margin-left: 16px;
+             margin-right: 16px;
+             width: 100%;
+           }
+            .post p{
+            font-size: 2.0rem;
+        }
+            .read-next div {
+                font-size: 4.9rem;
+                text-align: center;
+                margin-top: 2.8rem;
+                font-weight: bold;
+                line-height: 1.2;
+            }
+            a.next {
+                max-width: 50%;
+            }
+            a.previous{
+                max-width: 50%;
+            }
+        }
+        @media only screen and (max-width: 800px) {
+            .post{
+                width: 100%;
+            }
+            .post p{
+                font-size: 1.8rem;
+        }
+        .read-next div {
+        font-size: 3.6rem;
+        text-align: center;
+        margin-top: 2rem;
+        font-weight: bold;
+    }
+            a.next {
+                max-width: 50%;
+            }
+            a.previous{
+                max-width: 50%;
+            }
+    } 
+        @media only screen and (max-width: 450px) {
+            .read-next{
+                -webkit-box-orient: vertical;
+                -webkit-box-direction: normal;
+                -webkit-flex-direction: column;
+                -ms-flex-direction: column;
+                 flex-direction: column;
+                 margin-top: 4rem;
+            }
+            .read-next .post {
+                 width: 100%;
+                 margin-top: 2rem;
+                 margin-bottom: 2rem;
+                 margin-left: 16px;
+                 margin-right: 16px;
+                 padding-bottom: 2rem;
+                 line-height: 1.65em;
+         }
+            .next .post{
+                padding-top: 5rem;
+                padding-bottom: 6rem;
+            }
+            .previous .post {
+                padding-top: 5rem;
+                padding-bottom: 6rem;
+            }
+            .post p{
+            display: none;
+        }
+            .read-next div {
+        font-size: 2.5rem;
+        text-align: center;
+        margin-top: 1.8rem;
+        font-weight: bold;
+    }
+            a.next {
+                max-width: 100%;
+            }
+            a.previous{
+                max-width: 100%;
+            }
+    }
+     
+        /* 对于平板横屏时的响应式布局 */
+     
+    /*遮罩层*/
+    a.next:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    transition: all .5s ease;
+}
+    a.next:hover:before {
+        background: rgba(0, 0, 0, 0.57);
+    }
+    a.previous:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0,0,0,0.3);
+    transition: all .5s ease;
+}
+    a.previous:hover:before{
+        background: rgba(0, 0, 0, 0.57);
+    }
+
+
+    .next .post:before {
+    content: "Read Next";
+    padding: 4px 10px 5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: "Open Sans",sans-serif;
+    color: rgba(255,255,255,0.8);
+    border: rgba(255,255,255,0.5) 1px solid;
+    border-radius: 4px;
+    transition: all .5s ease;
+    }
+    .next .post:hover:before{
+        background-color: azure;
+        color: dimgray;
+    }
+    .previous .post:hover:before{
+        background-color: azure;
+        color: dimgray;
+    }
+    .previous .post:before {
+    content: "Read Previous";
+    padding: 4px 10px 5px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    font-family: "Open Sans",sans-serif;
+    color: rgba(255,255,255,0.8);
+    border: rgba(255,255,255,0.5) 1px solid;
+    border-radius: 4px;
+    transition: all .5s ease;
+    }
+    .post {
+    position: relative;
+    width: 70%;
+    max-width: 1366px;
+    margin: 4rem auto;
+    padding-bottom: .5rem;
+    word-wrap: break-word;
+    }
+    .read-next p {
+        font-weight: 200;
+    }
+    
+</style>
+                
+                <a id="typing" class="footer-device1" cursor="default" pointer-events="none">这里有一个有趣的灵魂</a>
+                
+                
+                <a id="TimeShow" class="footer-device2" cursor="default" pointer-events="none" ></a>
+                
+                <p class="copyright text-muted" style="color: lightslategray;letter-spacing: 1px;">
+
+                    Copyright &copy; <a href="https://www.hackerjerry.top">Jerry Blog</a> <br>2018-2019
+                </p>
+                
+                
+
+                <hr style="visibility: hidden;">
+                
+                 <aside class="read-next">
+                       
+                 
+                   
+                    <a class="previous" href="/2019/07/28/JavaScript-learning-note/"   style="background-image: url('http://ww1.sinaimg.cn/large/006y7E7Sly1g8rul1bp06j30xc0iraeu.jpg');border-style: none;letter-spacing:2px">
+                    <section class="post">
+                        <div class="pr-title">JavaScript学习笔记</div>
+                        <p> JavaScript，通常缩写为 JS，是一种高级的，不进行预编译的，从上到下逐行执行的编程语言。 </p> 
+                    </section>
+                        </a>
+                    
+                     
+                    
+                    
+                        
+                        <a class="next" href="/2019/09/14/wonderful-homeland/" style="background-image: url('http://ww1.sinaimg.cn/large/006y7E7Sly1g8l0hsgx7sj31gs0o8gu9.jpg');border-style: none;letter-spacing:2px">
+                        <section class="post">
+                            <div class="ne-title">礼赞中国，辉煌华夏</div>
+                            <p> “我和我的祖国，一刻也不能分割，无论我走到哪里，都流出一首赞歌。”</p>
+                        </section>
+                         
+                        </a>
+                    
+                    
+                </aside>
+                   
+              
+            </div>
+        </div>
+    </div>
+</footer>
+
+<!-- jQuery -->
+<script src="/js/jquery.min.js "></script>
+
+<!-- Bootstrap Core JavaScript -->
+<!-- Currently, only navbar scroll-down effect at desktop still depends on this -->
+<script src="/js/bootstrap.min.js "></script>
+
+<!-- Custom Theme JavaScript -->
+<script src="/js/jerry-blog.min.js "></script>
+
+<!-- Service Worker -->
+
+<script src="/js/snackbar.js "></script>
+<script src="/js/sw-registration.js "></script>
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
+     so Jerryblog drops it officially.
+
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
+     - https://github.com/jneen/rouge/wiki/list-of-supported-languages-and-lexers
+-->
+<!--
+    <script>
+        async("http://cdn.bootcss.com/highlight.js/8.6/highlight.min.js", function(){
+            hljs.initHighlightingOnLoad();
+        })
+    </script>
+    <link href="http://cdn.bootcss.com/highlight.js/8.6/styles/github.min.css" rel="stylesheet">
+-->
+
+
+
+
+
+<!--fastClick.js -->
+<script>
+    async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+        var $nav = document.querySelector("nav");
+        if($nav) FastClick.attach($nav);
+    })
+</script>
+
+
+<!-- Google Analytics -->
+
+
+
+<!-- Baidu Tongji -->
+
+
+
+<!-- Side Catalog -->
+
+<script type="text/javascript">
+    function generateCatalog (selector) {
+
+        // interop with multilangual 
+        if ('' == 'true') {
+            _containerSelector = 'div.post-container.active'
+        } else {
+            _containerSelector = 'div.post-container'
+        }
+
+        // init
+        var P = $(_containerSelector),a,n,t,l,i,c;
+        a = P.find('h1,h2,h3,h4,h5,h6');
+
+        // clean
+        $(selector).html('')
+
+        // appending
+        a.each(function () {
+            n = $(this).prop('tagName').toLowerCase();
+            i = "#"+$(this).prop('id');
+            t = $(this).text();
+            c = $('<a href="'+i+'" rel="nofollow">'+t+'</a>');
+            l = $('<li class="'+n+'_nav"></li>').append(c);
+            $(selector).append(l);
+        });
+        return true;
+    }
+
+    generateCatalog(".catalog-body");
+
+    // toggle side catalog
+    $(".catalog-toggle").click((function(e){
+        e.preventDefault();
+        $('.side-catalog').toggleClass("fold")
+    }))
+
+    /*
+     * Doc: https://github.com/davist11/jQuery-One-Page-Nav
+     * Fork by Hux to support padding
+     */
+    async("/js/jquery.nav.js", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+</script>
+
+
+
+<!-- Multi-Lingual -->
+
+<!-- 打字特效 -->
+<script type="text/javascript">
+    var scilper_option = new Object();
+    scilper_option.site_name = "Jerry&#0;s Home";
+    scilper_option.author_name = "Jerry";
+    scilper_option.admin_des = "这里有一个有趣的灵魂";
+var typing = function (r) {
+    function t() {
+        return b[Math.floor(Math.random() * b.length)]
+    }
+
+    function e() {
+        return String.fromCharCode(94 * Math.random() + 33)
+    }
+
+    function n(r) {
+        for (var n = document.createDocumentFragment(), i = 0; r > i; i++) {
+            var l = document.createElement("span");
+            l.textContent = e(), l.style.color = t(), n.appendChild(l)
+        }
+        return n
+    }
+
+    function i() {
+        var t = o[c.skillI];
+        c.step ? c.step-- : (c.step = g, c.prefixP < l.length ? (c.prefixP >= 0 && (c.text += l[c.prefixP]), c.prefixP++) : "forward" === c.direction ? c.skillP < t.length ? (c.text += t[c.skillP], c.skillP++) : c.delay ? c.delay-- : ( c.direction = "backward", c.delay = a) : c.skillP > 0 ? (c.text = c.text.slice(0, -1), c.skillP--) : (c.skillI = (c.skillI + 1) % o.length, c.direction = "forward")), r.textContent = c.text, r.appendChild(n(c.prefixP < l.length ? Math.min(s, s + c.prefixP) : Math.min(s, t.length - c.skillP))), setTimeout(i, d)
+    }
+
+    var l = "",
+        o = [ "欢迎来到" + scilper_option.site_name , scilper_option.admin_des ].map(function(r) {
+            return r + "."
+        }),
+        a = 2,
+        g = 1,
+        s = 5,
+        d = 75,
+        b = ["rgb(110,64,170)", "rgb(150,61,179)", "rgb(191,60,175)", "rgb(228,65,157)", "rgb(254,75,131)", "rgb(255,94,99)", "rgb(255,120,71)", "rgb(251,150,51)", "rgb(226,183,47)", "rgb(198,214,60)", "rgb(175,240,91)",
+            "rgb(127,246,88)", "rgb(82,246,103)", "rgb(48,239,130)", "rgb(29,223,163)", "rgb(26,199,194)", "rgb(35,171,216)", "rgb(54,140,225)", "rgb(76,110,219)", "rgb(96,84,200)"
+        ],
+        c = {
+            text: "",
+            prefixP: -s,
+            skillI: 0,
+            skillP: 0,
+            direction: "forward",
+            delay: a,
+            step: g
+        };
+    i()
+};
+typing(document.getElementById('typing'));
+
+window.onload = function() {
+    var TimeShow = document.getElementById("TimeShow");
+    if(TimeShow != undefined) {
+        TimeShow.innerHTML = "Time to build the page：" + (new Date().getTime()-t1) + " ms";
+    } else {
+        return false;
+    }
+};
+</script>
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.0.min.js"></script>
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.1.js"></script>
+  <script>AV.initialize("yoiaxJTwIFL3doFXtfqb8z0p-gzGzoHsz", "Cx3TbKuYgXoMJr81TaClCb2j");</script>
+  <script>
+    function showHitCount(Counter) {
+      /* 这是给一个页面中有多篇文章时所调用的，例如博客主界面或者存档界面。
+      */
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      // 获取页面中所有文章的id（page.url）
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      // 批量查询
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var hits = item.get('hits');// 获取点击次数
+            var element = document.getElementById(url);
+
+            // 显示点击次数
+            $(element).find(COUNT_CONTAINER_REF).text(hits);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      // 页面（博客文章）中的信息：leancloud_visitors
+      // id为page.url， data-flag-title为page.title
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      // 只根据文章的url查询LeanCloud服务器中的数据
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {//说明LeanCloud中已经记录了这篇文章
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("hits");// 将点击次数加1
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('hits'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            // 执行这里，说明LeanCloud中还没有记录此文章
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);// 把文章标题
+            newcounter.set("url", url); // 文章url
+            newcounter.set("hits", 1); // 初始点击次数：1次
+            newcounter.save(null, { // 上传到LeanCloud服务器中
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('hits'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        // in post.html, so add 1 to hit counts
+        addCount(Counter);
+      } else if ($('.post-link').length > 1){
+        // in index.html, there are many 'leancloud_visitors' and 'post-link', so just show hit counts.
+        showHitCount(Counter);
+      }
+    });
+  </script>
+
+
+
+<!-- Image to hack wechat -->
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
+
+</html>
