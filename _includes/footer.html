@@ -1,5 +1,6 @@
 <!-- Footer -->
 <footer>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <div class="footer-re">
         <div class="row">
             <div>
@@ -247,16 +248,16 @@
     
 </style>
                 
-                <a id="typing" class="footer-device1" cursor="default" pointer-events="none">这里有一个有趣的灵魂</a>
+                <a id="typing" class="footer-device1" cursor="default" pointer-events="none">这里有一个有趣的灵魂哦</a>
                 
                 
                 <a id="TimeShow" class="footer-device2" cursor="default" pointer-events="none" ></a>
                 
                 <p class="copyright text-muted" style="color: lightslategray;letter-spacing: 1px;">
 
-                    Copyright &copy; <a href="https://www.hackerjerry.top">{{ site.title }}</a> <br>2018-{{ site.time | date: '%Y' }}
+                    Copyright &copy; <a href="https://www.hackerjerry.top">{{ site.title }}</a> &nbsp;2018-{{ site.time | date: '%Y' }}
+                    <br> <i class="fa fa-id-card-o"></i>&nbsp;陕ICP备<a href="http://beian.miit.gov.cn/">19023179</a>号
                 </p>
-                
                 
 
                 <hr style="visibility: hidden;">
@@ -523,7 +524,7 @@
     var scilper_option = new Object();
     scilper_option.site_name = "Jerry&#0;s Home";
     scilper_option.author_name = "Jerry";
-    scilper_option.admin_des = "这里有一个有趣的灵魂";
+    scilper_option.admin_des = "这里有一个有趣的灵魂哦";
 var typing = function (r) {
     function t() {
         return b[Math.floor(Math.random() * b.length)]
@@ -570,12 +571,13 @@ var typing = function (r) {
 };
 typing(document.getElementById('typing'));
 
-window.onload = function() {
+function ff() {
     var TimeShow = document.getElementById("TimeShow");
     if(TimeShow != undefined) {
         TimeShow.innerHTML = "Time to build the page：" + (new Date().getTime()-t1) + " ms";
     } else {
         return false;
     }
-};
+}
+ff();
 </script>
