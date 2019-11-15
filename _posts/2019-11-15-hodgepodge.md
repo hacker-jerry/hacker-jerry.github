@@ -14,7 +14,7 @@ author: Jerry
 
 一开始我使用的是基于Hexo的博客，它的特点是需要在本地编辑，解析渲染成HTML后develop到github仓库里。
 
-这是我的原博客地址:<a href="hooojerry.github.io">hooojerry.github.io</a>,原博客也耗费大量心血魔改，最引以为豪的就是在header上添加了一个SVG动画，当然像添加readmore、增加字数统计、访客统计、点击动画等等都踩了一遍坑，对于hexo的文件结构绝对比一般人理解的要深刻。但是我还是没弄懂hexo的解析过程，魔改也仅限于此。
+这是我的原博客地址:<a href="https://hooojerry.github.io/">hooojerry.github.io</a>,原博客也耗费大量心血魔改，最引以为豪的就是在header上添加了一个SVG动画，当然像添加readmore、增加字数统计、访客统计、点击动画等等都踩了一遍坑，对于hexo的文件结构绝对比一般人理解的要深刻。但是我还是没弄懂hexo的解析过程，魔改也仅限于此。
 
 今年买了新域名后就想折腾一下，于是采用了jekyll的博客系统。说一下为什么选择它。
 ## 它很好看。
@@ -30,7 +30,7 @@ author: Jerry
 
 这其实是一个一开始没有想到的特性了。由于hexo的解析机制是在本地端渲染出HTML文件并上传至github page，所以它限制了我只能搬着2公斤的电脑才能写blog，（这对于我来说实在是太难了），而jekyll的解析机制比较神奇，它是直接解析post目录下的md文件，然后直接解析成html文件（这有个）。这个最大的好处是，可以直接将md文件上传到github的res/post里并且直接通过github page自动解析，因此我可以使用一切可以写md+push的客户端、网页端进行blog写作（比如说iPad√）。~~因此我就差一个键盘了~~
 
-在挑选移动端的时候，我尝试了不少，比如IPad：MWeb+Gitcopy（太贵了）,PC端：作业部落、Typora等等，有的支持第三方图床（我使用七牛云存储），有的支持github push，但是都不全，没有整合在一起。
+在挑选移动端的时候，我尝试了不少，比如IPad：MWeb+Gitcopy（太贵了）、幕布,PC端：作业部落、Typora等等，有的支持第三方图床（我使用七牛云存储），有的支持github push，但是都不全，没有整合在一起。
 今天突然发现一个宝藏APP，小书匠。一个几乎完美的Markdown编辑器。
 - 多平台：Windows,Mac,Linux
 - 在线编辑
