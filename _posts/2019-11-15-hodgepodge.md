@@ -14,7 +14,7 @@ author: Jerry
 
 一开始我使用的是基于Hexo的博客，它的特点是需要在本地编辑，解析渲染成HTML后develop到github仓库里。
 
-这是我的原博客地址:[hooojerry.github.io](hooojerry.github.io),原博客也耗费大量心血魔改，最引以为豪的就是在header上添加了一个SVG动画，当然像添加readmore、增加字数统计、访客统计、点击动画等等都踩了一遍坑，对于hexo的文件结构绝对比一般人理解的要深刻。但是我还是没弄懂hexo的解析过程，魔改也仅限于此。
+这是我的原博客地址:<a href="hooojerry.github.io">hooojerry.github.io</a>,原博客也耗费大量心血魔改，最引以为豪的就是在header上添加了一个SVG动画，当然像添加readmore、增加字数统计、访客统计、点击动画等等都踩了一遍坑，对于hexo的文件结构绝对比一般人理解的要深刻。但是我还是没弄懂hexo的解析过程，魔改也仅限于此。
 
 今年买了新域名后就想折腾一下，于是采用了jekyll的博客系统。说一下为什么选择它。
 ## 它很好看。
