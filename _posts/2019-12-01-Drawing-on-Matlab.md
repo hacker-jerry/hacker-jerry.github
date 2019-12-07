@@ -116,7 +116,7 @@ set(gca,'ytick',[y(1) (y(1)+y(2))/2 y(2)]);
                     φ \phi     Φ\Phi      ψ \psi     Ψ \Psi      χ \chi     ω \ommiga
 ```
 
-          4、< \leq> \geq 不等于    \neq<< \ll >> \gg
+   4、< \leq> \geq 不等于    \neq<< \ll >> \gg
 
            5、正负 \pm       左箭头 \leftarrow       右箭头\rightarrow      上箭头 \uparrow
 
