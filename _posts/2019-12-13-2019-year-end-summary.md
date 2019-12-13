@@ -6,7 +6,7 @@ catalog: true
 tags: 
 - 年终总结
 date: 2019-12-12
-header-img: 
+header-img: http://blog.img.hackerjerry.top/2019/12/13/15762507381443.jpg
 painhead: 
 post_copyright: true
 author: Jerry
