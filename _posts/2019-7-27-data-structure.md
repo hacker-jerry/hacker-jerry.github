@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "数据结构"
-subtitle:   " 它好难呀"
+subtitle:   " The better we become , the better we attract"
 date:      2019-05-31 21:51:53
 header-img:
 painhead:

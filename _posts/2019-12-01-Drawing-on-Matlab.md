@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Drawing on Matlab"
-subtitle:
+subtitle: "To attract better we have to become better"
 category: 
 catalog: true
 tags: 
@@ -16,7 +16,6 @@ author: Jerry
 
 是的就是它！
 <div class="tip inlineBlock important">plot(x,y)<br>plot(x,y,Linespec)</div>
-
 其中第一个最简单，x即x轴的点，y即y轴的点，根据要求设置。
 第三个参数Linespec是线的属性，包括：
 

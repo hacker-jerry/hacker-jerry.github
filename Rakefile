@@ -23,7 +23,7 @@ task :post do
     post.puts "---"
     post.puts "layout: post"
     post.puts "title: \"#{title.gsub(/-/,' ')}\""
-    post.puts "category: "
+    post.puts "subtitle: "
     post.puts "catalog: true"
     post.puts "tags: "
     post.puts "date: #{Time.now.strftime('%Y-%m-%d')}"
