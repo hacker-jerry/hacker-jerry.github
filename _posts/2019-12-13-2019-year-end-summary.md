@@ -4,7 +4,7 @@ title: "2019 year end summary"
 subtitle: "能留在你身边的，从来都不是你拼命去追赶的人" 
 catalog: true
 tags: 
-	- 年终总结
+- 年终总结
 date: 2019-12-12
 header-img: 
 painhead: 
