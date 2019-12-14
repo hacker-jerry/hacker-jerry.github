@@ -6,7 +6,7 @@ catalog: true
 tags: 
     - 踩坑日记
 date: 2019-11-15
-header-img: 
+header-img: http://blog.img.hackerjerry.top/2019/12/14/15762963350544.jpg
 post_copyright: true
 author: Jerry
 ---
