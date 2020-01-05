@@ -1,10 +1,10 @@
 ---
 layout: post
-title: "2019 year end summary"
+title: "2019 Year-End Summary"
 subtitle: "愿你善良，祝你平安" 
 catalog: true
 tags: 
-- 年终总结
+- 随笔
 date: 2019-12-12
 header-img: http://blog.img.hackerjerry.top/2019/12/13/15762507381443.jpg
 painhead: 
@@ -118,3 +118,5 @@ author: Jerry
 **2020，别来无恙。**
 
 新的一年，愿你善良，祝你平安。
+
+![enter description here](http://blog.img.hackerjerry.top/1578224694431.png)
