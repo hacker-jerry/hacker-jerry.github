@@ -104,20 +104,20 @@ set(gca,'ytick',[y(1) (y(1)+y(2))/2 y(2)]);
 
           3、希腊字母等特殊字符用 \加拼音如:
 ```matlab
-                   α \alpha     β\beta     γ \gamma     θ \theta       Θ \Theta
+ α \alpha     β\beta     γ \gamma     θ \theta       Θ \Theta
 
-                   Г \Gamma     δ\delta      Δ \Delta      ξ \xi       Ξ \Xi       Ω \Ommiga
+ Г \Gamma     δ\delta      Δ \Delta      ξ \xi       Ξ \Xi       Ω \Ommiga
 
-                    η \elta     ε\epsilong     ζ \zeta     μ \miu       υ \nu    τ \tau
+η \elta     ε\epsilong     ζ \zeta     μ \miu       υ \nu    τ \tau
 
-                   λ \lamda     Λ\Lamda     π \pi      Π \Pi      σ \sigma      \Sigma
+λ \lamda     Λ\Lamda     π \pi      Π \Pi      σ \sigma      \Sigma
 
-                    φ \phi     Φ\Phi      ψ \psi     Ψ \Psi      χ \chi     ω \ommiga
+φ \phi     Φ\Phi      ψ \psi     Ψ \Psi      χ \chi     ω \ommiga
 ```
 
-   4、< \leq> \geq 不等于    \neq<< \ll >> \gg
+   4、`< \leq> \geq` 不等于    `\neq<< \ll >> \gg`
 
-           5、正负 \pm       左箭头 \leftarrow       右箭头\rightarrow      上箭头 \uparrow
+   5、正负 `\pm`       左箭头 `\leftarrow`        右箭头`\rightarrow`      上箭头  `\uparrow`
 
 
 
