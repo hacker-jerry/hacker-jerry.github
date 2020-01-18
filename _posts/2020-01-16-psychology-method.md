@@ -5,6 +5,7 @@ subtitle: 关于做人的一些道理、感悟、启发
 date: 2020-01-16 10:59:20
 catalog: true
 tags: 
+- 随笔
 header-img: http://blog.img.hackerjerry.top/2020/01/18/15793269187193.png
 painhead: 
 post_copyright: true
