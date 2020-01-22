@@ -1,0 +1,58 @@
+I"�<h1 id="插入bilibili视频">插入Bilibili视频</h1>
+
+<p>首先，<a href="https://www.cnblogs.com/artoriax/p/10364915.html">参考博客</a>在这里。</p>
+
+<p>很简单，按照里面说的，直接在分享按钮里找到<code class="highlighter-rouge">iframe</code>代码，然后，<strong>稍作修改</strong>。</p>
+
+<blockquote>
+  <p>原<code class="highlighter-rouge">iframe</code>直接插入<code class="highlighter-rouge">&lt;iframe src="//player.bilibili.com/player.html?aid=73280139&amp;cid=135397662&amp;page=11" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"&gt; &lt;/iframe&gt;</code>会得到这样子的浏览器</p>
+</blockquote>
+
+<iframe src="//player.bilibili.com/player.html?aid=73280139&amp;cid=135397662&amp;page=11" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<p>土爆了好吗！</p>
+
+<p>因此,稍作修改，改成<code class="highlighter-rouge">&lt;iframe src="//player.bilibili.com/player.html?aid=73280139&amp;cid=135397662&amp;page=11" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="95%" height="450"&gt; &lt;/iframe&gt;</code></p>
+
+<p>就成了↓</p>
+
+<iframe src="https://player.bilibili.com/player.html?aid=73280139&amp;cid=135397662&amp;page=11" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="95%" height="450"> </iframe>
+<p>注意 <strong>URL少了传输协议，需要加上http:或者https:，否则会以file来传输</strong></p>
+
+<h1 id="增加标题动效">增加标题动效</h1>
+
+<p>下面是增加标题动效了。</p>
+
+<p>踩了不少坑，花了3天才整体迁移过来（并实现了三级标题动效）。</p>
+
+<p>用到的知识点</p>
+
+<ul>
+  <li>js</li>
+  <li>jquery库</li>
+  <li>css3</li>
+</ul>
+
+<div class="tip inlineBlock warning">第一版代码还是非常臃肿，暂时没有更好的思路简化，再埋下一个坑</div>
+
+<h1 id="优化响应速度">优化响应速度</h1>
+
+<p>How do you load third-party script efficiently?
+If a third-party script is slowing down your page load, you have several options to improve performance:</p>
+
+<p>Load the script using the async or defer attribute to avoid blocking document parsing.</p>
+
+<p>Consider self-hosting the script if the third-party server is slow.</p>
+
+<p>Consider removing the script if it doesn’t add clear value to your site.</p>
+
+<p>Consider Resource Hints like <link rel="preconnect" /> or &lt;link rel=dns-prefetch&gt; to perform a DNS lookup for domains hosting third-party scripts.</p>
+
+<p>Use async or defer
+JavaScript execution is parser blocking. This means when the browser encounters a script it must pause DOM construction, hand this over to the JavaScript engine and allow script execution before proceeding with DOM construction.</p>
+
+<p>The async and defer attributes change this behavior.</p>
+
+<p>With async, the browser downloads the script asynchronously while it continues to parse the HTML document. When the script finishes downloading, parsing is blocked while the script executes.</p>
+
+<p>With defer, the browser downloads the script asynchronously while it continues to parse the HTML document. The script doesn’t run until the parsing is complete.</p>
+:ET

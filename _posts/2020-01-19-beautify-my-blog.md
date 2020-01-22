@@ -41,3 +41,26 @@ author: Jerry
 - css3
 
 <div class="tip inlineBlock warning">第一版代码还是非常臃肿，暂时没有更好的思路简化，再埋下一个坑</div>
+
+
+# 优化响应速度
+
+How do you load third-party script efficiently?
+If a third-party script is slowing down your page load, you have several options to improve performance:
+
+Load the script using the async or defer attribute to avoid blocking document parsing.
+
+Consider self-hosting the script if the third-party server is slow.
+
+Consider removing the script if it doesn't add clear value to your site.
+
+Consider Resource Hints like <link rel=preconnect> or <link rel=dns-prefetch> to perform a DNS lookup for domains hosting third-party scripts.
+
+Use async or defer
+JavaScript execution is parser blocking. This means when the browser encounters a script it must pause DOM construction, hand this over to the JavaScript engine and allow script execution before proceeding with DOM construction.
+
+The async and defer attributes change this behavior.
+
+With async, the browser downloads the script asynchronously while it continues to parse the HTML document. When the script finishes downloading, parsing is blocked while the script executes.
+
+With defer, the browser downloads the script asynchronously while it continues to parse the HTML document. The script doesn't run until the parsing is complete.
