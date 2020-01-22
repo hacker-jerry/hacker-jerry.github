@@ -113,6 +113,9 @@
 {% endif %}
 
 {% if include.type == 'page' %}
+<style>
+@import url('https://fonts.googleapis.com/css?family=Playball&display=swap');
+</style>
 <header class="intro-header" style="background-image: url('{% if page.header-img %}{{ page.header-img }}{% else %}{{site.header-img}}{% endif %}')">
   <div class="container">
     <div class="row">
@@ -120,9 +123,10 @@
         {% if include.short %}
         <div class="site-heading" id="tag-heading">
         {% else %}
-        <div class="site-heading">
+        <div class="site-heading" >
         {% endif %}
-          <h1>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
+          <h1 style="font-family: 'Playball', cursive;
+    ">{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</h1>
           <span class="subheading">{{ page.description }}</span>
         </div>
       </div>
