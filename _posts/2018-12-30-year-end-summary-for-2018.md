@@ -144,7 +144,7 @@ tags:
 
 作为一个~~信安狗~~文艺青年怎么能忘记抒情呢？
 
-<font face="楷体">2018，我走过很多的路，流下了很多的汗，有很多欢笑，也有不少泪水。
+2018，我走过很多的路，流下了很多的汗，有很多欢笑，也有不少泪水。
 
 身经百战，我从没想过放弃。
 
@@ -162,7 +162,7 @@ tags:
 
 2018，谢谢你，这段日子，我很珍惜。
 
-再见了，2018。</font>
+再见了，2018。
 
 ## 2019你好
 
@@ -182,6 +182,6 @@ tags:
 
 2019，加油。</font>
 
-![](http://ww1.sinaimg.cn/mw690/007dh5vlly1g4s9yddqntj30ku19qmzw.jpg)
+<img src="http://ww1.sinaimg.cn/mw690/007dh5vlly1g4s9yddqntj30ku19qmzw.jpg" style="zoom:50%;" />
 
 <center><font face="楷体" size=4>我的新年flag</font></center>

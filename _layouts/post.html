@@ -8,7 +8,366 @@ layout: default
 
 <!-- Post Header -->
 {% include intro-header.html type='post' %}
+<style type="text/css">
+   
+    .header__span {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: default;
+    height: 100%;
+    position: relative;
+    display: inline-block;
+    left: -20px;
+    margin: 25px 0 0 0;
+    width: 110%;
+    transition: border-color .3s;
+    padding-bottom: 14px;
+    border-bottom: 1px solid transparent;
+    border-image: linear-gradient(to right,#f5f5f5,#eee);
+    border-image-slice: 30;}
+    
+    .header__dev {
+    font-family: Lato,Arial,sans-serif;
+    font-weight: 300!important;
+    position: absolute;
+    transition-delay: .5s;
+    z-index: 2;
+    margin: 0!important;
+    color: #222!important;
+}
+.header__span h1 {
+    font-size: 39px!important;
+    height: 39px;
+    line-height: 39px!important;
+}
+.dev__fe, .dev__fe_2, .dev__ux, .dev__ux_2, .dev__ux_3, .dev__fe i, .dev__fe_2 i, .dev__ux i, .dev__ux_2 i, .dev__ux_3 i,.dev__developer, .dev__slash, .dev__slash_2 {
+    transition: all .6s cubic-bezier(0.555,-0.375,0,1.615);
+}
+.dev__fe {
+    text-align: right;
+    direction: rtl;
+    top: -68px;
+    left: -40px;
+}
+.dev__fe_2 {
+    text-align: right;
+    direction: rtl;
+    top: -68px;
+    left: -40px;
+}
+.dev__fe, .dev__fe_2, .dev__ux, .dev__ux_2, .dev__ux_3 {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    -webkit-transform: rotateZ(22deg);
+    transform: rotateZ(22deg);
+}
 
+.header__dev--open .dev__fe i, .header__dev--open .dev__fe_2 i,.header__dev--open .dev__ux i, .header__dev--open .dev__ux_2 i {
+    text-indent: 5px!important;
+}
+.header__dev--open .dev__ux_3 i {
+    text-indent: 15px!important;
+}
+.dev__fe i, .dev__fe_2 i, .dev__ux i, .dev__ux_2 i, .dev__ux_3 i {
+    font-style: normal;
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    font-weight: 400;
+    -webkit-transform: rotateZ(-22deg);
+    transform: rotateZ(-22deg);
+    color: #333;
+}
+.dev__slash {
+    font-weight: 300;
+    position: absolute;
+    z-index: 5;
+    -webkit-transform: rotateZ(22deg);
+    transform: rotateZ(22deg);
+    top: -28px;
+    left:56px;
+}
+.header__span h1 .dev__slash {
+    color: #5d69a5;
+    top: -27px;
+    left: 55px;
+    font-size: 40px;
+}
+.header__span h2 .dev__slash {
+    color: #5d69a5;
+    top: -30px;
+    left: 55px;
+    font-size: 33px;
+}
+
+#hh3 {
+    color: #5d69a5;
+    top: -27px;
+    left: 55px;
+    font-size: 26px;
+}
+.header__span h3 .dev__slash_2 {
+    color: #5d69a5;
+    top: -28px;
+    left: 76px;
+    font-size: 26px;
+}
+.header__dev--open .dev__slash {
+    -webkit-transform: scale(0.9) rotateZ(0deg);
+    transform: scale(0.9) rotateZ(0deg);
+}
+
+.dev__slash_2 {
+    font-weight: 300;
+    position: absolute;
+    z-index: 5;
+    -webkit-transform: rotateZ(22deg);
+    transform: rotateZ(22deg);
+    top: -28px;
+    left:78px;
+}
+.header__dev--open .dev__slash_2 {
+    -webkit-transform: scale(0.9) rotateZ(0deg);
+    transform: scale(0.9) rotateZ(0deg);
+}
+.dev__ux {
+    left: 66px;
+    top: -57px;
+    text-align: left;
+}
+.dev__ux_2 {
+    left: 63px;
+    top: -57px;
+    text-align: left;
+    direction: rtl;
+}
+.dev__ux_3 {
+    left: 83px;
+    top: -57px;
+    text-align: left;
+}
+.header__span h1 .dev__fe i {
+    text-indent: -9px;
+    top: 13px;
+    right: 0;
+}
+.header__span h1 .dev__ux i {
+    text-indent: -6px;
+    top: 2px;
+    left: -3px;
+}
+.header__span h1 .dev__developer {
+    top: -28px;
+    left: 90px;
+    min-height: 34px;
+}
+.header__span h2 .dev__fe i {
+    text-indent: -9px;
+    top: 13px;
+    right: 0;
+}
+.header__span h2 .dev__ux i {
+    text-indent: -6px;
+    top: 1px;
+    left: -1px;
+}
+.header__span h2 .dev__developer {
+    top: -30px;
+    left: 96px;
+}
+.header__span h3 .dev__fe_2 i {
+    text-indent: -6px;
+    top: 12px;
+    right: 0;
+}
+.header__span h3 .dev__ux_2 i {
+    text-indent: -7px;
+    top: 1px;
+    left: -1px;
+}
+.header__span h3 .dev__ux_3 i {
+    text-indent: 4px;
+    top: 4px;
+    left: -10px;
+}
+.header__span h3 .dev__developer {
+    top: -26px;
+    left: 98px;
+}
+.header__dev--open .dev__developer {
+    -webkit-transform: translateX(15px);
+    transform: translateX(15px);
+    opacity: .6;
+}
+.dev__developer {
+    position: absolute;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    font-family: "Open Sans","Microsoft Jhenghei","Microsoft Yahei",sans-serif;
+}
+    </style>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.4.1.min.js"></script>
+    <script>
+
+$(document).ready(function(){
+    $("a.anchorjs-link").remove();
+    var Th1 = document.getElementsByTagName("h1");
+    var Th2 = document.getElementsByTagName("h2");
+    var Th3 = document.getElementsByTagName("h3");
+    var Th4 = document.getElementsByTagName("h4");
+    var Th5 = document.getElementsByTagName("h5");
+    //这里不知为何会报错TypeError: Failed to execute 'appendChild' on 'Node': parameter 1 is not of type 'Node'.
+    //貌似是因为一开始没用var定义
+    var th2 =new Array();//每个下标代表章里面的节数
+    var thRe = new Array();//用于记录第i章有几节被记录
+    var th3 = new Array();
+    var th3Re = new Array();
+    for(var i =1;i<Th1.length;i++){
+       var num = 0 ;
+        var th1next = $(Th1[i]).nextUntil("h1");
+        
+        for(var n =0;n<th1next.length;n++){
+            if(th1next[n].tagName=="H2"){
+                num++;
+            }
+        }
+        th2[i] = num;//得到了第i章的节数
+        thRe [i] = th2[i];
+    }
+    for(var i =0;i<Th1.length;i++){
+                
+                    if(i == 0) continue;
+                    
+                    Text = Th1[i].innerHTML;
+                    $(Th1[i]).wrap('<span title-type="h1" class="header__span h1"></span>');
+                    $(Th1[i]).text('');
+                    $(Th1[i]).addClass('header__dev');
+                    var th1Html = '<b class="dev__fe"><i>' + i + '</i></b>';
+        th1Html += '<span class="dev__slash">|</span>';
+        th1Html += '<b class="dev__ux"><i>0</i></b>';
+        th1Html += '<b class="dev__developer"><span class="dev__title">' + Text + '</span></b>';
+        $(Th1[i]).append(th1Html);
+        $(Th1[i]).parents('.header__span').after('<br><p></p>');
+        $(Th1[i]).parent(".header__span").hover(
+                    function(){
+                        $(this).find('.header__dev').addClass("header__dev--open");
+                    } ,
+                    function(){
+                        $(this).find('.header__dev').removeClass("header__dev--open");
+                    }
+                ) ;
+         
+}
+    for(var j =0;j<Th2.length;j++){
+        //判断是不是subtitle
+        var num = 0;
+    if($(Th2[j]).hasClass("subheading"))
+            continue;
+    var Th2Text = Th2[j].innerHTML;
+     var index = 1; 
+     var Th2Pre = $(Th2[j]).prevAll("span");
+     var th2next = $(Th2[j]).nextUntil("h2");
+     for(var n =0;n<th2next.length;n++){
+            if(th2next[n].tagName=="H3"){
+                num++;
+            }
+        }
+        th3[j] = num;
+        th3Re[j] = th3[j];//得到第i节的段数
+     //确定h2前面有多少个span标签，并找出title-type属性是h1的个数
+              if($(Th2[j]).prevAll("span").length>=1){
+                  for(var d = 0;d<$(Th2[j]).prevAll("span").length;d++){
+                      if($(Th2Pre[d]).attr("title-type")=="h1")
+                        index++;
+                  }
+               }//确定了第几章
+               index--;
+        $(Th2[j]).wrap('<span title-type="h2" class="header__span"></span>');
+                $(Th2[j]).text('');
+                $(Th2[j]).addClass('header__dev');
+               //开始逻辑判断推理它属于第几章第几节
+
+
+                var Th2Html = '<b class="dev__fe"><i>' + index + '</i></b>';
+                Th2Html += '<span class="dev__slash">|</span>';
+                if(thRe[index]>0)
+                {
+                    Th2Html += '<b class="dev__ux"><i>' + (th2[index]-thRe[index]+1) + '</i></b>';
+                    thRe[index]--;
+                }
+                Th2Html += '<b class="dev__developer"><span class="dev__title">' + Th2Text + '</span></b>';
+        
+                $(Th2[j]).append(Th2Html);
+                $(Th2[j]).parents('.header__span').after('<br><p></p>');
+                $(Th2[j]).parent(".header__span").hover(
+                    function(){
+                        $(this).find('.header__dev').addClass("header__dev--open");
+                    } ,
+                    function(){
+                        $(this).find('.header__dev').removeClass("header__dev--open");
+                    }
+                ) ;
+        }             
+        for(var k =0;k<Th3.length;k++){
+            var Th3Text = Th3[k].innerHTML;
+            var index = 1;
+            var para = 1;
+            var dd = 1;//必须设出一个看似bug的变量
+            var Th3Pre = $(Th3[k]).prevUntil("span.h1");
+            var unkown = $(Th3[k]).prevAll("span");
+            if(Th3Pre.length>=1){
+                  for(var d = 0;d<Th3Pre.length;d++){
+                        if($(Th3Pre[d]).attr("title-type")=="h2")
+                        para++;//第几节
+                  }
+                  for(var d = 0;d<unkown.length;d++){
+                      if($(unkown[d]).attr("title-type")=="h1")
+                        index++;//第几章
+                        if($(unkown[d]).attr("title-type")=="h2")
+                        dd++;//第几节
+                  }
+               }
+               index--;
+               para--;
+               dd--;
+               $(Th3[k]).wrap('<span title-type="h3" class="header__span"></span>');
+                $(Th3[k]).text('');
+                $(Th3[k]).addClass('header__dev');
+                var Th3Html = '<b class="dev__fe_2"><i>' + index + '</i></b>';
+                Th3Html += '<span class="dev__slash" id="hh3">|</span>';
+                Th3Html += '<b class="dev__ux_2"><i>' + para + '</i></b>';
+                Th3Html += '<span class="dev__slash_2">|</span>';
+                //判断在第几段
+                if(th3Re[dd]>0)
+                {
+                    Th3Html += '<b class="dev__ux_3"><i>' + (th3[dd]-th3Re[dd]+1) + '</i></b>';
+                    th3Re[dd]--;
+                }
+                Th3Html += '<b class="dev__developer"><span class="dev__title">' + Th3Text + '</span></b>';
+                $(Th3[k]).append(Th3Html);
+                $(Th3[k]).parents('.header__span').after('<br>');
+                $(Th3[k]).parent(".header__span").hover(
+                    function(){
+                        $(this).find('.header__dev').addClass("header__dev--open");
+                    } ,
+                    function(){
+                        $(this).find('.header__dev').removeClass("header__dev--open");
+                    }
+                ) ;
+        }
+}
+    );
+
+
+
+</script>
 <!-- Post Content -->
 <article>
     <div class="container">

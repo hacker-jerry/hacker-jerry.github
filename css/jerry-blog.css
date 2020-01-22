@@ -713,8 +713,8 @@ samp {
   margin-top: 20px;
 }
 .post-container h2::before {
-  content: " ";
-  display: block;
+  
+  
   border-bottom: 1px solid #ececec;
   margin-top: 44px;
   margin-bottom: 30px;
