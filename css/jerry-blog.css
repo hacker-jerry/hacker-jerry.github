@@ -1737,9 +1737,7 @@ img::-moz-selection {
   max-width: 50em;
 }
 /* 模仿@docsify的warning */
-.tip.inlineBlock {
-  display: inline-block;
-}
+
 .tip.warning {
   border-left-color: #ff7800;
   background: #fcf2e9;
