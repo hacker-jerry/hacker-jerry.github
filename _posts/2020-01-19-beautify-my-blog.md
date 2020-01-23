@@ -207,8 +207,8 @@ position 属性值的含义：
 `p:after`在每个<p>元素之后插入内容
 
 ## css transition
-https://www.w3school.com.cn/cssref/pr_transition-property.asp
-https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
+[教程](https://www.w3school.com.cn/cssref/pr_transition-property.asp
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions)
 
 ## css3动画
-https://www.runoob.com/css3/css3-animations.html
+[教程](https://www.runoob.com/css3/css3-animations.html)
