@@ -1,10 +1,15 @@
 ---
 layout: post
-title: "Beautify My Blog"
-subtitle: 关于插入b站视频，以及调整标题动效
+title: "Optimize My Blog"
+subtitle: 关于插入b站视频，优化响应速度以及调整标题动效
 date: 2020-01-19 12:38:37
 catalog: true
 tags: 
+- 美化
+- 优化
+- js
+- css
+- 前端
 header-img: 
 post_copyright: true
 author: Jerry
@@ -41,8 +46,6 @@ author: Jerry
 - css3
 
 <div class="tip inlineBlock warning">第一版代码还是非常臃肿，暂时没有更好的思路简化，再埋下一个坑</div>
-
-
 # 优化响应速度
 
 How do you load third-party script efficiently?
@@ -64,3 +67,148 @@ The async and defer attributes change this behavior.
 With async, the browser downloads the script asynchronously while it continues to parse the HTML document. When the script finishes downloading, parsing is blocked while the script executes.
 
 With defer, the browser downloads the script asynchronously while it continues to parse the HTML document. The script doesn't run until the parsing is complete.
+
+## js异步加载
+
+defer
+async
+
+
+## 图像转webp格式
+
+https://web.dev/codelab-serve-images-webp/
+
+## Lazy load offscreen images with lazysizes
+https://web.dev/codelab-use-lazysizes-to-lazyload-images/
+
+## 优化缓存（没看明白）
+https://web.dev/uses-long-cache-ttl/?utm_source=lighthouse&utm_medium=unknown
+
+
+使用fetch
+https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch
+
+# css
+
+先总结总结一下css的核心思想吧。
+
+首先，**css的框模型**可以说是最基本的思想了。
+
+## 一切皆为框
+
+div、h1 或 p 元素常常被称为块级元素。这意味着这些元素显示为**一块内容**，即"**块框**"。与之相反，span 和 strong 等元素称为“行内元素”，这是因为它们的内容显示在行中，即“**行内框**”。
+
+>行框和行内框是两个概念
+>由一行形成的水平框称为行框（Line Box），行框的高度总是足以容纳它包含的所有行内框。不过，设置行高可以增加这个框的高度。
+>由一行形成的水平框称为行框（Line Box），行框的高度总是足以容纳它包含的所有行内框。不过，设置行高可以增加这个框的高度。
+
+
+但是！可以使用`display`属性改变生成的框的类型，比如设置成`block`可以让行内元素表现的和块级元素一样，还可以通过把` display` 设置为 `none`，让生成的元素根本没有框。这样的话，该框及其所有内容就不再显示，不占用文档中的空间。
+
+那么框的大小就成了第一个需要考虑的事情。
+
+<img src="http://blog.img.hackerjerry.top/Fse8NdwoChZwroUIPk9HRokozVb_" style="zoom:67%;" />
+
+<div class="tip inlineBlock important">这里特别注意:<p></p>如果没有指明是`margin-left`或者`padding-bottom`的话，它们的作用范围是四周，作用效果是长和宽各增加两倍</div>
+<div class="tip inlineBlock success">外边距（margin)可以是负值，而且在很多情况下都要使用负值的外边距。</div>
+## positon定位
+
+position 属性值的含义：
+
+- static
+
+  元素框正常生成。块级元素生成一个矩形框，作为文档流的一部分，行内元素则会创建一个或多个行框，置于其父元素中。
+
+- relative
+
+  元素框偏移某个距离。元素仍保持其未定位前的形状，它原本所占的空间仍保留。
+
+- absolute
+
+  元素框从文档流完全删除，并相对于其包含块定位。包含块可能是文档中的另一个元素或者是初始包含块。元素原先在正常文档流中所占的空间会关闭，就好像元素原来不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。
+
+- fixed
+
+  元素框的表现类似于将 position 设置为 absolute，不过其包含块是视窗本身。
+
+
+## id和class选择器
+
+对于`id选择器`，css选择器用`#id-name`来进行选择。
+
+比如：
+
+```html
+<style>
+    #hello {
+        font-size:5px;
+        padding-left:2px;
+    }
+</style>
+<body>
+    <div id="hello">
+        hello
+    </div>
+</body>
+```
+
+而`class选择器`是用`.class-name`来选择的。
+
+比如：
+```html
+<style>
+    .happy {
+        font-size:5px;
+        padding-left:2px;
+    }
+</style>
+<body>
+    <p class="happy">
+        hello
+    </p>
+</body>
+```
+
+而最更厉害的特性在于，可以对**特定标签的类**进行自定义css设置。比如，对`p标签`的`happy类`设置，可以这样：
+
+```html
+<style>
+    p.happy {
+        font-size:5px;
+        padding-left:2px;
+    }
+</style>
+<body>
+    <p class="happy">
+        happy
+    </p>
+    <div class="happy">
+        happy
+        </div>
+</body>
+```
+## css伪类
+对于伪类，比如hover,focus,active这类常见的伪类就是可以选择一些特殊条件的元素。
+
+从而不需要js也可以完成一些DOM操作。
+
+其他常用的伪类还有：
+
+` p:last-child` 选择所有p元素的最后一个子元素
+
+`p:nth-child(2)`选择所有 p 元素的父元素的第二个子元素
+
+`p:only-child` 选择所有仅有一个子元素的p元素
+
+`p:first-line`选择每个<p> 元素的第一行
+
+`p:before`在每个<p>元素之前插入内容
+
+`p:after`在每个<p>元素之后插入内容
+
+## css transition
+https://www.w3school.com.cn/cssref/pr_transition-property.asp
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions
+
+## css3动画
+https://www.runoob.com/css3/css3-animations.html
