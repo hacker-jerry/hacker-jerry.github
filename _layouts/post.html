@@ -283,13 +283,20 @@ $(document).ready(function(){
         th3[j] = num;
         th3Re[j] = th3[j];//得到第i节的段数
      //确定h2前面有多少个span标签，并找出title-type属性是h1的个数
-              if($(Th2[j]).prevAll("span").length>=1){
+                if(Th1.length==1){
+                    for(var d = 0;d<$(Th2[j]).prevAll("span").length;d++){
+                      if($(Th2Pre[d]).attr("title-type")=="h2")
+                        index++;
+                  }
+                }
+             else if($(Th2[j]).prevAll("span").length>=1){
                   for(var d = 0;d<$(Th2[j]).prevAll("span").length;d++){
                       if($(Th2Pre[d]).attr("title-type")=="h1")
                         index++;
                   }
+                  index--;
                }//确定了第几章
-               index--;
+               
         $(Th2[j]).wrap('<span title-type="h2" class="header__span"></span>');
                 $(Th2[j]).text('');
                 $(Th2[j]).addClass('header__dev');
@@ -302,6 +309,9 @@ $(document).ready(function(){
                 {
                     Th2Html += '<b class="dev__ux"><i>' + (th2[index]-thRe[index]+1) + '</i></b>';
                     thRe[index]--;
+                }
+                else{
+                    Th2Html += '<b class="dev__ux"><i>' + 0 + '</i></b>';
                 }
                 Th2Html += '<b class="dev__developer"><span class="dev__title">' + Th2Text + '</span></b>';
         

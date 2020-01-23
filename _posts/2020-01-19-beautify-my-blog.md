@@ -109,7 +109,7 @@ div、h1 或 p 元素常常被称为块级元素。这意味着这些元素显�
 
 <img src="http://blog.img.hackerjerry.top/Fse8NdwoChZwroUIPk9HRokozVb_" style="zoom:67%;" />
 
-<div class="tip inlineBlock important">这里特别注意:<p></p>如果没有指明是`margin-left`或者`padding-bottom`的话，它们的作用范围是四周，作用效果是长和宽各增加两倍</div>
+<div class="tip inlineBlock important">这里特别注意:<p></p>如果没有指明是<code>margin-left</code>或者<code>padding-bottom</code>的话，它们的作用范围是四周，作用效果是长和宽各增加两倍</div>
 <div class="tip inlineBlock success">外边距（margin)可以是负值，而且在很多情况下都要使用负值的外边距。</div>
 ## positon定位
 

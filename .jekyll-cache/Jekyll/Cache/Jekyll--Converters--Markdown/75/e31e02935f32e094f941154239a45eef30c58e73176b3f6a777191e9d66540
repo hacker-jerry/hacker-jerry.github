@@ -1,0 +1,152 @@
+I"�$<h1 id="最重要的函数plot">最重要的函数–plot()</h1>
+
+<p>是的就是它！</p>
+<div class="tip inlineBlock important">plot(x,y)<br />plot(x,y,Linespec)</div>
+<p>其中第一个最简单，x即x轴的点，y即y轴的点，根据要求设置。
+第三个参数Linespec是线的属性，包括：</p>
+
+<ul>
+  <li>线型</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>符号</th>
+      <th>含义</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>-</td>
+      <td>细实线</td>
+    </tr>
+    <tr>
+      <td>:</td>
+      <td>虚点线</td>
+    </tr>
+    <tr>
+      <td>-.</td>
+      <td>点画线</td>
+    </tr>
+    <tr>
+      <td>–</td>
+      <td>虚画线</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><img src="http://blog.img.hackerjerry.top/1575201928829.png" alt="类似这样" /></p>
+<ul>
+  <li>点型
+<img src="http://blog.img.hackerjerry.top/1575202009113.png" alt="点型" /></li>
+  <li>颜色
+<img src="http://blog.img.hackerjerry.top/1575202032992.png" alt="颜色" /></li>
+</ul>
+
+<p>如果要在一个图里画多个曲线，则需要使用<code class="highlighter-rouge">plot(x1,y1,x2,y2)</code>和<code class="highlighter-rouge">plot(x1,y1,linespec,x2,y2,linspec)</code>
+比如这样，</p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="n">x</span> <span class="o">=</span> <span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mf">0.01</span><span class="p">:</span><span class="mi">7</span><span class="p">;</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">normpdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">);</span>
+<span class="n">z</span> <span class="o">=</span> <span class="n">normpdf</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">);</span>
+<span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">,</span><span class="s1">'r'</span><span class="p">,</span><span class="n">x</span><span class="p">,</span><span class="n">z</span><span class="p">,</span><span class="s1">'g'</span><span class="p">);</span>
+<span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s1">'XTick'</span><span class="p">,[</span><span class="o">-</span><span class="mi">5</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">]);</span>
+<span class="nb">grid</span> <span class="n">on</span><span class="c1">%用来开启刻度线</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>效果图
+<img src="http://blog.img.hackerjerry.top/1575202790270.png" alt="正态分布" /></p>
+
+<h1 id="第二个函数set">第二个函数–set()</h1>
+
+<p>这个函数呢，是用来设置坐标轴的各种属性。（当然还可以设置其他的比如窗口什么的，现在先不要求掌握）</p>
+<h2 id="自定义刻度">自定义刻度</h2>
+<p><code class="highlighter-rouge">set(gca,'XTick',[-5:1:7]);</code>从-5到7以步长为1显示坐标
+<code class="highlighter-rouge">set(gca,'xticklabel',{'最低','低','中','高','最高'}); </code>%x轴的标注上自定义字符（也就是上面可以标注的点）
+效果图：
+<img src="http://blog.img.hackerjerry.top/1575203294887.png" alt="set函数" /></p>
+
+<h2 id="刻度调整">刻度调整</h2>
+
+<p>         <code class="highlighter-rouge">set(gca,'xtick'，[])</code>              %去掉x轴的刻度</p>
+
+<p>         <code class="highlighter-rouge">set(gca,'tickdir','in/out');</code>     %决定坐标轴上的刻度线在图形里还是图形外</p>
+
+<p>         <code class="highlighter-rouge">set(gca,'xlim',[xmin xmax])/set(gca,'ylim',[xminxmax]);</code>%设定图形的显示范围</p>
+
+<p>         <code class="highlighter-rouge">set(gca, 'fontsize',8)</code>            % 此时x,y轴标注文字都会改变</p>
+
+<p>         <code class="highlighter-rouge">set(gca,'xdir','reverse')/ set(gca,'ydir','reverse');</code>%坐标轴刻度翻转</p>
+
+<p>         <code class="highlighter-rouge">set(gca,'xgrid','on')</code>              %X轴的grid开启</p>
+
+<p>         <code class="highlighter-rouge">set(gca,'ygrid','on')</code>               %y轴的grid开启
+另外还可以自动格式化坐标轴</p>
+<pre><code class="language-ma">x=get(gca,'xlim');%获取x轴的范围，并返回一个数组 
+
+y=get(gca,'ylim'); 
+
+set(gca,'xtick',[x(1) (x(1)+x(2))/2 x(2)]);%这里的x(1)就是最小值，x(2)是最大值
+
+set(gca,'ytick',[y(1) (y(1)+y(2))/2 y(2)]); 
+</code></pre>
+<p><img src="http://blog.img.hackerjerry.top/1575205431988.png" alt="" /></p>
+<div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre> <span class="n">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">20000</span><span class="p">;</span>
+ <span class="n">x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mi">10</span><span class="p">:</span><span class="mi">20000</span><span class="p">;</span>
+ <span class="nb">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
+ <span class="n">x</span><span class="o">=</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s1">'xlim'</span><span class="p">);</span>
+ <span class="n">y</span><span class="o">=</span><span class="nb">get</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s1">'ylim'</span><span class="p">);</span>
+ <span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s1">'xtick'</span><span class="p">,[</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="n">x</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">))/</span><span class="mi">2</span> <span class="n">x</span><span class="p">(</span><span class="mi">2</span><span class="p">)]);</span>
+ <span class="nb">set</span><span class="p">(</span><span class="nb">gca</span><span class="p">,</span><span class="s1">'ytick'</span><span class="p">,[</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="p">(</span><span class="n">y</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="n">y</span><span class="p">(</span><span class="mi">2</span><span class="p">))/</span><span class="mi">2</span> <span class="n">y</span><span class="p">(</span><span class="mi">2</span><span class="p">)])</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<h2 id="特殊字符">特殊字符</h2>
+
+<p>          1、bf，\it，\rm表示黑体，斜体，正体字符</p>
+
+<p>          2、上标用 ^(指数)，下标用 _(下划线)</p>
+
+<p>          调用方式为: ^{任意字符}, _{任意字符}, 注意{}的使用!</p>
+
+<p>          3、希腊字母等特殊字符用 \加拼音如:</p>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+</pre></td><td class="rouge-code"><pre> α \alpha     β\beta     γ \gamma     θ \theta       Θ \Theta
+
+ Г \Gamma     δ\delta      Δ \Delta      ξ \xi       Ξ \Xi       Ω \Ommiga
+
+η \elta     ε\epsilong     ζ \zeta     μ \miu       υ \nu    τ \tau
+
+λ \lamda     Λ\Lamda     π \pi      Π \Pi      σ \sigma      \Sigma
+
+φ \phi     Φ\Phi      ψ \psi     Ψ \Psi      χ \chi     ω \ommiga
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>4、<code class="highlighter-rouge">&lt; \leq&gt; \geq</code> 不等于    <code class="highlighter-rouge">\neq&lt;&lt; \ll &gt;&gt; \gg</code></p>
+
+<p>   5、正负 <code class="highlighter-rouge">\pm</code>       左箭头 <code class="highlighter-rouge">\leftarrow</code>        右箭头<code class="highlighter-rouge">\rightarrow</code>      上箭头  <code class="highlighter-rouge">\uparrow</code></p>
+
+<p>参考：
+https://blog.csdn.net/revivre/article/details/80136142
+https://blog.csdn.net/sign1991/article/details/8468400
+这是一篇比较详细的https://blog.csdn.net/qq_41187256/article/details/79822852</p>
+:ET
