@@ -123,6 +123,7 @@ str 指的是我们需要查的较长的字符串，searchValue 表示我们指�
 var string = "I like study";
 string.replace("study","sleep"); // returns "I like sleep"
 ```
+
 ## 函数
 
 ### 函数声明和函数表达式的区别

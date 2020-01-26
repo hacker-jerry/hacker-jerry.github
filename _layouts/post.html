@@ -9,7 +9,9 @@ layout: default
 <!-- Post Header -->
 {% include intro-header.html type='post' %}
 <style type="text/css">
-   
+   span.dev__title{
+       line-height: 50px!important;
+   }
     .header__span {
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -38,7 +40,7 @@ layout: default
     color: #222!important;
 }
 .header__span h1 {
-    font-size: 39px!important;
+    font-size: 39px;
     height: 39px;
     line-height: 39px!important;
 }
@@ -94,14 +96,14 @@ layout: default
 }
 .header__span h1 .dev__slash {
     color: #5d69a5;
-    top: -27px;
-    left: 55px;
+    top: -28px;
+    left: 55.5px;
     font-size: 40px;
 }
 .header__span h2 .dev__slash {
     color: #5d69a5;
     top: -30px;
-    left: 55px;
+    left: 56px;
     font-size: 33px;
 }
 
@@ -162,7 +164,7 @@ layout: default
     left: -3px;
 }
 .header__span h1 .dev__developer {
-    top: -28px;
+    top: -34px;
     left: 90px;
     min-height: 34px;
 }
@@ -245,9 +247,10 @@ $(document).ready(function(){
     for(var i =0;i<Th1.length;i++){
                 
                     if(i == 0) continue;
-                    
+                   
                     Text = Th1[i].innerHTML;
                     $(Th1[i]).wrap('<span title-type="h1" class="header__span h1"></span>');
+                     
                     $(Th1[i]).text('');
                     $(Th1[i]).addClass('header__dev');
                     var th1Html = '<b class="dev__fe"><i>' + i + '</i></b>';
@@ -256,6 +259,8 @@ $(document).ready(function(){
         th1Html += '<b class="dev__developer"><span class="dev__title">' + Text + '</span></b>';
         $(Th1[i]).append(th1Html);
         $(Th1[i]).parents('.header__span').after('<br><p></p>');
+        if(i == 1)
+                    $(Th1[i]).parent('.header__span').before('<br>');
         $(Th1[i]).parent(".header__span").hover(
                     function(){
                         $(this).find('.header__dev').addClass("header__dev--open");
