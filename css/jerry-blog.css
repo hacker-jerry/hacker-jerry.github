@@ -551,9 +551,7 @@ pre.highlight {
 /* Landscape phones and down */
 @media (max-width: 480px) {
   .highlighter-rouge .highlight {
-    margin-left: -15px;
-    margin-right: -15px;
-    border-radius: 0px;
+    border-radius: 15px;
   }
   .highlighter-rouge .highlight td.rouge-gutter {
     width: 36px;

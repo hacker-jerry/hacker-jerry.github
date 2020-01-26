@@ -7,7 +7,7 @@ catalog: true
 tags: 
 - jquery
 - js
-header-img: 
+header-img: http://blog.img.hackerjerry.top/Fqp4IboXx7-YWSlzQDFItPlh4PyT
 post_copyright: true
 author: Jerry
 ---
@@ -31,3 +31,5 @@ jQuery 库包含以下特性：
 总之很强大就对了！
 
 但是！一定要正确引用！一定要正确引用！比如我试了网上的某些在线JQuery库，包括微软的、谷歌的、新浪的，统统不能用！还是引用了js目录下的jquery文件才搞定的。所以，为了保险起见，还是用自己文件吧。
+
+<img src="http://blog.img.hackerjerry.top/Fh3YYibuIg8K_bTPQthswaakoEM3" style="zoom:67%;" />

@@ -134,9 +134,9 @@ string.replace("study","sleep"); // returns "I like sleep"
     function f(a,b) {
         console.log(a+b);
     }
-```
+​```58
 - 函数表达式
-```javascript
+​```javascript
 //报错：f is not a function
 //这是因为函数表达式，如同定义其它基本类型的变量一样，只在执行到某一句时也会对其进行解析
 

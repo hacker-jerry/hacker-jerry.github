@@ -1,0 +1,23 @@
+I"�<p><strong>jQuery 库可以通过一行简单的标记被添加到网页中。</strong></p>
+
+<h1 id="jquery是什么">jQuery是什么</h1>
+
+<p>jQuery 是一个 JavaScript 函数库。</p>
+
+<p>jQuery 库包含以下特性：</p>
+
+<ul>
+  <li>HTML 元素选取</li>
+  <li>HTML 元素操作</li>
+  <li>CSS 操作</li>
+  <li>HTML 事件函数</li>
+  <li>JavaScript 特效和动画</li>
+  <li>HTML DOM 遍历和修改</li>
+  <li>AJAX</li>
+</ul>
+
+<p>总之很强大就对了！</p>
+
+<p>但是！一定要正确引用！一定要正确引用！比如我试了网上的某些在线JQuery库，包括微软的、谷歌的、新浪的，统统不能用！还是引用了js目录下的jquery文件才搞定的。所以，为了保险起见，还是用自己文件吧。</p>
+
+:ET
