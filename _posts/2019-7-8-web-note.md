@@ -3,7 +3,7 @@ layout:     post
 title:      "前端笔记(一)"
 subtitle:   " 爱你所爱，无问西东 "
 date:       2019-07-03 19:16:08 
-header-img: 
+header-img: http://blog.img.hackerjerry.top/FgNlBtfxZvuMIn28C-cNfNABcAu2
 author:     "Jerry"
 catalog:  true
 tags:
