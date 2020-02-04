@@ -1,0 +1,68 @@
+I"y<p>采用Coding page自定义域名托管blog颇费周折。</p>
+
+<p>首先，我采用码云gitee下载github项目，然后发现了它也有page功能，结果它不能绑定自定义域名，遂放弃。</p>
+
+<p>转战coding，它在半年前还可以直接导入github的项目，结果现在</p>
+
+<p><img src="http://blog.img.hackerjerry.top/FknfMwNeZbTIUWI8mCUf7cWD6R_y" alt="" /></p>
+
+<p>只能在用gitlab中转了。</p>
+
+<blockquote>
+  <p>我为了优化访问速度，把各大代码托管商终于都逛遍了。</p>
+</blockquote>
+
+<p>于是，<a href="https://www.cnblogs.com/tsingke/p/9632913.html">参考</a></p>
+
+<p><img src="http://blog.img.hackerjerry.top/FgKb9vJ3zsv8wezrbTai7xIGGeSD" alt="" /></p>
+
+<p>然后就是添加公钥</p>
+
+<p>参考<a href="https://help.coding.net/docs/project/features/ssh.html?_ga=2.192796386.999518034.1580722898-79781026.1562586775">官方文档</a>或者<a href="https://blog.csdn.net/weixin_41196185/article/details/79234078">博客</a></p>
+
+<p><img src="http://blog.img.hackerjerry.top/Fns9c0bRonbbz4rOcl_6UBhUvfAZ" alt="" /></p>
+
+<p>然后完全按照https://10101.io/2018/09/18/Blog_3的来</p>
+
+<p>结果在push的时候我输错账号了，然后系统把那个临时凭据一直提交导致push失败，我又参考了https://blog.csdn.net/qq_41306610/article/details/85000771 把那个密码给修改了才成功push
+<img src="http://blog.img.hackerjerry.top/FpbvGVHQHKbaVigQ6QRtbDibg4L5" alt="" /></p>
+
+<p>就在我兴冲冲地准备在coding上开启page服务的时候，我怎么也没有找到开关，</p>
+
+<p><img src="http://blog.img.hackerjerry.top/FlIxArPbMC6hw7fA_9JceZ-feT9V" alt="" /></p>
+
+<p>然后我查了一下，</p>
+
+<p><img src="http://blog.img.hackerjerry.top/Fq3j_4lVDK7mbVoZaZ_zssl50443" style="zoom: 77%;" /></p>
+
+<p>？？？融合升级了？？</p>
+
+<p><img src="http://blog.img.hackerjerry.top/Fm7ZaOPff04-AEKVxa-525N9BCNZ" alt="" /></p>
+
+<p><del>官方说1月20日开始就开始融合升级了，然后最近疫情的原因，它一直没有上班……然后……暂停注册……看样子一时半会是优化不了CDN了，留个坑。</del></p>
+
+<p>我又重新看了一下官方文档，原来是选择错了项目，应该是<code class="highlighter-rouge">DevOps项目</code></p>
+
+<p><img src="http://blog.img.hackerjerry.top/FqEWJO35JZTXaBBYjm3p1SiMO2-r" alt="" /></p>
+
+<ul>
+  <li>
+    <p><a href="https://10101.io/2018/09/18/Blog_3">将 Jekyll 博客同时托管在 Github Pages 和 Coding Pages </a></p>
+  </li>
+  <li>
+    <p><a href="http://www.shenl.com/2016/08/19/hello-jekyll/">详细记录使用jekyll/GitHub/Coding搭建个人博客全过程</a></p>
+  </li>
+  <li>
+    <p><a href="https://blog.csdn.net/qq_36667170/article/details/79318665">旧版Coding Pages</a></p>
+  </li>
+  <li>
+    <p><a href="https://www.cnblogs.com/selier/p/9634418.html">实现Github和Coding仓库等Git服务托管更新</a></p>
+  </li>
+</ul>
+
+<p>然后真的弄好Page后，发现coding的服务器好慢……比github还慢，而且昨天我记得修改了一个git的config文件，结果今天怎么也搜不到，然后github desktop不能push了，只能命令行了。<del>以后再想法子解决吧。</del></p>
+
+<p><img src="http://blog.img.hackerjerry.top/FsExmao3Ry3BLDd0pBb1txL66V__" alt="" /></p>
+
+<p>然后发现，原来是github客户端不支持同时git提交github和coding，又介于coding page性能如此不佳，我还是用github做</p>
+:ET

@@ -64,6 +64,18 @@ author: Jerry
 
 - [实现Github和Coding仓库等Git服务托管更新](https://www.cnblogs.com/selier/p/9634418.html)
 
-然后真的弄好Page后，发现coding的服务器好慢……比github还慢，而且昨天我记得修改了一个git的config文件，结果今天怎么也搜不到，然后github desktop不能push了，只能命令行了。以后再想法子解决吧。
+然后真的弄好Page后，发现coding的服务器好慢……比github还慢，而且昨天我记得修改了一个git的config文件，结果今天怎么也搜不到，然后github desktop不能push了，只能命令行了。~~以后再想法子解决吧。~~
 
 ![](http://blog.img.hackerjerry.top/FsExmao3Ry3BLDd0pBb1txL66V__)
+
+然后发现，原来是github客户端不支持同时git提交github和coding，~~又介于coding page性能如此不佳，我还是用github做服务器吧……~~
+
+但是我不甘心呀，我就又查，发现大概是我的项目名称搞错了？
+
+就是说，必须是`项目名=用户名`,像这里
+
+![](http://blog.img.hackerjerry.top/FmxxiqJyjW6-7uXKGSuYlSsr6rUb)
+
+这里再多提供一个[阿里在线域名检测工具](https://zijian.aliyun.com/?spm=a2c1d.8251892.content.3.66695b76g71m9J#/domainDetect)
+
+![可以看出它确实指向了Coding-Page](http://blog.img.hackerjerry.top/FsCT9cLuLuXOOygTcdNBj4il1bl-)
