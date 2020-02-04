@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Optimize My Blog"
-subtitle: 关于插入b站视频，优化响应速度以及调整标题动效
+subtitle: 关于插入iframe标签，优化响应速度以及调整标题动效
 date: 2020-01-19 12:38:37
 catalog: true
 tags: 
@@ -32,6 +32,24 @@ author: Jerry
 <iframe src="https://player.bilibili.com/player.html?aid=73280139&cid=135397662&page=11" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="95%" height="450"> </iframe>
 注意 **URL少了传输协议，需要加上http:或者https:，否则会以file来传输** 
 
+# 插入第三方页面
+
+同样还是用的`<iframe>标签`，如法炮制。
+
+不过需要加入`div标签`，用来约束。
+
+```html
+<div>
+<iframe src="https://mubu.com/doc/explore/27635"  height="500px"  width="100%"   frameborder="0"       border="0" frameborder="no" framespacing="0" allowfullscreen="true" ></iframe>
+</div>
+```
+
+效果如下：
+
+<div>
+<iframe src="https://mubu.com/doc/explore/27635"  height="500px"  width="100%"   frameborder="0"       border="0" frameborder="no" framespacing="0" allowfullscreen="true" ></iframe>
+</div>
+
 # 增加标题动效 
 
 下面是增加标题动效了。
@@ -46,6 +64,10 @@ author: Jerry
 
 <div class="tip inlineBlock warning">第一版代码还是非常臃肿，暂时没有更好的思路简化，再埋下一个坑</div>
 # 优化响应速度
+
+`google`官方文件，原文如下：
+
+
 
 How do you load third-party script efficiently?
 If a third-party script is slowing down your page load, you have several options to improve performance:
@@ -70,6 +92,7 @@ With defer, the browser downloads the script asynchronously while it continues t
 ## js异步加载
 
 defer
+
 async
 
 

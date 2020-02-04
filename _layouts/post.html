@@ -258,7 +258,7 @@ $(document).ready(function(){
         th1Html += '<b class="dev__ux"><i>0</i></b>';
         th1Html += '<b class="dev__developer"><span class="dev__title">' + Text + '</span></b>';
         $(Th1[i]).append(th1Html);
-        $(Th1[i]).parents('.header__span').after('<br><p></p>');
+        $(Th1[i]).parents('.header__span').after('<br>');
         if(i == 1)
                     $(Th1[i]).parent('.header__span').before('<br>');
         $(Th1[i]).parent(".header__span").hover(
@@ -322,6 +322,7 @@ $(document).ready(function(){
         
                 $(Th2[j]).append(Th2Html);
                 $(Th2[j]).parents('.header__span').after('<br><p></p>');
+                $(Th2[j]).parents('.header__span').before('<br>');
                 $(Th2[j]).parent(".header__span").hover(
                     function(){
                         $(this).find('.header__dev').addClass("header__dev--open");
