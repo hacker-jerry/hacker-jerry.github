@@ -63,3 +63,7 @@ author: Jerry
 - [旧版Coding Pages](https://blog.csdn.net/qq_36667170/article/details/79318665)
 
 - [实现Github和Coding仓库等Git服务托管更新](https://www.cnblogs.com/selier/p/9634418.html)
+
+然后真的弄好Page后，发现coding的服务器好慢……比github还慢，而且昨天我记得修改了一个git的config文件，结果今天怎么也搜不到，然后github desktop不能push了，只能命令行了。以后再想法子解决吧。
+
+![](http://blog.img.hackerjerry.top/FsExmao3Ry3BLDd0pBb1txL66V__)
