@@ -1,0 +1,359 @@
+I"Oh<center>Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。</center>
+<center>Node.js 使用了一个事件驱动、非阻塞式 I/O 的模型，使其轻量又高效。</center>
+<h1 id="nodejs适用场景">Node.js适用场景</h1>
+
+<p>Node.js 擅长处理 I/O，不善于计算（单线程的缺点），因此 Node.js 适用于：当应用程序需要处理大量并发的 I/O，而在向客户端发出响应之前，应用程序内部并不需要进行非常复杂的处理的时候，Node.js 也非常适合与 web socket 配合，开发长连接的实时交互应用程序。
+ 比如：聊天室，博客系统，考试系统等。</p>
+
+<h1 id="全局对象">全局对象</h1>
+
+<p>在 JavaScript 中全局对象通常是 window，而在 Node.js 中全局对象是 globa，所有全局变量（除了 global 本身以外）都是 global 对象的属性，我们可以直接访问到 global 的属性</p>
+
+<h2 id="全局变量">全局变量</h2>
+
+<p>按照 ECMAScript 的定义，满足以下条 件的变量是全局变量：</p>
+
+<ul>
+  <li>
+    <p>在最外层定义的变量</p>
+  </li>
+  <li>
+    <p>全局对象的属性</p>
+  </li>
+  <li>
+    <p>隐式定义的变量（未定义直接赋值的变量）</p>
+  </li>
+</ul>
+
+<blockquote>
+  <p>当你定义一个全局变量的时候，这个变量同时也会成为全局对象的属性，反之亦然。在 Node.js 中你不可能在最外层定义变量，因为所有用户代码都是属于当前模块的，而模块本身不是最外层上下文。定义变量一定要使用 var 关键字，因为全局变量会污染命名空间。</p>
+</blockquote>
+
+<h3 id="常见全局变量和全局函数">常见全局变量和全局函数</h3>
+
+<ul>
+  <li>__filename 表示当前正在执行的脚本的文件名。它将输出文件所在位置的绝对路径，且和命令行参数所指定的文件名不一定相同。如果在模块中，返回的值是模块文件的路径。</li>
+  <li>__dirname，表示当前执行脚本所在的目录。</li>
+  <li>setTimeout(cb, ms) 全局函数在指定的毫秒(ms)数后执行指定函数(cb),只执行一次函数。
+<img src="http://ww1.sinaimg.cn/large/007dh5vlly1g5bvhqxm8rg30y20b8mxu.gif" alt="" /></li>
+</ul>
+
+<h1 id="require方法创建hello-world">require方法–创建hello world</h1>
+
+<p>Node中的JavaScript可以具备文件操作能力，得益于丰富的API。</p>
+
+<p>引入核心模块<code class="highlighter-rouge">fs</code>，调用相应的API即可实现</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">fs</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">fs</span><span class="dl">'</span><span class="p">)</span><span class="c1">//用require方法创建实例</span>
+<span class="nx">fs</span><span class="p">.</span><span class="nx">writeFile</span><span class="p">(</span><span class="dl">'</span><span class="s1">./hello.md</span><span class="dl">'</span><span class="p">,</span><span class="dl">'</span><span class="s1">写入一段文本</span><span class="dl">'</span><span class="p">)</span>
+
+<span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">http</span><span class="dl">'</span><span class="p">)</span>
+<span class="kd">var</span> <span class="nx">server</span> <span class="o">=</span> <span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">()</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="dl">'</span><span class="s1">request</span><span class="dl">'</span><span class="p">,</span><span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="nx">response</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">收到请求:</span><span class="dl">'</span><span class="o">+</span><span class="nx">request</span><span class="p">.</span><span class="nx">url</span><span class="p">)</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">write</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">)</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">()</span>
+<span class="p">})</span>
+<span class="nx">server</span><span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">,</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">启动咯</span><span class="dl">'</span><span class="p">)</span>
+<span class="p">})</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">http</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">request</span><span class="p">,</span><span class="nx">response</span><span class="p">){</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">,{</span><span class="dl">'</span><span class="s1">Content-Type</span><span class="dl">'</span><span class="p">:</span><span class="dl">'</span><span class="s1">text/plain</span><span class="dl">'</span><span class="p">});</span>
+    <span class="nx">response</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello world</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">8080</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">开启咯</span><span class="dl">'</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p><code class="highlighter-rouge">http.createServer([requestListener])</code>
+其中<code class="highlighter-rouge">requestListener 请求函数</code>是一个自动添加到 ‘request’ 事件的函数。函数传递有两个参数：request 请求对象 和 response 响应对象。</p>
+
+<p><strong>response 对象</strong>常用的方法有：</p>
+
+<ul>
+  <li>response.writeHead(statusCode[, statusMessage][, headers])。表示向请求发送响应头。</li>
+  <li>
+    <p>response.write() 发送一块响应主体，也就是说用来给客户端发送响应数据。可以直接写文本信息，也可以写我们的 html 代码，注意要设置 Content-Type 的值 。write 可以使用多次，但是最后一定要使用 end 来结束响应，否则客户端会一直等待。</p>
+  </li>
+  <li>response.end() 此方法向服务器发出信号，表示已发送所有响应头和主体，该服务器应该视为此消息完成。必须在每个响应上调用方法 response.end()。</li>
+</ul>
+
+<p><strong>request</strong>对象的常用方法：</p>
+
+<ul>
+  <li>
+    <p>request.url 获取请求路径，获取到的是端口号之后的那一部分路径,也就是说所有的 url 都是以 / 开头的，判断路径处理响应。</p>
+  </li>
+  <li>
+    <p>request.socket.localAddress 获取 ip 地址。</p>
+  </li>
+  <li>
+    <p>request.socket.remotePort 获取源端口。</p>
+  </li>
+</ul>
+
+<h1 id="nodejs包">Node.js包</h1>
+
+<p>用于管理多个模块及其依赖关系，可以对多个模块进行封装，包的根目录必须包含 package.json 文件，package.json 文件是 CommonJS 规范用于描述包的文件，符合 CommonJS 规范的 package.json 文件一般包含以下字段：</p>
+
+<ol>
+  <li>name：包名。包名是唯一的，只能包含小写字母、数字和下划线。</li>
+  <li>version：包版本号。</li>
+  <li>description：包说明。</li>
+  <li>keywords：关键字数组，用于搜索。</li>
+  <li>homepage：项目主页。</li>
+  <li>bugs：提交 bug 的地址。</li>
+  <li>license：许可证。</li>
+  <li>maintainers：维护者数组。</li>
+  <li>contributors：贡献者数组。</li>
+  <li>repositories：项目仓库托管地址数组。</li>
+  <li>dependencies：包依赖。这个属性十分重要，NPM会通过这个属性，帮你自动加载依赖的包</li>
+</ol>
+
+<blockquote>
+  <p>packae.json包示例</p>
+  <div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+</pre></td><td class="rouge-code"><pre><span class="p">{</span><span class="w">
+    </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"shiyanlou"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shiyanlou test package."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"version"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.1.0"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"keywords"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+        </span><span class="s2">"shiyanlou"</span><span class="p">,</span><span class="w">
+        </span><span class="s2">"nodejs"</span><span class="w">
+     </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"maintainers"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"email"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@shiyanlou.com"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"contributors"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"web"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.shiyanlou.com/"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"bugs"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+        </span><span class="nl">"mail"</span><span class="p">:</span><span class="w"> </span><span class="s2">"test@shiyanlou.com"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"web"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.shiyanlou.com/"</span><span class="w">
+    </span><span class="p">},</span><span class="w">
+    </span><span class="nl">"licenses"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Apache License v2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://www.apache.org/licenses/apache2.html"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"repositories"</span><span class="p">:</span><span class="w"> </span><span class="p">[{</span><span class="w">
+        </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"git"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"url"</span><span class="p">:</span><span class="w"> </span><span class="s2">"http://github.com/test/test.git"</span><span class="w">
+    </span><span class="p">}],</span><span class="w">
+    </span><span class="nl">"dependencies"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+        </span><span class="nl">"webkit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"1.2"</span><span class="p">,</span><span class="w">
+        </span><span class="nl">"ssl"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"> 
+            </span><span class="nl">"gnutls"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"1.0"</span><span class="p">,</span><span class="w"> </span><span class="s2">"2.0"</span><span class="p">],</span><span class="w">
+            </span><span class="nl">"openssl"</span><span class="p">:</span><span class="w"> </span><span class="s2">"0.9.8"</span><span class="w">
+        </span><span class="p">}</span><span class="w">
+    </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div>  </div>
+  <p>注：
+package.json 文件可以自己手动编辑，还可以通过 npm init 命令进行生成。你可以自己尝试在终端中输入 npm init 命令来生成一个包含 package.json 文件的包。直接输入 npm init –yes 跳过回答问题步骤，直接生成默认值的 package.json 文件。</p>
+</blockquote>
+
+<p>==安装包==
+<code class="highlighter-rouge">npm install express</code></p>
+
+<p>==更新包==
+<code class="highlighter-rouge">npm update express</code></p>
+
+<p>==删除包==
+<code class="highlighter-rouge">npm uninstall express</code></p>
+
+<h1 id="nodejs模块">Node.js模块</h1>
+
+<p>在 JavaScript 中，我们通常把 JavaScript 代码分为几个 js 文件，然后在浏览器中将这些 js 文件合并运行，但是在 Node.js 中，是通过以模块为单位来划分所有功能的，每一个模块为一个 js 文件，每一个模块中定义的全局变量和函数的作用范围也被限定在这个模块之内，只有使用 <strong>exports 对象</strong>才能传递到外部使用。</p>
+
+<p>▶1.js</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">foo</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">.</span><span class="nx">foo</span> <span class="o">=</span> <span class="nx">foo</span><span class="p">;</span><span class="c1">//用module.exports导出,也可以直接exports导出</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>▶2.js</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">hello</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="dl">'</span><span class="s1">./1.js</span><span class="dl">'</span><span class="p">);</span>
+<span class="nx">hello</span><span class="p">.</span><span class="nx">foo</span><span class="p">();</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<blockquote>
+  <p><strong>require 加载模块</strong>，以’/’ 为前缀的模块是文件的绝对路径。’./’ 为前缀的模块是相对于调用 require() 的文件的，上面的例子中 index.js 和 myModule.js 是在同一个目录下（project 目录）。当没有以 ‘/’、’./’ 或 ‘../’ 开头来表示文件时，这个模块必须是一个核心模块或加载自 node_modules 目录。</p>
+</blockquote>
+
+<div class="tip inlineBlock important">module.exports 和 exports 的区别</div>
+
+<p>每次导出接口成员的时候都通过 module.exports.xxx = xxx 的方式很麻烦。所以，Node.js 为了简化你的操作，专门提供了一个变量：exports 等于 module.exports。也就是说在模块中还有这么一句代码：
+<code class="highlighter-rouge">var exports = module.exports;</code></p>
+
+<p>让我们看一下它们</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">a</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">b</span><span class="p">:</span><span class="mi">3</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">a</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exports</span> <span class="o">==</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exports</span> <span class="o">===</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>运行结果：
+<img src="http://ww1.sinaimg.cn/large/007dh5vlly1g5c5b4u4rgj30k502mt8l.jpg" alt="" /></p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="na">b</span><span class="p">:</span><span class="mi">3</span>
+<span class="p">}</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exports</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">);</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exports</span> <span class="o">==</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">)</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">exports</span> <span class="o">===</span> <span class="nx">module</span><span class="p">.</span><span class="nx">exports</span><span class="p">)</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>运行结果：
+<img src="http://ww1.sinaimg.cn/large/007dh5vlly1g5c5cylve6j30i002ldfq.jpg" alt="" /></p>
+
+<p>也就是说给 exports 赋值会断开和 module.exports 之间的引用，同样的给 module.exports 重新赋值也会断开它们之间的引用。但是最终导出的是 module.exports。而如果给其他变量赋值则没有对exports 和 module.exports之间的引用造成改变。即module.exports才是真正的接口，exports只不过是它的一个辅助工具。最终返回给调用的是module.exports而不是exports</p>
+
+<p><strong>总结：</strong>
+require 得到的是 module.exports 导出的值，导出多个成员可以用 module.exports 和 exports,导出单个成员只能用 module.exports。</p>
+
+<h1 id="nodejs函数">Node.js函数</h1>
+
+<p>在 JavaScript 中，一个函数可以作为另一个函数的参数。我们可以先定义一个函数，然后把函数作为变量在另一个函数中传递，也可以在传递参数的地方直接定义函数。</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+</pre></td><td class="rouge-code"><pre><span class="kd">function</span> <span class="nx">sayHi</span><span class="p">(</span><span class="nx">value</span><span class="p">){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="kd">function</span> <span class="nx">execute</span><span class="p">(</span><span class="nx">someFunction</span><span class="p">,</span><span class="nx">value</span><span class="p">){</span>
+    <span class="nx">someFunction</span><span class="p">(</span><span class="nx">value</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="nx">execute</span><span class="p">(</span><span class="nx">sayHi</span><span class="p">,</span><span class="dl">'</span><span class="s1">hi</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="匿名函数">匿名函数</h2>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">fun</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+
+<span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h3 id="箭头函数">箭头函数</h3>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="p">(</span><span class="err">参数</span><span class="mi">1</span><span class="p">,</span> <span class="err">参数</span><span class="mi">2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="err">参数</span><span class="nx">N</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span> <span class="err">函数声明</span> <span class="p">}</span>
+
+<span class="c1">//相当于：(参数1, 参数2, …, 参数N) =&gt;{ return 表达式; }</span>
+<span class="p">(</span><span class="err">参数</span><span class="mi">1</span><span class="p">,</span> <span class="err">参数</span><span class="mi">2</span><span class="p">,</span> <span class="err">…</span><span class="p">,</span> <span class="err">参数</span><span class="nx">N</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="err">表达式（单一）</span>
+
+<span class="c1">// 当只有一个参数时，圆括号是可选的</span>
+<span class="p">(</span><span class="err">单一参数</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="err">函数声明</span><span class="p">}</span>
+<span class="err">单一参数</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="err">函数声明</span><span class="p">}</span>
+
+<span class="c1">// 没有参数的函数应该写成一对圆括号。</span>
+<span class="p">()</span> <span class="o">=&gt;</span> <span class="p">{</span><span class="err">函数声明</span><span class="p">}</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<p>示例：</p>
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+</pre></td><td class="rouge-code"><pre><span class="kd">var</span> <span class="nx">fun</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello syl</span><span class="dl">'</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="c1">//上面的匿名函数可以用箭头函数改写为下面的</span>
+<span class="kd">var</span> <span class="nx">fun</span> <span class="o">=</span> <span class="p">()</span> <span class="o">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="dl">'</span><span class="s1">hello syl</span><span class="dl">'</span><span class="p">);</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+:ET

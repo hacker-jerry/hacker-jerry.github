@@ -1,0 +1,60 @@
+I"�<p>自定义代码片段是为了更加高效的输入某些标签（暂时对于html），方法也很简单。</p>
+
+<p><img src="http://blog.img.hackerjerry.top/FgvRTAPdULovqI9w55GeqQCtnej3" style="zoom:67%;" /></p>
+
+<p>这里面的<code class="highlighter-rouge">user snippets</code>,点击后</p>
+
+<p><img src="http://blog.img.hackerjerry.top/FmkFVuOCllNH6lXcGO26cGSUSYR0" style="zoom: 67%;" /></p>
+
+<p>直接搜对应的文件类型或创建全局文件，然后创建对应的<code class="highlighter-rouge">json</code>格式的片段，例如：</p>
+
+<div class="language-json highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+</pre></td><td class="rouge-code"><pre><span class="nl">"set tipi"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">  
+        </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tipi"</span><span class="p">,</span><span class="w">  
+        </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+			</span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">tip inlineBlock important</span><span class="se">\"</span><span class="s2">&gt;$0&lt;/div&gt;"</span><span class="p">,</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"set_important_tip"</span><span class="w">  
+	</span><span class="p">}</span><span class="err">,</span><span class="w">
+	</span><span class="nl">"set tips"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">  
+        </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tips"</span><span class="p">,</span><span class="w">  
+        </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w"> 
+			</span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">tip inlineBlock success</span><span class="se">\"</span><span class="s2">&gt;$0&lt;/div&gt;"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"set_success_tip"</span><span class="w">  
+	</span><span class="p">}</span><span class="err">,</span><span class="w">
+	</span><span class="nl">"set tipw"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">  
+        </span><span class="nl">"prefix"</span><span class="p">:</span><span class="w"> </span><span class="s2">"tipw"</span><span class="p">,</span><span class="w"> 
+        </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">  
+			</span><span class="s2">"&lt;div class=</span><span class="se">\"</span><span class="s2">tip inlineBlock warning</span><span class="se">\"</span><span class="s2">&gt;$0&lt;/div&gt;"</span><span class="w">
+        </span><span class="p">],</span><span class="w">
+        </span><span class="nl">"description"</span><span class="p">:</span><span class="w"> </span><span class="s2">"set_warning_tip"</span><span class="w"> 
+    </span><span class="p">}</span><span class="w">
+</span></pre></td></tr></tbody></table></code></pre></div></div>
+<blockquote>
+  <p>注意！json文件不能加注释……虽然它的确能执行但是！官方是不允许加注释的！</p>
+</blockquote>
+
+<p>而我希望在markdown文件中实现这个智能联想的功能，但是并没有（vscode的小bug），反馈给官方之后得到的折中方案是手动触发联想，具体操作是<code class="highlighter-rouge">ctrl+space</code>，但是，win系统这个快捷键基本都是绑定的切换输入法，所以我换了一下默认的绑定，比如<code class="highlighter-rouge">alt+x</code>，就成功啦。</p>
+
+:ET

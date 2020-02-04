@@ -1,0 +1,265 @@
+I"4<h1 id="插入bilibili视频">插入Bilibili视频</h1>
+
+<p>首先，<a href="https://www.cnblogs.com/artoriax/p/10364915.html">参考博客</a>在这里。</p>
+
+<p>很简单，按照里面说的，直接在分享按钮里找到<code class="highlighter-rouge">iframe</code>代码，然后，<strong>稍作修改</strong>。</p>
+
+<blockquote>
+  <p>原<code class="highlighter-rouge">iframe</code>直接插入<code class="highlighter-rouge">&lt;iframe src="//player.bilibili.com/player.html?aid=73280139&amp;cid=135397662&amp;page=11" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"&gt; &lt;/iframe&gt;</code>会得到这样子的浏览器</p>
+</blockquote>
+
+<iframe src="//player.bilibili.com/player.html?aid=73280139&amp;cid=135397662&amp;page=11" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+<p>土爆了好吗！</p>
+
+<p>因此,稍作修改，改成<code class="highlighter-rouge">&lt;iframe src="//player.bilibili.com/player.html?aid=73280139&amp;cid=135397662&amp;page=11" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="95%" height="450"&gt; &lt;/iframe&gt;</code></p>
+
+<p>就成了↓</p>
+
+<iframe src="https://player.bilibili.com/player.html?aid=73280139&amp;cid=135397662&amp;page=11" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" width="95%" height="450"> </iframe>
+<p>注意 <strong>URL少了传输协议，需要加上http:或者https:，否则会以file来传输</strong></p>
+
+<h1 id="插入第三方页面">插入第三方页面</h1>
+
+<p>同样还是用的<code class="highlighter-rouge">&lt;iframe&gt;标签</code>，如法炮制。</p>
+
+<p>不过需要加入<code class="highlighter-rouge">div标签</code>，用来约束。</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;div&gt;</span>
+<span class="nt">&lt;iframe</span> <span class="na">src=</span><span class="s">"https://mubu.com/doc/explore/27635"</span>  <span class="na">height=</span><span class="s">"500px"</span>  <span class="na">width=</span><span class="s">"100%"</span>   <span class="na">frameborder=</span><span class="s">"0"</span>       <span class="na">border=</span><span class="s">"0"</span> <span class="na">frameborder=</span><span class="s">"no"</span> <span class="na">framespacing=</span><span class="s">"0"</span> <span class="na">allowfullscreen=</span><span class="s">"true"</span> <span class="nt">&gt;&lt;/iframe&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>效果如下：</p>
+
+<div>
+<iframe src="https://mubu.com/doc/explore/27635" height="500px" width="100%" frameborder="no" border="0" framespacing="0" allowfullscreen="true"></iframe>
+</div>
+
+<h1 id="增加标题动效">增加标题动效</h1>
+
+<p>下面是增加标题动效了。</p>
+
+<p>踩了不少坑，花了3天才整体迁移过来（并实现了三级标题动效）。</p>
+
+<p>用到的知识点</p>
+
+<ul>
+  <li>js</li>
+  <li>jquery库</li>
+  <li>css3</li>
+</ul>
+
+<div class="tip inlineBlock warning">第一版代码还是非常臃肿，暂时没有更好的思路简化，再埋下一个坑</div>
+<h1 id="优化响应速度">优化响应速度</h1>
+
+<p><code class="highlighter-rouge">google</code>官方文件，原文如下：</p>
+
+<p>How do you load third-party script efficiently?
+If a third-party script is slowing down your page load, you have several options to improve performance:</p>
+
+<p>Load the script using the async or defer attribute to avoid blocking document parsing.</p>
+
+<p>Consider self-hosting the script if the third-party server is slow.</p>
+
+<p>Consider removing the script if it doesn’t add clear value to your site.</p>
+
+<p>Consider Resource Hints like <link rel="preconnect" /> or &lt;link rel=dns-prefetch&gt; to perform a DNS lookup for domains hosting third-party scripts.</p>
+
+<p>Use async or defer
+JavaScript execution is parser blocking. This means when the browser encounters a script it must pause DOM construction, hand this over to the JavaScript engine and allow script execution before proceeding with DOM construction.</p>
+
+<p>The async and defer attributes change this behavior.</p>
+
+<p>With async, the browser downloads the script asynchronously while it continues to parse the HTML document. When the script finishes downloading, parsing is blocked while the script executes.</p>
+
+<p>With defer, the browser downloads the script asynchronously while it continues to parse the HTML document. The script doesn’t run until the parsing is complete.</p>
+
+<h2 id="js异步加载">js异步加载</h2>
+
+<p>defer</p>
+
+<p>async</p>
+
+<h2 id="图像转webp格式">图像转webp格式</h2>
+
+<p>https://web.dev/codelab-serve-images-webp/</p>
+
+<h2 id="lazy-load-offscreen-images-with-lazysizes">Lazy load offscreen images with lazysizes</h2>
+<p>https://web.dev/codelab-use-lazysizes-to-lazyload-images/</p>
+
+<h2 id="优化缓存没看明白">优化缓存（没看明白）</h2>
+<p>https://web.dev/uses-long-cache-ttl/?utm_source=lighthouse&amp;utm_medium=unknown</p>
+
+<p>使用fetch
+https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch</p>
+
+<h1 id="css">css</h1>
+
+<p>先总结总结一下css的核心思想吧。</p>
+
+<p>首先，<strong>css的框模型</strong>可以说是最基本的思想了。</p>
+
+<h2 id="一切皆为框">一切皆为框</h2>
+
+<p>div、h1 或 p 元素常常被称为块级元素。这意味着这些元素显示为<strong>一块内容</strong>，即”<strong>块框</strong>“。与之相反，span 和 strong 等元素称为“行内元素”，这是因为它们的内容显示在行中，即“<strong>行内框</strong>”。</p>
+
+<blockquote>
+  <p>行框和行内框是两个概念
+由一行形成的水平框称为行框（Line Box），行框的高度总是足以容纳它包含的所有行内框。不过，设置行高可以增加这个框的高度。
+由一行形成的水平框称为行框（Line Box），行框的高度总是足以容纳它包含的所有行内框。不过，设置行高可以增加这个框的高度。</p>
+</blockquote>
+
+<p>但是！可以使用<code class="highlighter-rouge">display</code>属性改变生成的框的类型，比如设置成<code class="highlighter-rouge">block</code>可以让行内元素表现的和块级元素一样，还可以通过把<code class="highlighter-rouge"> display</code> 设置为 <code class="highlighter-rouge">none</code>，让生成的元素根本没有框。这样的话，该框及其所有内容就不再显示，不占用文档中的空间。</p>
+
+<p>那么框的大小就成了第一个需要考虑的事情。</p>
+
+<p><img src="http://blog.img.hackerjerry.top/Fse8NdwoChZwroUIPk9HRokozVb_" style="zoom:67%;" /></p>
+
+<div class="tip inlineBlock important">这里特别注意:<br />如果没有指明是<code>margin-left</code>或者<code>padding-bottom</code>的话，它们的作用范围是四周，作用效果是长和宽各增加两倍</div>
+<div class="tip inlineBlock success">外边距（margin)可以是负值，而且在很多情况下都要使用负值的外边距。</div>
+<h2 id="positon定位">positon定位</h2>
+
+<p>position 属性值的含义：</p>
+
+<ul>
+  <li>
+    <p>static</p>
+
+    <p>元素框正常生成。块级元素生成一个矩形框，作为文档流的一部分，行内元素则会创建一个或多个行框，置于其父元素中。</p>
+  </li>
+  <li>
+    <p>relative</p>
+
+    <p>元素框偏移某个距离。元素仍保持其未定位前的形状，它原本所占的空间仍保留。</p>
+  </li>
+  <li>
+    <p>absolute</p>
+
+    <p>元素框从文档流完全删除，并相对于其包含块定位。包含块可能是文档中的另一个元素或者是初始包含块。元素原先在正常文档流中所占的空间会关闭，就好像元素原来不存在一样。元素定位后生成一个块级框，而不论原来它在正常流中生成何种类型的框。</p>
+  </li>
+  <li>
+    <p>fixed</p>
+
+    <p>元素框的表现类似于将 position 设置为 absolute，不过其包含块是视窗本身。</p>
+  </li>
+</ul>
+
+<h2 id="id和class选择器">id和class选择器</h2>
+
+<p>对于<code class="highlighter-rouge">id选择器</code>，css选择器用<code class="highlighter-rouge">#id-name</code>来进行选择。</p>
+
+<p>比如：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;style&gt;</span>
+    <span class="nf">#hello</span> <span class="p">{</span>
+        <span class="nl">font-size</span><span class="p">:</span><span class="m">5px</span><span class="p">;</span>
+        <span class="nl">padding-left</span><span class="p">:</span><span class="m">2px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"hello"</span><span class="nt">&gt;</span>
+        hello
+    <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>而<code class="highlighter-rouge">class选择器</code>是用<code class="highlighter-rouge">.class-name</code>来选择的。</p>
+
+<p>比如：</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;style&gt;</span>
+    <span class="nc">.happy</span> <span class="p">{</span>
+        <span class="nl">font-size</span><span class="p">:</span><span class="m">5px</span><span class="p">;</span>
+        <span class="nl">padding-left</span><span class="p">:</span><span class="m">2px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"happy"</span><span class="nt">&gt;</span>
+        hello
+    <span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+
+<p>而最更厉害的特性在于，可以对<strong>特定标签的类</strong>进行自定义css设置。比如，对<code class="highlighter-rouge">p标签</code>的<code class="highlighter-rouge">happy类</code>设置，可以这样：</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><table class="rouge-table"><tbody><tr><td class="rouge-gutter gl"><pre class="lineno">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+</pre></td><td class="rouge-code"><pre><span class="nt">&lt;style&gt;</span>
+    <span class="nt">p</span><span class="nc">.happy</span> <span class="p">{</span>
+        <span class="nl">font-size</span><span class="p">:</span><span class="m">5px</span><span class="p">;</span>
+        <span class="nl">padding-left</span><span class="p">:</span><span class="m">2px</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
+<span class="nt">&lt;body&gt;</span>
+    <span class="nt">&lt;p</span> <span class="na">class=</span><span class="s">"happy"</span><span class="nt">&gt;</span>
+        happy
+    <span class="nt">&lt;/p&gt;</span>
+    <span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"happy"</span><span class="nt">&gt;</span>
+        happy
+        <span class="nt">&lt;/div&gt;</span>
+<span class="nt">&lt;/body&gt;</span>
+</pre></td></tr></tbody></table></code></pre></div></div>
+<h2 id="css伪类">css伪类</h2>
+<p>对于伪类，比如hover,focus,active这类常见的伪类就是可以选择一些特殊条件的元素。</p>
+
+<p>从而不需要js也可以完成一些DOM操作。</p>
+
+<p>其他常用的伪类还有：</p>
+
+<p><code class="highlighter-rouge"> p:last-child</code> 选择所有p元素的最后一个子元素</p>
+
+<p><code class="highlighter-rouge">p:nth-child(2)</code>选择所有 p 元素的父元素的第二个子元素</p>
+
+<p><code class="highlighter-rouge">p:only-child</code> 选择所有仅有一个子元素的p元素</p>
+
+<p><code class="highlighter-rouge">p:first-line</code>选择每个&lt;p&gt; 元素的第一行</p>
+
+<p><code class="highlighter-rouge">p:before</code>在每个&lt;p&gt;元素之前插入内容</p>
+
+<p><code class="highlighter-rouge">p:after</code>在每个&lt;p&gt;元素之后插入内容</p>
+
+<h2 id="css-transition">css transition</h2>
+<p><a href="https://www.w3school.com.cn/cssref/pr_transition-property.asp
+https://developer.mozilla.org/zh-CN/docs/Web/CSS/CSS_Transitions/Using_CSS_transitions">教程</a></p>
+
+<h2 id="css3动画">css3动画</h2>
+<p><a href="https://www.runoob.com/css3/css3-animations.html">教程</a></p>
+
+<p><img src="http://blog.img.hackerjerry.top/FlDj0XNXKL-iMH5EBuD86Hn5BXC8" style="zoom: 50%;" /></p>
+:ET

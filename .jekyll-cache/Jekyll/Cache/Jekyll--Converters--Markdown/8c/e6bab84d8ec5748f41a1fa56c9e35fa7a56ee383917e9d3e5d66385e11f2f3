@@ -1,0 +1,21 @@
+I"/<h2 id="kali增加硬盘容量后产生的1分30秒引导失败问题解决办法">kali增加硬盘容量后产生的1分30秒引导失败问题解决办法</h2>
+<p>https://blog.csdn.net/Mike_Roger/article/details/79264209 参考它
+然而，增加硬盘之后直接虚拟机都打不开了，因此，重新安了一遍kali，真香。</p>
+
+<h2 id="md5各种密码格式">MD5各种密码格式</h2>
+<p><img src="http://blog.img.hackerjerry.top/2019-11-16_20-10-43_的屏幕截图.png" alt="enter description here" /></p>
+
+<h2 id="md5爆破">MD5爆破</h2>
+<p>使用HashCat
+<a href="http://www.tiaozhanziwo.com/archives/1087.html">踩坑指南</a>
+<a href="https://blog.csdn.net/SHIGUANGTUJING/article/details/90074614">具体操作</a></p>
+
+<h2 id="目录扫描神器dirb">目录扫描神器dirb</h2>
+
+<h2 id="一个靠扫描拿flag的i简单过程">一个靠扫描拿flag的i简单过程？</h2>
+<p>https://www.cnblogs.com/zhaoyixiang/archive/2019/06/19/11050231.html</p>
+
+<h2 id="nmap扫端口">Nmap扫端口</h2>
+
+<p>https://www.cnblogs.com/tdcqma/p/5692546.html</p>
+:ET
