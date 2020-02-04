@@ -5,7 +5,7 @@ subtitle:
 date: 2020-02-04 11:59:57
 catalog: true
 tags: 
-header-img: http://ww1.sinaimg.cn/large/007dh5vlly1g5bcln7dflj30kb06u74a.jpg
+header-img: http://blog.img.hackerjerry.top/FvTXExGq7_Blv_6f1KX8bfa_KdF8
 post_copyright: true
 author: Jerry
 ---
@@ -180,7 +180,6 @@ hello.foo();
 >**require 加载模块**，以'/' 为前缀的模块是文件的绝对路径。'./' 为前缀的模块是相对于调用 require() 的文件的，上面的例子中 index.js 和 myModule.js 是在同一个目录下（project 目录）。当没有以 '/'、'./' 或 '../' 开头来表示文件时，这个模块必须是一个核心模块或加载自 node_modules 目录。
 
 <div class="tip inlineBlock important">module.exports 和 exports 的区别</div>
-
 每次导出接口成员的时候都通过 module.exports.xxx = xxx 的方式很麻烦。所以，Node.js 为了简化你的操作，专门提供了一个变量：exports 等于 module.exports。也就是说在模块中还有这么一句代码：
 `var exports = module.exports;`
 
