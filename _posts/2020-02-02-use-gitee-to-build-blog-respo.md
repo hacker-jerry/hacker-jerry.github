@@ -10,4 +10,4 @@ post_copyright: true
 author: Jerry
 ---
 
-DNS设置CNAME之后，国内访问自动跳转到OFFLINE界面，网址正确，不知道除了什么差错。
+使用Coding Page+Coding自动化部署功能
