@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Use Coding To build Blog"
+title: "Use Coding To build JBlog"
 subtitle: 
 date: 2020-02-02 22:35:20
 catalog: true
