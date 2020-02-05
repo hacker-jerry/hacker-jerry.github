@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Use Coding To build JekyBlog"
+title: "Use Coding To build JekylBlog"
 subtitle: 
 date: 2020-02-02 22:35:20
 catalog: true
