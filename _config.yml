@@ -79,7 +79,7 @@ ga_domain: hackerjerry.top
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: ""
-sidebar-avatar: /img/jerry.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /hacker-jerry.github/img/jerry.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
