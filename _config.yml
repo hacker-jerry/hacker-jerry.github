@@ -6,7 +6,7 @@ email:
 description: "一个白帽子、黑客与文人 | Curious Passionate Dream-Chaser Hacker | 这里是 Jerry 的个人博客，一个有趣的灵魂期待与你相遇。"
 keyword: "CTF，攻防，HACK,白帽子，渗透，逆向，二进制，密码学，区块链"
 url: "https://www.blog.hackerjerry.top"              # your host, for absolute URL
-baseurl: "./"                             # for example, '/blog' if your blog hosted on 'host/blog'
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
 
 # Publish posts or collection documents with a future date.
 future: true
